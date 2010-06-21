@@ -270,5 +270,5 @@ class Project < ActiveRecord::Base
 	
 	# Validation
 	
-	validates_presence_of :name
+	validates_presence_of :name, , :priority
 end
