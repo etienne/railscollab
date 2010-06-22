@@ -1,7 +1,7 @@
 !!! 1.1
 %html
   %head
-    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{"http-equiv" => "content-type", :content => "text/html;charset=UTF-8"}/
     %title= "#{h(page_title)} @ #{h(Company.owner.name)}"
     = stylesheet_link_tag 'company_website'
     - additional_stylesheets.each do |ss|
@@ -38,8 +38,8 @@
                 - @last_search ||= @search_field_default_value
                 - @search_field_attrs = {:onfocus => "if (event.target.value == '#{@search_field_default_value}') event.target.value=''", :onblur => "if (event.target.value == '#{@search_field_default_value}') event.target.value=''"}
                 = text_field_tag 'search_id', (h @last_search), @search_field_attrs
-              %button{:type => "submit"}
-                = :go.l
+                %button{:type => "submit"}
+                  = :go.l
 
       / Content Wrapper      
       #outerContentWrapper
@@ -51,18 +51,17 @@
             = h page_title
           
           #pageContent
-            #content{@content_for_sidebar.nil? ? '' : 'class=\'sidebar\''}
+            #content{:class => @content_for_sidebar.nil? ? '' : 'sidebar'}
               = render :partial => 'layouts/actions' unless page_actions.nil?
-            
+
               / Content
               = yield
               / End Content
-            
+
             - unless @content_for_sidebar.nil?
               #sidebar
                 = render :partial => @content_for_sidebar
-
-          .clear
+            .clear
       / Footer
       = render :partial => 'layouts/footer'
     / End Content Wrapper

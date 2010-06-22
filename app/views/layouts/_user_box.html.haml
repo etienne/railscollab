@@ -1,0 +1,66 @@
+#userbox
+  - if user.is_anonymous?
+    = :welcome_anonymous.l
+    = "(#{link_to(:login.l, logout_path)}),"
+  - else
+    = :welcome_back.l_with_args(:user => h(user.display_name))
+    = "(#{link_to :logout.l, logout_path, :confirm => :are_you_sure_logout.l})"
+
+  #running_times_count{:style => "display:#{@running_times.empty? ? 'none' : 'block'};"}
+    %span
+      = :running_times.l_with_args(:count => @running_times.size)
+      = render_icon 'bullet_drop_down', '', :id => 'running_times', :class => 'PopupMenuWidgetAttachTo', :title => 'Enable javascript'
+
+  %ul
+    - unless user.is_anonymous?
+      %li
+        = link_to :account.l, @logged_user
+        = render_icon 'bullet_drop_down', '', :id => 'account_more', :class => 'PopupMenuWidgetAttachTo', :title => 'Enable javascript'
+
+    - unless projects.blank?
+      %li
+        = link_to :projects.l, :controller => 'dashboard', :action => 'my_projects'
+        = render_icon 'bullet_drop_down', '', :id => 'projects_more', :class => 'PopupMenuWidgetAttachTo', :title => 'Enable javascript'
+
+    - if user.is_admin
+      %li
+        = link_to :administration.l, :controller => 'administration'
+        = render_icon 'bullet_drop_down', '', :id => 'administration_more', :class => 'PopupMenuWidgetAttachTo', :title => 'Enable javascript'
+
+  - unless user.is_anonymous?
+    #account_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
+      %p
+        = :account.l
+        \:
+      %ul
+        %li= link_to :edit_profile.l, edit_user_path(:id => user.id)
+        %li= link_to :update_avatar.l, avatar_user_path(:id => user.id)
+      %p= :userbox_more.l
+      %ul
+        %li= link_to :my_projects.l, :controller => 'dashboard', :action => 'my_projects'
+        %li= link_to :my_tasks.l, :controller => 'dashboard', :action => 'my_tasks'
+
+  - unless projects.blank?
+    #projects_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
+      %p
+        = :projects.l
+        \:
+      %ul
+        - projects.each do |project|
+          %li= link_to h(project.name), project_path(:id => project.id)
+
+  - if user.is_admin
+    #administration_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
+      %p
+        = :administration.l
+        \:
+      %ul
+        %li= link_to :company.l, Company.owner
+        %li= link_to :members.l, companies_path
+        %li= link_to :projects.l, projects_path
+        %li= link_to :configuration.l, configurations_path
+        %li= link_to :tools.l, tools_path
+
+  #running_times_menu.PopupMenuWidgetDiv{:style => "display:none"}
+    %ul
+      = render :partial => 'times/listed', :collection => @running_times
