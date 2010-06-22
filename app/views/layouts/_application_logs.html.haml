@@ -6,7 +6,7 @@
   %tr.logOlder
 
 %td.logTypeIcon
-  %img{:alt => application_logs.rel_object_type, :src => "/themes/#{AppConfig.site_theme}/images/logtypes/#{"#{application_logs.rel_object_type.downcase}s.gif"}", :title => application_logs.rel_object_type}/
+  %img{:alt => application_logs.rel_object_type, :src => "/themes/#{AppConfig.site_theme}/images/logtypes/#{application_logs.rel_object_type.downcase}s.gif", :title => application_logs.rel_object_type}/
 %td.logDetails
   %span
     - if not ['Comment', 'ProjectMessage'].include?(application_logs.rel_object_type)
@@ -27,12 +27,12 @@
       = format_usertime(application_logs.created_on, :action_past_format)
 
     - if not application_logs.taken_by.nil?
-      = link_to (h application_logs.taken_by.display_name), user_path(:id => application_logs.taken_by.id)
+      = link_to (h(application_logs.taken_by.display_name), user_path(:id => application_logs.taken_by.id))
 
 - if show_project_column
 %td.logProject
   - if not application_logs.project.nil?
-    = link_to (h application_logs.project.name), project_path(:id => application_logs.project.id)
+    = link_to (h(application_logs.project.name), project_path(:id => application_logs.project.id))
 - else
 %td.logTakenOnBy
   - if application_logs.is_today?
