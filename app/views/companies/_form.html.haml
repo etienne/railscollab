@@ -1,0 +1,69 @@
+= error_messages_for :company
+%div
+  %label{:for => "clientFormName"}
+    = :name.l
+    \:
+    %span.label_required *
+  = text_field 'company', 'name', :id => 'clientFormName'
+%div
+  %label{:for => "clientFormTimezone"}
+    = :timezone.l
+    \:
+    %span.label_required *
+  = time_zone_select 'company', 'time_zone', nil, {}, {:id => 'clientFormTimezone', :class => 'long'}
+%fieldset
+  %legend= :contact_online.l
+  %div
+    %label{:for => "clientFormEmail"}
+      = :email_address.l
+      \:
+    = text_field 'company', 'email', :id => 'clientFormEmail'
+  %div
+    %label{:for => "clientFormHomepage"}
+      = :homepage.l
+      \:
+    = text_field 'company', 'homepage', :id => 'clientFormHomepage'
+%fieldset
+  %legend= :phone_numbers.l
+  %div
+    %label{:for => "clientFormPhoneNumber"}
+      = :phone_number.l
+      \:
+    = text_field 'company', 'phone_number', :id => 'clientFormPhoneNumber'
+  %div
+    %label{:for => "clientFormFaxNumber"}
+      = :fax_number.l
+      \:
+    = text_field 'company', 'fax_number', :id => 'clientFormFaxNumber'
+%fieldset
+  %legend= :address.l
+  %div
+    %label{:for => "clientFormAddress"}
+      = :address.l
+      \:
+    = text_field 'company', 'address', :id => 'clientFormAddress'
+  %div
+    %label{:for => "clientFormAddress2"}
+      = :address_2.l
+      \:
+    = text_field 'company', 'address2', :id => 'clientFormAddress2'
+  %div
+    %label{:for => "clientFormCity"}
+      = :city.l
+      \:
+    = text_field 'company', 'city', :id => 'clientFormCity'
+  %div
+    %label{:for => "clientFormState"}
+      = :state.l
+      \:
+    = text_field 'company', 'state', :id => 'clientFormState'
+  %div
+    %label{:for => "clientFormZipcode"}
+      = :zipcode.l
+      \:
+    = text_field 'company', 'zipcode', :id => 'clientFormZipcode'
+  %div
+    %label{:for => "clientFormCountry"}
+      = :country.l
+      \:
+    = text_field 'company', 'country', :id => 'clientFormCountry', :limit => 100

@@ -1,0 +1,27 @@
+- form_tag company_path(:id => @company.id), :method => :put do
+  = render :partial => 'form'
+  %button.submit{:type => "submit"}= :edit_company.l
+
+- form_tag(logo_company_path(:id => @company.id), :method => :put, :multipart => true) do
+  %fieldset
+    %legend= :current_logo.l
+    
+    - if @company.has_logo?
+      %img{:alt => "#{h @company.name} logo", :src => @company.logo_url}/
+      %p
+        = link_to :delete_current_logo.l, logo_company_path(:id => @company.id), {:onclick => :current_logo_confirm_delete.l, :method => :delete}
+    - else
+      = :logo_not_uploaded.l
+
+    %div
+      %label{:for => "logoFormLogo"}
+        = :new_logo.l
+        \:
+        %span.label_required *
+  
+      #logoFormLogo
+        %input{:name => "company[logo]", :type => "file"}/
+        - if @company.has_logo?
+          %p.desc
+            = :logo_replace_info.l
+        %button.submit{:type => "submit"}= :update_logo.l
