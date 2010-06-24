@@ -271,4 +271,5 @@ class Project < ActiveRecord::Base
 	# Validation
 	
 	validates_presence_of :name, :priority
+	validates_numericality_of :priority, :only_integer => true
 end
