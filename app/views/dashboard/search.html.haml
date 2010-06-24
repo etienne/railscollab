@@ -1,0 +1,16 @@
+#searchForm
+  - form_tag :action => 'search' do
+    = text_field_tag 'search_id', @last_search
+    %button.submit{:type => "submit"}= :search.l
+
+- if !@search_results.empty?
+  %p= :search_displaying_results_for.l_with_args({:start => @start_search_results, :finish => @start_search_results+@search_results.length, :total => @total_search_results, :search => h(@current_search)})
+  %ul
+    - @search_results.each do |obj|
+      %li= :search_dashboard.l_with_args(:type => obj.class.to_s.to_sym.l, :name => link_to(obj.object_name, obj.object_url), :project => link_to(obj.project.object_name, obj.project.object_url))
+
+  #searchPagination
+    = pagination_links  "/dashboard/search?search_id=#{CGI::escape(@last_search)}&", @pagination unless @pagination.length <= 1
+
+- elsif !@current_search.nil?
+  %p= :search_no_matching_objects.l_with_args({:search => h(@current_search)})

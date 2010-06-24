@@ -1,0 +1,6 @@
+.sidebarBlock
+  %h2= :calendar_feeds.l
+  .blockContent
+    %a.iCalSubscribe{:href => @logged_user.milestone_feed_url(nil, 'ics')}= :ical.l
+    %p= :calendar_feed_milestone_info.l
+    %p= :calendar_feeds_password_warning.l
