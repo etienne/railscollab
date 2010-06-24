@@ -31,7 +31,7 @@
 
 - unless @calendar_milestones.empty?
   %h2= :due_in_next_n_days.l_with_args(:num => 14)
-  = milestones_calendar
+  = index_calendar
 
 - cache "user#{@logged_user.id}_dblog" do
   - if @activity_log.length > 0
