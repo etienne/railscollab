@@ -58,7 +58,7 @@ module DashboardHelper
 	   :del     => (Company.owner.projects.length > 0)}]
   end
   
-  def milestones_calendar()
+  def index_calendar()
     now = @time_now.to_date
     prev_month = now.month
     days_calendar now, now + 13.days, 'dayCal' do |date|
@@ -71,6 +71,17 @@ module DashboardHelper
         else
           calendar_block(date.day, @calendar_milestones["#{date.month}-#{date.day}"], 'day')
         end
+      end
+    end
+  end
+  
+  def milestones_calendar()
+    now = @time_now.to_date
+    months_calendar @date_start, @date_end, 'monthsCal', AppConfig.first_day_of_week.to_i do |date|
+      unless date == now
+        calendar_block(date.day, @milestones["#{date.month}-#{date.day}"], 'day')
+      else
+        calendar_block(:today.l, @milestones["#{date.month}-#{date.day}"], 'today', true)
       end
     end
   end
