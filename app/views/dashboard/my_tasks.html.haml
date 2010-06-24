@@ -4,7 +4,7 @@
       - if project[:milestones].length > 0 or project[:tasks].length > 0
         .block
           .header
-            %h2= link_to (h project[:name]), project_path(:id => project[:id])
+            %h2= link_to(h(project[:name]), project_path(:id => project[:id]))
           .content
             - if project[:milestones].length > 0
               %p
@@ -19,7 +19,7 @@
 
                       - else
                         %span.assignedTo= "#{:anyone.l}:"
-                        = link_to (h milestone.name), milestone_path(:id => milestone.id, :active_project => project[:id])
+                        = link_to(h(milestone.name), milestone_path(:id => milestone.id, :active_project => project[:id]))
                         \-
                       
                       - if milestone.is_upcoming?

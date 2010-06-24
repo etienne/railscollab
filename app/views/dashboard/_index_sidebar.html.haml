@@ -12,7 +12,7 @@
         - @online_users.each do |user|
           - if user.can_be_viewed_by(@logged_user)
             %li
-              = link_to (h user.display_name), user_path(:id => user.id)
+              = link_to(h(user.display_name), user_path(:id => user.id))
               %span.desc
                 = "(#{h user.company.name})"
 
@@ -23,7 +23,7 @@
       %ul
         - @my_projects.each do |project|
           %li
-            = link_to h(project.name), project_path(:id => project.id)
+            = link_to(h(project.name), project_path(:id => project.id))
 
       %p
         = link_to :my_projects_sidebar_link.l, :controller => 'dashboard', :action => 'my_projects'
