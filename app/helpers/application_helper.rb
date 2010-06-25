@@ -102,9 +102,9 @@ module ApplicationHelper
 
   def yesno_toggle_tag(name, is_yes, options = {})
     radio_button_tag(name, "1", is_yes, options.merge({:id => "#{options[:id]}Yes"})) +
-      " <label for=\"#{options[:id]}Yes\" class=\"#{options[:class]}\">#{:yesno_yes.l}</label> " +
-      radio_button_tag(name, "0", !is_yes, options.merge({:id => "#{options[:id]}No"})) +
-      " <label for=\"#{options[:id]}No\" class=\"#{options[:class]}\">#{:yesno_no.l}</label>"
+    label_tag(name, :yesno_yes.l, {:for => "#{options[:id]}Yes", :class => "#{options[:class]}"}) + 
+    radio_button_tag(name, "0", !is_yes, options.merge({:id => "#{options[:id]}No"})) +
+    label_tag(name, :yesno_no.l, {:for => "#{options[:id]}No", :class => "#{options[:class]}"})
   end
 	
 	def actions_for_user(user)
