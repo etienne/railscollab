@@ -77,7 +77,7 @@ es:
   edit_message_category: Editar categoría de mensaje
   edit_category: Editar categoría
   view_message: Ver mensaje
-  category_messages: "Mensajes de categoría {{category}}"
+  category_messages: "Mensajes de categoría %{category}"
   add_milestone: Añadir hito
   edit_milestone: Editar hito
   add_task_list: Añadir lista de tareas
@@ -88,12 +88,12 @@ es:
   search_results: Resultados de búsqueda
   add_project: Añadir proyecto
   edit_project: Editar proyecto
-  user_card: Tarjeta de usuario de {{user}}
-  folder_name: "Carpeta : {{folder}}"
+  user_card: Tarjeta de usuario de %{user}
+  folder_name: "Carpeta : %{folder}"
   add_page: Añadir página
   edit_page: Editar página
   all_pages: Todas las páginas
-  company_card: "Tarjeta de compañía de {{company}}"
+  company_card: "Tarjeta de compañía de %{company}"
   reset_password: Restaurar contraseña
   set_password: Establecer contraseña
   save_changes: Guardar cambios
@@ -103,22 +103,22 @@ es:
   recent_milestones_feed_info: Hitos recientes de todos los proyectos
   recent_activities_feed: Feed de actividades recientes
   recent_activities_feed_info: Actividades recientes de todos los proyectos
-  recent_project_milestones_feed: "Feed de hitos recientes del proyecto {{project}}"
-  recent_project_milestones_feed_info: "Hitos recientes del proyecto {{project}}"
-  recent_project_activities_feed: "Feed de actividades recientes del proyecto {{project}}"
-  recent_project_activities_feed_info: "Actividades recientes para el proyecto {{project}}"
+  recent_project_milestones_feed: "Feed de hitos recientes del proyecto %{project}"
+  recent_project_milestones_feed_info: "Hitos recientes del proyecto %{project}"
+  recent_project_activities_feed: "Feed de actividades recientes del proyecto %{project}"
+  recent_project_activities_feed_info: "Actividades recientes para el proyecto %{project}"
   
   # New account steps
   welcome_to_new_account: Bienvenido a tu nueva cuenta
-  welcome_to_new_account_info: "{{user}}, bienvenido a tu nueva cuenta. A partir de ahora siempre estará disponible en {{url}} (puedes guardar en favoritos éste enlace). Puedes ponerte en marcha siguiendo estos fáciles pasos:"
+  welcome_to_new_account_info: "%{user}, bienvenido a tu nueva cuenta. A partir de ahora siempre estará disponible en %{url} (puedes guardar en favoritos éste enlace). Puedes ponerte en marcha siguiendo estos fáciles pasos:"
   new_account_step1: "Paso 1: Actualizar la información de tu compañia"
-  new_account_step1_info: "<a href='{{url}}'>Establece los datos de tu compañía</a> como teléfono, fax, dirección, correo electrónico, página web, etc"
+  new_account_step1_info: "<a href='%{url}'>Establece los datos de tu compañía</a> como teléfono, fax, dirección, correo electrónico, página web, etc"
   new_account_step2: "Paso 2: Añadir miembros a tu equipo"
-  new_account_step2_info: "Puedes <a href='{{url}}'>crear cuentas de usuario</a> para todos los miembros de tu equipo (ilimitados). Cada miembro tendrá su propio nombre y contraseña para acceder al sistema"
+  new_account_step2_info: "Puedes <a href='%{url}'>crear cuentas de usuario</a> para todos los miembros de tu equipo (ilimitados). Cada miembro tendrá su propio nombre y contraseña para acceder al sistema"
   new_account_step3: "Paso 3: Añadir compañías cliente y sus miembros"
-  new_account_step3_info: "Ahora es el momento para <a href='{{url}}'>definir compañías cliente</a> (ilimitados). Cuando hayas acabado podrás añadir sus miembros o definir un líder de equipo. Los miembros de los clientes son similares a los de tu compañía pero tienen acceso limitado al contenido y las funciones (puedes configurar qué pueden ver por proyecto o miembro)"
+  new_account_step3_info: "Ahora es el momento para <a href='%{url}'>definir compañías cliente</a> (ilimitados). Cuando hayas acabado podrás añadir sus miembros o definir un líder de equipo. Los miembros de los clientes son similares a los de tu compañía pero tienen acceso limitado al contenido y las funciones (puedes configurar qué pueden ver por proyecto o miembro)"
   new_account_step4: "Paso 4: Empezar un proyecto"
-  new_account_step4_info: "Definir un <a href='{{url}}'>nuevo proyecto</a> es muy fácil: agrega un nombre y una descripción (opcional) y haz click en enviar. Después puedes configurar los permisos para los miembros de tu equipo y del cliente."
+  new_account_step4_info: "Definir un <a href='%{url}'>nuevo proyecto</a> es muy fácil: agrega un nombre y una descripción (opcional) y haz click en enviar. Después puedes configurar los permisos para los miembros de tu equipo y del cliente."
   
   hide_welcome_info: "&raquo; Ocultar ésta información permanentemente"
   
@@ -126,12 +126,12 @@ es:
   
   # User box
   welcome_anonymous: "Bienvenido <strong>Anónimo</strong>"
-  welcome_back: "Bienvenido de nuevo <strong>{{user}}</strong>"
+  welcome_back: "Bienvenido de nuevo <strong>%{user}</strong>"
   logout: Cerrar sesión
   are_you_sure_logout: ¿Estás seguro de que quieres cerrar sesión?
   running_times:
-    one: "Tienes {{count}} tiempo en progreso"
-    other: "Tienes {{count}} tiempos en progreso"
+    one: "Tienes %{count} tiempo en progreso"
+    other: "Tienes %{count} tiempos en progreso"
   
   # Permission names
   can_manage_messages: Gestionar mensajes
@@ -147,13 +147,13 @@ es:
   # Status messages
   login_success: Inicio de sesión correcto
   login_failure: Falló el inicio de sesión
-  invalid_openid_server: "No pude encontrar el servidor openid para <q>{{openid_url}}</q>"
-  failed_verification_openid_url: "Verificación de {{openid_url}} fallida"
-  failed_login_openid_url: "Falló el inicio de sesión con la identidad {{openid_url}}"
-  success_login_openid_url: "Has iniciado con éxito la sesión con {{openid_url}} como tu identidad"
+  invalid_openid_server: "No pude encontrar el servidor openid para <q>%{openid_url}</q>"
+  failed_verification_openid_url: "Verificación de %{openid_url} fallida"
+  failed_login_openid_url: "Falló el inicio de sesión con la identidad %{openid_url}"
+  success_login_openid_url: "Has iniciado con éxito la sesión con %{openid_url} como tu identidad"
   verification_failed: Verificación fallida
   verification_cancelled: Verificación cancelada
-  unknown_response_status: "Respuesta de estado desconocida: {{status}}"
+  unknown_response_status: "Respuesta de estado desconocida: %{status}"
   invalid_email: Dirección de correo inválida
   invalid_email_not_in_use: Dirección de correo inválida
   password_changed: Contraseña cambiada
@@ -243,13 +243,13 @@ es:
   success_deleted_time: Registro de tiempo borrado con éxito
   success_stopped_time: Registro de tiempo parado con éxito
   success_added_user: Usuario añadido con éxito
-  success_deleted_user: "Usuario {{name}} borrado con éxito"
+  success_deleted_user: "Usuario %{name} borrado con éxito"
   unimplemented: No implementado
   invalid_request: Petición no válida
   
   # Stuff which appears in the sidebar
   online_users: Usuarios conectados
-  users_active_in_last_n_minutes: "Usuarios activos en los últimos {{number}} minutos:"
+  users_active_in_last_n_minutes: "Usuarios activos en los últimos %{number} minutos:"
   my_projects_sidebar_link: "&raquo; Mis proyectos"
   update_feeds: RSS feeds
   recent_activities: Actividades recientes
@@ -258,7 +258,7 @@ es:
   active_projects: Proyectos activos
   finished_projects: Proyectos finalizados
   archived_projects_list_info: "Lista de proyectos finalizados (archivados). Todas las acciones para el proyecto están bloqueados pero puedes navegar por ellos."
-  project_completed_time_with_user: "{{time}} | {{user}}"
+  project_completed_time_with_user: "%{time} | %{user}"
   calendar_feeds: iCalendar
   ical: iCalendar
   calendar_feed_milestone_info: Usa éste enlace para llevar los hitos a tu aplicación de calendario favorita.
@@ -268,12 +268,12 @@ es:
   all_files: Todos los archivos
   important_files: Archivos importantes
   important_file_revisions_count:
-    one: "{{count}} revisión"
-    other: "{{count}} revisiones"
+    one: "%{count} revisión"
+    other: "%{count} revisiones"
   important_messages: Mensajes importantes
   important_messages_comments_count:
-    one: "{{count}} comentario"
-    other: "{{count}} comentarios"
+    one: "%{count} comentario"
+    other: "%{count} comentarios"
   categories: Categorías
   all_categories: Todas las categorías
   configuration_categories: Configuración de categorías
@@ -295,9 +295,9 @@ es:
   completed_milestones: Hitos completados
   late: Atrasados
   upcoming: Próximos
-  milestones_summary: "Hitos {{adjetives}}"
-  milestone_completed_time_with_user: "{{time}} | {{user}}"
-  project_status_header: "Estado del proyecto: {{status}}"
+  milestones_summary: "Hitos %{adjetives}"
+  milestone_completed_time_with_user: "%{time} | %{user}"
+  project_status_header: "Estado del proyecto: %{status}"
   active: Activo
   completed: Completado
   edit_project_details: Editar detalles del proyecto
@@ -307,19 +307,19 @@ es:
   mark_project_as_active_confirmation: "¿Estás seguro de que quieres marcar el proyecto como activo? Ésto habilitará todas las acciones en el proyecto"
   involved_companies: Compañías involucradas
   open_task_lists: Lista de tareas abiertas
-  num_tasks_open_in_task_list: "{{num}} tareas abiertas de {{total}} en la lista"
+  num_tasks_open_in_task_list: "%{num} tareas abiertas de %{total} en la lista"
   completed_task_lists: Lista de tareas completa
-  task_list_completed_time_with_user: "{{time}} | {{user}}"
+  task_list_completed_time_with_user: "%{time} | %{user}"
   tags_used_in_project:  Etiquetas usadas en el proyecto
   no_tags_used_in_project: No se han usado etiquetas en el proyecto
   objects_tagged_with:
-    one: "{{count}} objeto se ha etiquetado con <strong>{{tag}}</strong>"
-    other: "{{count}} objetos se han etiquetado con <strong>{{tag}}</strong>"
-  no_objects_tagged_with: "No hay objetos etiquetados con <strong>{{tag}}</strong>"
-  milestone_assigned_to: "Asignado a {{name}}"
+    one: "%{count} objeto se ha etiquetado con <strong>%{tag}</strong>"
+    other: "%{count} objetos se han etiquetado con <strong>%{tag}</strong>"
+  no_objects_tagged_with: "No hay objetos etiquetados con <strong>%{tag}</strong>"
+  milestone_assigned_to: "Asignado a %{name}"
   tag_object_count:
-    one: "{{count}} objeto."
-    other: "{{count}} objetos."
+    one: "%{count} objeto."
+    other: "%{count} objetos."
   # Message form
   title: Título
   text: Texto
@@ -342,11 +342,11 @@ es:
   current_logo_confirm_delete: "¿Estás seguro de que quieres borrar el logo actual?"
   logo_not_uploaded: El logo no está subido
   logo_replace_info: "¡Ten en cuenta que el logo actual se borrará y se reemplazará con el nuevo!"
-  milestone_in: "{{milestone}} en {{project}}"
+  milestone_in: "%{milestone} en %{project}"
   
   # Message view
   from: De
-  message_created_with_user: "{{time}} | {{user}}"
+  message_created_with_user: "%{time} | %{user}"
   comments: Comentarios
   no_messages_in_project: No hay mensajes en éste proyecto
   no_messages_in_category: No hay mensajes en ésta categoría
@@ -363,7 +363,7 @@ es:
   priority: Prioridad
   description: Descripción
   estimated_hours: Horas estimadas
-  task_estimated_hours: "[{{hours}} horas estimadas]"
+  task_estimated_hours: "[%{hours} horas estimadas]"
   is_private_list: Es privada
   is_private_list_info: "(Las listas de tareas privadas sólo pueden verlas los miembros de la compañía propietaria. Los miembros de otras compañías no podrán verlas.)"
   task_list: Lista de tareas
@@ -384,7 +384,7 @@ es:
   no_tasks_assigned_to_you: No tienes tareas asignadas
   edit_tasks: Editar tareas
   task: Tarea
-  task_created_by: "Creado por {{user}}"
+  task_created_by: "Creado por %{user}"
   
   # Milestone form
   private_milestone: Hitos privados
@@ -398,16 +398,16 @@ es:
   todays_milestones: Hitos para hoy
   upcoming_milestones: Próximos hitos
   all_upcoming_milestones: Todos los hitos próximos
-  milestone_days_left: "Quedan {{days}} días"
-  milestone_days_late: "{{days}} días tarde"
+  milestone_days_left: "Quedan %{days} días"
+  milestone_days_late: "%{days} días tarde"
   milestone_show_all_upcoming:
-    one: "&raquo; Mostrar el próximo {{count}} hito"
-    other: "&raquo; Mostrar los próximos {{count}} hitos"
+    one: "&raquo; Mostrar el próximo %{count} hito"
+    other: "&raquo; Mostrar los próximos %{count} hitos"
   today: Hoy
-  milestone_empty_info: "Éste hito está vacio. Puedes añadir un {{message}} o una {{task_list}} cuando quieras"
+  milestone_empty_info: "Éste hito está vacio. Puedes añadir un %{message} o una %{task_list} cuando quieras"
   task_lists: Listas de tareas
   message: Mensaje
-  milestone_messages_created_with_user: "{{time}} | {{user}}"
+  milestone_messages_created_with_user: "%{time} | %{user}"
   milestone_confirm_delete: "¿Estás seguro de que quieres borrar éste hito?"
   
   # Wiki page view
@@ -422,9 +422,9 @@ es:
   action_edit: Editado
   action_close: Cerrado
   action_upload: Subido
-  action_today_with_time: "Hoy {{time}}"
+  action_today_with_time: "Hoy %{time}"
   action_yesterday: Ayer
-  action_by: 'por {{user}}'
+  action_by: 'por %{user}'
   
   # Access
   forgot_password_sent_email: Se han enviado más intrucciones a tu dirección de correo electrónico.
@@ -481,7 +481,7 @@ es:
   started_on: Iniciado a las
   no_active_projects: No hay proyectos activos
   companies_involved_in: "Compañías involucradas en el proyecto"
-  tasks_in_list: "En {{list}}"
+  tasks_in_list: "En %{list}"
   anyone: Cualquiera
   none: Ninguno
   project: Proyecto
@@ -505,8 +505,8 @@ es:
   private_comment_info: "Los comentarios privados sólo puede verlos la compañia propietaria. Los miembros de las compañías cliente no podrán verlos."
   comment_delete_confirm: "¿Estás seguro de que quieres borrar éste comentario?"
   no_comments_for_object: No se han publicado comentarios en éste objeto
-  comment_posted_with_user: "Publicado en {{time}} por {{user}}"
-  comment_posted: "Publicado en {{time}} por <strong>{{name}}</strong>"
+  comment_posted_with_user: "Publicado en %{time} por %{user}"
+  comment_posted: "Publicado en %{time} por <strong>%{name}</strong>"
   
   # User
   generate_password: Generar contraseña
@@ -518,17 +518,17 @@ es:
   project_show_description_in_overview: Mostrar descripción en la página resumen del proyecto
   company_no_users: No hay usuarios en la compañía
   permissions_form: formulario de permisos
-  permissions_info: "Usando el {{link}} podrás añadir o quitar compañías y usuarios y controlar sus permisos de acceso fácilmente."
-  clients_involved_in: "Los usuarios de {{company}} están involucrados en {{project}}"
+  permissions_info: "Usando el %{link} podrás añadir o quitar compañías y usuarios y controlar sus permisos de acceso fácilmente."
+  clients_involved_in: "Los usuarios de %{company} están involucrados en %{project}"
   confirm_client_remove: "¿Estás seguro de que quieres borrar el cliente?"
   confirm_user_remove: "¿Estás seguro de que quieres quitar el usuario?"
   confirm_user_delete: "¿Estás seguro de que quieres borrar el usuario?"
   hint: Pista
   hint_permissions_info: "Marca el proyecto para dar permisos de acceso para ésta compañía. Ten en cuenta que necesitarás especificar los permisos para los miembros de la compañía que quieres que sean capaces de acceder y gestionar los proyectos seleccionados (puedes hacerlo a través de la página de gente o los perfiles de usuarios)."
-  project_completed_on: "Completado el {{date}} por {{user}}"
+  project_completed_on: "Completado el %{date} por %{user}"
   all: Todos
   go: Ir
-  due_in_next_n_days: "Vence en los siguientes {{num}} días"
+  due_in_next_n_days: "Vence en los siguientes %{num} días"
   project_locked_header: "Éste proyecto se ha marcado como finalizado y está bloqueado."
   
   # Forms
@@ -540,7 +540,7 @@ es:
   save: Guardar
   reset: Reiniciar
   submit: Enviar
-  form_action_add_to: "Añadir {{object}} a {{link}}"
+  form_action_add_to: "Añadir %{object} a %{link}"
   form_related_object_notfound: "¡El objeto relacionado no existe!"
   form_confirm_delete: "¿Estás seguro de que quieres borrar éste formulario?"
   no_forms_in_project: No hay formularios en éste proyecto
@@ -558,10 +558,10 @@ es:
   private_time_info: "Los tiempos privados sólo pueden verlos la compañía propietaria. Los miembros de las compañías cliente no podrán verlos."
   billable_time: Tiempo facturable
   billable_time_info: "Los tiempos facturables son aquellos por los que habrá que cobrar al cliente."
-  task_list_hours: "{{name}} [{{hours}} horas]"
+  task_list_hours: "%{name} [%{hours} horas]"
   task_list_hours_info: "Tareas con tiempos registrados"
-  task_list_task_hours: "{{name}} [{{hours}} horas]"
-  billable_hours: "[{{hours}} horas facturables]"
+  task_list_task_hours: "%{name} [%{hours} horas]"
+  billable_hours: "[%{hours} horas facturables]"
   no_times_in_project: "Éste proyecto no tiene registros de tiempo"
   time_confirm_delete: "¿Estás seguro de que quieres borrar éste registro de tiempo?"
   start_time: "Iniciar registro de tiempo"
@@ -578,17 +578,17 @@ es:
   new_file: Nuevo archivo
   new_revision: Nueva revisión
   existing_file: Archivo existente
-  file_upload_info: "Puedes subir cualquier tipo de archivo. El tamaño máximo es de {{max}}"
+  file_upload_info: "Puedes subir cualquier tipo de archivo. El tamaño máximo es de %{max}"
   file_update_info: "Puedes reemplazar un archivo existente especificando uno nuevo. Si no quieres que se reemplace deja éste campo vacio."
   revision_comment: Comentario de revisión
   private_file: Archivo privado
   private_file_info: "Los archivos privados sólo puede verlos la compañía propietaria. Los miembros de las compañías cliente no podrán verlos."
   important_file: Archivo importante
   important_file_info: "Los archivos importantes se listan en la barra lateral \"Archivos importantes\" de la página del proyecto"
-  revision_created_by: "Revisión #{{number}} <span>(por {{user}} el {{date}})</span>"
-  revision_created_on: "Revisión #{{number}} <span>(creada el {{date}})</span>"
-  download_size: "Descargar ({{size}})"
-  details_size: "Detalles ({{size}})"
+  revision_created_by: "Revisión #%{number} <span>(por %{user} el %{date})</span>"
+  revision_created_on: "Revisión #%{number} <span>(creada el %{date})</span>"
+  download_size: "Descargar (%{size})"
+  details_size: "Detalles (%{size})"
   revisions: Revisiones
   last_revision: Última revisión
   file_delete_confirmation: "¿Estás seguro de que quieres borrar éste archivo?"
@@ -601,7 +601,7 @@ es:
   attach_existing_file: "Adjuntar archivo existente (desde la sección de Archivos)"
   file_view_details: Ver detalles del archivo
   no_files_in_location: No hay archivos en ésta localización.
-  hint_attach_files: "Usa éste formulario para adjuntar archivos a <strong>{{link}}</strong>. Puedes adjuntar uno o más archivos. Puedes seleccionar cualquier archivo existente desde la sección de archivos o subir nuevos.<strong>Los nuevos archivos estarán disponibles también desde la sección de archivos cuando los hayas subido</strong>."
+  hint_attach_files: "Usa éste formulario para adjuntar archivos a <strong>%{link}</strong>. Puedes adjuntar uno o más archivos. Puedes seleccionar cualquier archivo existente desde la sección de archivos o subir nuevos.<strong>Los nuevos archivos estarán disponibles también desde la sección de archivos cuando los hayas subido</strong>."
   upload_attach_to_message: Subir nuevo archivo y adjuntarlo al mensaje
   select_file: Seleccionar archivo
   
@@ -616,8 +616,8 @@ es:
   not_part_of_project: No es parte del proyecto
   search: Búsqueda
   search_box_default: "Buscar..."
-  search_displaying_results_for: "Mostrando {{start}}...{{finish}} de {{total}} resultados para {{search}}."
-  search_no_matching_objects: "No hay objetos que concuerden con la búsqueda '<strong>{{search}}</strong>'"
+  search_displaying_results_for: "Mostrando %{start}...%{finish} de %{total} resultados para %{search}."
+  search_no_matching_objects: "No hay objetos que concuerden con la búsqueda '<strong>%{search}</strong>'"
   
   
   # Configuration messages
@@ -701,21 +701,21 @@ es:
   
   # Mailing views
   notifier_subject_new_task: "Nueva tarea"
-  notifier_subject_new_message: "Nuevo mensaje {{title}}"
-  notifier_subject_new_milestone: "Nuevo hito {{name}}"
-  notifier_subject_new_comment: "Nuevo comentario en {{title}}"
+  notifier_subject_new_message: "Nuevo mensaje %{title}"
+  notifier_subject_new_milestone: "Nuevo hito %{name}"
+  notifier_subject_new_comment: "Nuevo comentario en %{title}"
   notifier_subject_reset_password_request: "Petición de cambio de contraseña"
   notifier_subject_new_account: "Tu cuenta se ha creado"
   notifier_donotreply: "NO CONTESTE A ÉSTE MENSAJE"
-  notifier_greeting: "Hola {{user}}"
-  notifier_new_message: "Un nuevo mensaje con el título '{{title}}' se ha publicado en el proyecto {{project}}. Para verlo visite la siguiente dirección URL:"
-  notifier_new_task: "Una nueva tarea se ha publicado en el proyecto {{project}}. Para verla visite la siguiente dirección URL:"
-  notifier_new_milestone: "Un nuevo hito llamado '{{name}}' se ha publicado en el proyecto {{project}}. Para verlo visite la siguiente dirección URL:"
-  notifier_new_comment: "Un nuevo comentario se ha publicado en el mensaje {{title}}. Para verlo, visite la siguiente URL:"
-  notifier_reset_password: "Se ha solicitado restablecer su contraseña para su cuenta en {{site}}. Si quiere seguir con el procedimiento visite la siguiente URL:"
-  notifier_new_account: "{{user}} ha creado una nueva cuenta de usuario para ti en {{site}}."
+  notifier_greeting: "Hola %{user}"
+  notifier_new_message: "Un nuevo mensaje con el título '%{title}' se ha publicado en el proyecto %{project}. Para verlo visite la siguiente dirección URL:"
+  notifier_new_task: "Una nueva tarea se ha publicado en el proyecto %{project}. Para verla visite la siguiente dirección URL:"
+  notifier_new_milestone: "Un nuevo hito llamado '%{name}' se ha publicado en el proyecto %{project}. Para verlo visite la siguiente dirección URL:"
+  notifier_new_comment: "Un nuevo comentario se ha publicado en el mensaje %{title}. Para verlo, visite la siguiente URL:"
+  notifier_reset_password: "Se ha solicitado restablecer su contraseña para su cuenta en %{site}. Si quiere seguir con el procedimiento visite la siguiente URL:"
+  notifier_new_account: "%{user} ha creado una nueva cuenta de usuario para ti en %{site}."
   notifier_new_account_access: "Para acceder a su cuenta, visite la siguiente URL:"
-  notifier_new_account_access_login: "Entonces inicie sesión con el usuario '{{login}}'."
+  notifier_new_account_access_login: "Entonces inicie sesión con el usuario '%{login}'."
   notifier_new_account_credentials: "Inicie sesión utilizando las siguientes credenciales:"
   author: Autor
   
@@ -732,8 +732,8 @@ es:
   ProjectFileRevision: Revisión de archivo
   WikiPage: Página de wiki
   
-  search_dashboard: "{{type}}: {{name}} en {{project}}"
-  search_project: "{{type}}: {{name}}"
+  search_dashboard: "%{type}: %{name} en %{project}"
+  search_project: "%{type}: %{name}"
   
   # system
   
@@ -744,8 +744,8 @@ es:
     errors:
       template:
         header:
-          one:   "no se pudo guardar este {{model}} porque se encontró 1 error" 
-          other:  "no se pudo guardar este {{model}} porque se encontraron {{count}} errores" 
+          one:   "no se pudo guardar este %{model} porque se encontró 1 error" 
+          other:  "no se pudo guardar este %{model} porque se encontraron %{count} errores" 
         # The variable :count is also available
         body: "Se encontraron problemas con los siguientes campos:" 
 
@@ -759,16 +759,16 @@ es:
         accepted: "debe ser aceptado"
         empty: "no puede estar vacío"
         blank: "no puede estar en blanco"
-        too_long: "es demasiado largo ({{count}} caracteres máximo)"
-        too_short: "es demasiado corto ({{count}} caracteres mínimo)"
-        wrong_length: "no tiene la longitud correcta ({{count}} caracteres exactos)"
+        too_long: "es demasiado largo (%{count} caracteres máximo)"
+        too_short: "es demasiado corto (%{count} caracteres mínimo)"
+        wrong_length: "no tiene la longitud correcta (%{count} caracteres exactos)"
         taken: "ya está en uso"
         not_a_number: "no es un número"
-        greater_than: "debe ser mayor que {{count}}"
-        greater_than_or_equal_to: "debe ser mayor que o igual a {{count}}"
-        equal_to: "debe ser igual a {{count}}"
-        less_than: "debe ser menor que {{count}}"
-        less_than_or_equal_to: "debe ser menor que o igual a {{count}}"
+        greater_than: "debe ser mayor que %{count}"
+        greater_than_or_equal_to: "debe ser mayor que o igual a %{count}"
+        equal_to: "debe ser igual a %{count}"
+        less_than: "debe ser menor que %{count}"
+        less_than_or_equal_to: "debe ser menor que o igual a %{count}"
         odd: "debe ser impar"
         even: "debe ser par"
 
