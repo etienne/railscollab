@@ -12,7 +12,7 @@ fr:
   configuration: Configuration
   tools: Outils
   upgrade: Mise à jour
-  messages: Messages
+  messages: Discussions
   tasks: Tâches
   milestones: Étapes
   ptime: Temps
@@ -46,67 +46,67 @@ fr:
   add_user: Nouvel utilisateur
   add_client: Nouveau client
   edit_profile: Modifier le profil
-  update_avatar: Update avatar
+  update_avatar: Mettre à jour l’avatar
   permissions: Permissions
-  edit_company: Edit company
-  edit_company_logo: Edit company logo
+  edit_company: Modifier la compagnie
+  edit_company_logo: Modifier le logo de compagnie
   add_file: Nouveau fichier
-  edit_file: Edit file
-  attach_files: Attach files
-  file_details: File details
-  add_folder: Add folder
-  edit_folder: Edit folder
-  forgot_password: Forgot password
-  remember_me: Remember me
-  login: Login
-  update_permissions: Update permissions
-  update_people: Update people
-  edit_client: Edit client
-  new_logo: New logo
-  update_logo: Update logo
-  forms: Forms
-  add_form: Add form
-  edit_form: Edit form
+  edit_file: Modifier le fichier
+  attach_files: Ajouter des pièces jointes
+  file_details: Détails du fichier
+  add_folder: Nouveau dossier
+  edit_folder: Modifier le dossier
+  forgot_password: Mot de passe oublié
+  remember_me: Se souvenir de moi
+  login: Connexion
+  update_permissions: Mettre à jour les permissions
+  update_people: Mettre à jour les personnes
+  edit_client: Modifier le client
+  new_logo: Nouveau logo
+  update_logo: Mettre à jour le logo
+  forms: Formulaires
+  add_form: Nouveau formulaire
+  edit_form: Modifier le formulaire
   add_time: Ajouter un temps
   edit_time: Modifier le temps
   edit_user: Modifier l’utilisateur
-  add_message: Nouveau message
-  edit_message: Modifier le message
-  add_message_category: Nouvelle catégorie de message
+  add_message: Nouvelle discussion
+  edit_message: Modifier la discussion
+  add_message_category: Nouvelle catégorie de discussion
   add_category: Nouvelle catégorie
-  edit_message_category: Modifier la catégorie de message
+  edit_message_category: Modifier la catégorie de discussion
   edit_category: Modifier la catégorie
-  view_message: Voir le message
-  category_messages: "Messages of category %{category}"
+  view_message: Voir la discussion
+  category_messages: "Discussions dans la catégorie %{category}"
   add_milestone: Nouvelle étape
-  edit_milestone: Edit milestone
+  edit_milestone: Modifier l’étape
   add_task_list: Nouvelle liste de tâches
-  add_task: Add task
-  edit_task_list: Edit task list
-  edit_task: Edit task
-  reorder_tasks: Reorder tasks
+  add_task: Nouvelle tâche
+  edit_task_list: Modifier la liste de tâches
+  edit_task: Modifier la tâche
+  reorder_tasks: Réordonner les tâches
   search_results: Résultats de recherche
   add_project: Nouveau projet
   edit_project: Modifier le projet
   user_card: Carte d’utilisateur de %{user}
   folder_name: "Folder : %{folder}"
-  add_page: Add page
-  edit_page: Edit page
-  all_pages: All pages
-  company_card: "Company card of %{company}"
-  reset_password: Reset password
-  set_password: Set password
-  save_changes: Save changes
+  add_page: Nouvelle page
+  edit_page: Modifier la page
+  all_pages: Toutes les pages
+  company_card: "Carte de compagnie de %{company}"
+  reset_password: Réinitialiser le mot de passe
+  set_password: Établir le mot de passe
+  save_changes: Enregistrer les changements
   
   # Feeds
-  recent_milestones_feed: Recent milestones feed
-  recent_milestones_feed_info: Recent milestones for all projects
-  recent_activities_feed: Recent activities feed
-  recent_activities_feed_info: Recent activities for all projects
-  recent_project_milestones_feed: "%{project} Recent milestones feed"
-  recent_project_milestones_feed_info: "Recent milestones for the %{project} project"
-  recent_project_activities_feed: "%{project} Recent activities feed"
-  recent_project_activities_feed_info: "Recent activities for the %{project} project"
+  recent_milestones_feed: Fil des étapes récentes
+  recent_milestones_feed_info: Étapes récentes dans tous les projets
+  recent_activities_feed: Fil de l’activité récente
+  recent_activities_feed_info: Activité récente dans tous les projets
+  recent_project_milestones_feed: "Fil des étapes récentes dans %{project}"
+  recent_project_milestones_feed_info: "Étapes récentes dans %{project}"
+  recent_project_activities_feed: "Fil de l’activité récente dans %{project}"
+  recent_project_activities_feed_info: "Activité récente dans %{project}"
   
   # New account steps
   welcome_to_new_account: Welcome to your newly created account
@@ -132,15 +132,15 @@ fr:
   running_times: "Vous avez %{count} compteurs en marche"
   
   # Permission names
-  can_manage_messages: Manage messages
-  can_manage_tasks: Manage tasks
-  can_manage_milestones: Manage milestones
-  can_manage_time: Manage times
-  can_upload_files: Upload files
-  can_manage_files: Manage files
-  can_assign_to_owners: Assign tasks to members of owner company
-  can_assign_to_other: Assign tasks to members of other clients
-  can_manage_wiki_pages: Manage wiki pages
+  can_manage_messages: Gérer les discussions
+  can_manage_tasks: Gérer les tâches
+  can_manage_milestones: Gérer les étapes
+  can_manage_time: Gérer les temps
+  can_upload_files: Télécharger des fichiers
+  can_manage_files: Gérer les fichiers
+  can_assign_to_owners: Attribuer des tâches aux coéquipiers
+  can_assign_to_other: Attribuer des tâches aux clients
+  can_manage_wiki_pages: Gérer les pages de wiki
   
   # Status messages
   login_success: Login successful
@@ -285,7 +285,7 @@ fr:
   enable_comments: Enable comments
   enable_anonymous_comments: Anonymous comments
   update_options: Update options
-  edit_message_sidebar_link: "&raquo; Edit message"
+  edit_message_sidebar_link: "&raquo; Modifier le message"
   completed_milestones: Completed milestones
   late: Late
   upcoming: Upcoming
@@ -295,32 +295,32 @@ fr:
   active: Actif
   completed: Complété
   edit_project_details: Modifier les détails du projet
-  mark_project_as_finished: Marquer le projet comme terminé
-  mark_project_as_finished_confirmation: "Are you sure you want to mark this project as finished? All project actions will be locked"
-  mark_project_as_active: Mark project as active
-  mark_project_as_active_confirmation: "Are you sure you want to mark this project as open? This will unlock all project actions"
-  involved_companies: Involved companies
-  open_task_lists: Open task lists
-  num_tasks_open_in_task_list: "%{num} open of %{total} tasks in list"
-  completed_task_lists: Completed task lists
+  mark_project_as_finished: Fermer le projet
+  mark_project_as_finished_confirmation: "Voulez-vous vraiment fermer ce projet ? Toues les actions du projet seront verrouillées."
+  mark_project_as_active: Réactiver le projet
+  mark_project_as_active_confirmation: "Voulez-vous vraiment réactiver le projet ? Toutes les actions du projet seront déverrouillées."
+  involved_companies: Compagnies impliquées
+  open_task_lists: Listes de tâches ouvertes
+  num_tasks_open_in_task_list: "%{num} tâches ouvertes sur %{total} dans cette liste"
+  completed_task_lists: Listes de tâches complétées
   task_list_completed_time_with_user: "%{time} | %{user}"
-  tags_used_in_project: Tags used in this project
-  no_tags_used_in_project: There are no tags used in this project
-  objects_tagged_with: "%{count} objects are tagged with <strong>%{tag}</strong>"
-  no_objects_tagged_with: "There are no objects are tagged with <strong>%{tag}</strong>"
-  milestone_assigned_to: "Assigned to %{name}"
-  tag_object_count: "%{count} objects."
+  tags_used_in_project: Mots-clés utilisés dans ce projet
+  no_tags_used_in_project: Aucun mot-clé n’est utilisé dans ce projet
+  objects_tagged_with: "%{count} objets sont identifiés avec le mot-clé <strong>%{tag}</strong>"
+  no_objects_tagged_with: "Aucun objet n’est identifié avec le mot-clé <strong>%{tag}</strong>"
+  milestone_assigned_to: "Attribué à %{name}"
+  tag_object_count: "%{count} objets."
   # Message form
-  title: Title
-  text: Text
-  additional_text: Additional text
-  additional_text_info: Additional message text is visible only on comments page
-  collapse: Collapse
-  expand: Expand
-  milestone: Milestone
-  category: Category
-  private_message_info: "Private messages are visible only to owner company members. Members of client companies will not be able to see them."
-  important_message_info: "Important messages are listed in the \"Important messages\" sidebar on the project messages page"
+  title: Titre
+  text: Texte
+  additional_text: Texte supplémentaire
+  additional_text_info: Le texte supplémentaire n’est visible que sur la page des commentaires
+  collapse: Fermer
+  expand: Ouvrir
+  milestone: Étape
+  category: Catégorie
+  private_message_info: "Les discussions privées ne sont visibles que par les coéquipiers. Les clients ne pourront pas les voir."
+  important_message_info: "Les discussions importantes sont listées dans la colonne \"Discussions importantes\" sur la page des discussions du projet."
   enable_comments_info: "Users that can view this object can post comments on it. Select \"No\" to lock comments"
   enable_anonymous_comments_info: "Allow anonymous comments be posted for this object. Anonymous comments can be posted through the API or other external sources (if enabled). The author must provide a name and valid email address. The source IP address will be logged."
   email_notification: Email notification
@@ -328,7 +328,7 @@ fr:
   tags_info: "List of comma separated tags (example: \"interface, javascript, public beta\")"
   name: Name
   current_logo: Current logo
-  delete_current_logo: Delete current logo
+  delete_current_logo: Effacer le logo actuel
   current_logo_confirm_delete: "Are you sure you want to delete this logo?"
   logo_not_uploaded: Logo is not uploaded
   logo_replace_info: "Note that the current logo will be deleted and replaced with new one!"
@@ -337,15 +337,15 @@ fr:
   # Message view
   from: From
   message_created_with_user: "%{time} | %{user}"
-  comments: Comments
-  no_messages_in_project: There are no messages in this project
-  no_messages_in_category: There are no messages in this category
-  edit: Edit
-  delete: Delete
-  remove: Remove
-  read_more: "Read more..."
+  comments: Réponses
+  no_messages_in_project: Il n’y a pas de discussions dans ce projet
+  no_messages_in_category: Il n’y a pas de discussions dans cette catégorie
+  edit: Modifier
+  delete: Effacer
+  remove: Enlever
+  read_more: "Lire la suite..."
   message_seperator: "****"
-  message_confirm_delete: "Are you sure you want to delete this message?"
+  message_confirm_delete: "Voulez-vous vraiment effacer cette discussion ?"
   
   # Task form
   private_task_list: Private task list
@@ -362,19 +362,19 @@ fr:
   
   
   # Task view
-  no_open_task_lists_for_project: There are no open task lists for this project
-  order: Order
-  task_list_confirm_delete: "Are you sure you want to delete this task list?"
-  task_delete_confirm: "Are you sure you want to delete this task?"
-  view_all_completed_tasks: View all completed tasks
-  recent_completed_tasks: Recently completed tasks
-  completed_tasks: Completed tasks
-  task_mark_open: Mark task as open
-  mark_task_completed: Mark task as completed
-  no_tasks_assigned_to_you: There are no tasks assigned to you
-  edit_tasks: Edit tasks
-  task: Task
-  task_created_by: "Created by %{user}"
+  no_open_task_lists_for_project: Il n’y a pas de listes de tâches ouvertes pour ce projet.
+  order: Ordre
+  task_list_confirm_delete: "Voulez-vous vraiment effacer cette liste de tâches ?"
+  task_delete_confirm: "Voulez-vous vraiment effacer cette tâche ?"
+  view_all_completed_tasks: Voir toutes les tâches complétées
+  recent_completed_tasks: Tâches récemment complétées
+  completed_tasks: Tâches complétées
+  task_mark_open: Ouvrir la tâche
+  mark_task_completed: Compléter la tâche
+  no_tasks_assigned_to_you: Aucune tâche ne vous est assignée.
+  edit_tasks: Modifier les tâches
+  task: Tâche
+  task_created_by: "Créée par %{user}"
   
   # Milestone form
   private_milestone: Private milestone
@@ -410,7 +410,7 @@ fr:
   action_edit: Modifié
   action_close: Fermé
   action_upload: Téléchargé
-  action_today_with_time: "Aujourd’hui à %{time}"
+  action_today_with_time: "Aujourd’hui %{time}"
   action_yesterday: Hier
   action_by: 'par %{user}'
   
@@ -427,43 +427,43 @@ fr:
   forgot_password_q: "Forgot password?"
   
   # Account
-  new_avatar: New avatar
-  current_avatar: Current avatar
-  delete_current_avatar: Delete current avatar
-  avatar_confirm_delete: "Are you sure you want to delete this avatar?"
-  avatar_upload_info: "Note that the current avatar will be deleted and replaced with new one!"
-  avatar_not_uploaded: "Avatar is not uploaded"
-  administration_options_info: "Administration options (available only to administrators!)"
-  administrator: Administrator
-  auto_assign: Auto assign
-  auto_assign_to_new_projects: "Auto assign to new projects?"
-  openid_info: "For more information about OpenID, please visit <a href=\"http://openid.net/\">OpenID</a>."
-  display_name: Display name
-  timezone: Timezone
+  new_avatar: Nouvelle image de profil
+  current_avatar: Image de profil actuelle
+  delete_current_avatar: Effacer l’image de profil actuelle
+  avatar_confirm_delete: "Voulez-vous vraiment effacer cette image de profil ?"
+  avatar_upload_info: "Notez que l’image de profil actuelle sera effacée et remplacée par la nouvelle."
+  avatar_not_uploaded: "L’image de profil n’a pas été téléchargée"
+  administration_options_info: "Options d’administration (disponible seulement aux administrateurs)"
+  administrator: Administrateur
+  auto_assign: Assignation automatique
+  auto_assign_to_new_projects: "Assigner automatiquement aux nouveaux projets ?"
+  openid_info: "Pour plus d’informations sur OpenID, veuillez visiter <a href=\"http://openid.net/\">OpenID</a>."
+  display_name: Nom affiché
+  timezone: Fuseau horaire
   instant_messengers: Instant Messengers
   service: Service
   value: Value
   primary_im: Primary IM
   instant_messengers_info: "All IM addresses that you enter will be listed on your card page. Only the primary IM will be shown on other pages (like the people page of the project)."
-  phone_number: Phone number
-  phone_numbers: Phone numbers
-  office: Office
-  office_ext: Office extension
-  fax: Fax
-  fax_number: Fax number
-  mobile: Mobile
-  home: Home
-  homepage: Homepage
-  address: Address
-  address_2: Address 2
-  city: City
-  state: State
-  zipcode: Zipcode
-  country: Country
-  contact_online: Contact online
-  contact_offline: Contact offline
+  phone_number: Numéro de téléphone
+  phone_numbers: Numéros de téléphone
+  office: Bureau
+  office_ext: Extension au bureau
+  fax: Télécopieur
+  fax_number: Numéro de télécopieur
+  mobile: Cellulaire
+  home: Maison
+  homepage: Site web
+  address: Adresse
+  address_2: Adresse 2
+  city: Ville
+  state: Province
+  zipcode: Code postal
+  country: Pays
+  contact_online: Contact en ligne
+  contact_offline: Contact hors ligne
   not_applicable: "n/a"
-  contact_info: Contact info
+  contact_info: Information de contact
   
   # Dashboard
   started_on: Started on
@@ -487,12 +487,12 @@ fr:
   # Comments
   comment: Comment
   add_comment: Add comment
-  edit_comment: Edit comment
+  edit_comment: Modifier le commentaire
   post_comment: Post comment
   private_comment: Private comment
   private_comment_info: "Private comments are visible only to owner company members. Members of client companies will not be able to see them"
   comment_delete_confirm: "Are you sure you want to delete this comment?"
-  no_comments_for_object: No comments are posted for this object
+  no_comments_for_object: Aucun commentaire n’a encore été publié.
   comment_posted_with_user: "Posted on %{time} by %{user}"
   comment_posted: "Posted on %{time} by <strong>%{name}</strong>"
   
