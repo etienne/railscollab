@@ -2,7 +2,7 @@
 # Be sure to restart your web server when you modify this file.
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '>=2.3.3' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '~> 2.3.3' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -29,16 +29,6 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/config_handlers )
 
   # Specify gems that this application depends on.
-  config.gem 'actionmailer', :version => '>=2.1.0'
-  config.gem 'ferret',       :version => '>=0.11.6'
-  config.gem 'icalendar',    :version => '>=1.0.2'
-  config.gem 'ruby-openid',  :version => '>=2.1.2', :lib => 'openid'
-  config.gem 'acts_as_ferret',    :version => '>=0.4.4'
-  config.gem 'haml', :version => '3.0.6'
-
-  # optional gems
-  config.gem 'RedCloth',     :version => '>= 4.0.0',   :lib => 'redcloth'
-  config.gem 'aws-s3', :lib => 'aws/s3'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
