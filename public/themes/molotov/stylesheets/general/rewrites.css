@@ -78,16 +78,16 @@ h3 {
 }
 
 p, ul, pre, dl {
-  margin: 8px 0;
+  margin: 0 0 6px 0;
 }
 
 ul {
-  padding-left: 20px;
-  list-style: square;
+  padding: 0;
+  list-style: none;
 }
 
 ol {
-  padding-left: 25px;
+  padding-left: 15px;
   list-style: decimal;
 }
 
@@ -151,8 +151,7 @@ table.blank th, table.blank td {
 
 .desc {
   font-size: 90%;
-  color: #666;
-  font-style: italic;
+  color: #999;
   font-weight: normal;
 }
 
@@ -182,14 +181,6 @@ table.blank th, table.blank td {
 
 .error {
   color: red;
-}
-
-.even {
-  background-color: transparent;
-}
-
-.odd {
-  background-color: #e8e8e8;
 }
 
 .blockHeader {

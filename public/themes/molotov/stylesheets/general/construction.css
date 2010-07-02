@@ -103,7 +103,7 @@ body {
   list-style: square;
 }
 
-.action, button.submit {
+.action, .ajax_action, button.submit {
 	background: url("../../images/layout/button-bg.png") repeat-x;
   padding: 6px 10px;
 	text-shadow: white 0 1px 0;
@@ -114,7 +114,7 @@ body {
 	text-decoration: none;
 }
 
-.action:hover, button.submit:hover {
+.action:hover, .ajax_action:hover, button.submit:hover {
 	cursor: hand;
 	cursor: pointer;
 	text-decoration: none;
@@ -209,6 +209,7 @@ body {
 
 #crumbs ul li span {
   font-weight: normal;
+	color: #999;
 }
 
 #crumbs ul li a {
@@ -225,7 +226,7 @@ body {
 }
 
 #searchBox {
-  padding: 1px 0;
+  padding: 4px 0;
   text-align: right;
 }
 
@@ -278,27 +279,26 @@ body {
 }
 
 #content.sidebar {
-  width: 530px;
+  width: 660px;
   float: left;
 }
 
 /** Sidebar **/
 
 #sidebar {
-  margin-left: 535px;
+  margin-left: 670px;
   padding: 0 10px;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 #sidebar h2 {
-  margin-top: 0;
-  font-size: 12px;
+  margin: 0;
+  font-size: 13px;
 }
 
 #sidebar .blockContent {
   margin-bottom: 10px;
-  padding: 0 5px;
-  line-height: 120%;
+  line-height: 17px;
 }
 
 #sidebar .listWithDetails li {
@@ -331,8 +331,6 @@ body {
 #page_actions .dialog {
   margin: 0px;
   background-color:#F8F8F8;
-  border-color:#CCCCCC;
-  border:2px solid #CCCCCC;
   padding:5px 10px;
 }
 
