@@ -48,9 +48,9 @@
               = yield
               / End Content
             
-              - unless @content_for_sidebar.nil?
-                #sidebar
-                  = render :partial => @content_for_sidebar
+            - unless @content_for_sidebar.nil?
+              #sidebar
+                = render :partial => @content_for_sidebar
             .clear
           
           / Footer
