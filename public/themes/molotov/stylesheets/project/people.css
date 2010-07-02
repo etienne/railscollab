@@ -1,0 +1,29 @@
+div.peopleList {
+}
+
+div.peopleList h2 {
+	padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.card .cardOwner { 
+  font-weight: bolder;
+}
+
+div.peopleList .card {
+  float:left;
+  width: 28%;
+  
+  margin: 6px;
+  
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: 1px solid #eee;
+}
+
+div.card div.cardBlock {
+  padding-left: 0px;
+  margin-bottom: 4px;
+}
+

@@ -1,0 +1,24 @@
+#content fieldset {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+}
+form div.wiki_main label {
+  display: inline;
+  vertical-align: text-bottom;
+}
+form div.wiki_main input {
+  margin-top: 3px;
+  width: auto;
+}
+form div.help {
+  width: 300px;
+  float: right;
+}
+form div.help code, form div.help pre {
+  font-size: 1em;
+}
+form input.preview {
+  width: auto;
+}

@@ -1,0 +1,113 @@
+div.taskList {
+  font-size: 110%;
+}
+
+div.taskList .desc {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+div.taskList .openTasks, .taskList .completedTasks {
+  margin: 10px;
+}
+
+div.taskList .taskItems {
+	list-style-type: none;
+}
+
+div.taskList li.taskItem div.taskControls {
+	display: none;
+	position: absolute;
+	margin-left: -40px;
+}
+div.taskList li.taskItem:hover div.taskControls {
+	display: block;
+}
+div.reorder li.taskItem:hover div.taskControls {
+  display: none;
+}
+div.taskList li.taskItem div.taskControls img {
+	margin-bottom: -4px;
+}
+
+div.taskList li.taskItem div.taskActions {
+	display: none;
+}
+div.taskList li.taskItem:hover div.taskActions {
+	display: inline;
+}
+div.taskList li.taskItem div.taskActions form {
+  display: inline;
+}
+div.taskList li.taskItem div.taskActions form div {
+  display: inline;
+}
+
+div.taskList span.taskCheckbox {
+  padding-top: 4px;
+}
+
+div.taskList span.assignedTo {
+  font-weight: bolder;
+}
+
+div.taskList .addTask {
+  padding: 10px;
+  background: #e8e8e8;
+}
+
+div.taskList .options {
+  padding: 10px;
+  padding-top: 0;
+}
+
+div.taskList .completedTasks {
+  color: #666;
+  font-size: 90%;
+}
+
+div.taskList .completedTasks li {
+  padding: 0 2px;
+  line-height: 16px;
+}
+
+div.taskList span.taskCompletedOnBy {
+  font-style: italic;
+  color: #333;
+}
+
+div.taskList .taskListTags {
+  margin: 10px;
+  font-size: 90%;
+}
+
+div.taskList .taskListTags span {
+  font-weight: bolder;
+}
+
+div.taskList ul.taskItems {
+  padding-left: 0px;
+  line-height: 160%;
+}
+
+div.taskList ul.taskItems li {
+  padding-left: 20px;
+}
+
+div.taskList .taskItemHandle {
+    position: relative;
+    left: 0pt;
+    width: 0pt;
+    height: 0pt;
+}
+
+div.taskList .taskItemHandle div.inner {
+    position: absolute;
+    right: 0px;
+    margin: 0px;
+    background: white;
+    width: 28px;
+    text-align: center;
+    
+    cursor: move;
+}
