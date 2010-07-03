@@ -67,9 +67,9 @@ body {
 }
 
 #userboxWrapper {
-  margin-left: 700px;
+  float: right;
   color: #666;
-  font-size: 10px; 
+  font-size: 11px; 
 }
 
 #userbox {
@@ -136,10 +136,11 @@ body {
 /** Tabs **/
 
 #tabsWrapper {
+	clear: both;
   width: 940px;
-  margin: 35px auto 0 auto;
+  margin: 60px auto 0 auto;
   text-align: left;
-	border-bottom: 12px solid #333;
+	border-bottom: 10px solid #333;
 }
 
 #tabs {
@@ -160,7 +161,7 @@ body {
 #tabs ul li a {
   border: 0;
   display: block;
-  padding: 6px 12px;
+  padding: 7px 12px;
   text-align: center;
   font-size: 13px;
 	font-weight: bold;
@@ -270,7 +271,7 @@ body {
 	background-color: white;
   margin: 0 auto;
   padding: 10px 20px;
-	margin-bottom: 40px;
+	margin-bottom: 15px;
   width: 900px;
   text-align: left;
 }

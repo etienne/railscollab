@@ -38,7 +38,7 @@ q:before, q:after {
 body {
   font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
   font-size: 12px;
-  color: black;
+  color: #333;
   background: white;
   line-height: 150%;
 }
