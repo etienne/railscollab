@@ -14,12 +14,12 @@
 
         - if project.companies.length > 0
           .involvedCompanies
-            %em= "#{:companies_involved_in.l}:"
+            = "#{:companies_involved_in.l}:"
             = project.companies.collect{ |company| link_to(h(company.name), company_path(:id => company.id)) }.join(', ')
 
         - if not project.created_by.nil?
           .startedOnBy
-            %em= "#{:started_on.l}:#{format_usertime(project.created_on, :project_created_format)} | "
+            = "#{:started_on.l}: #{format_usertime(project.created_on, :project_created_format)} | "
             = link_to(h(project.created_by.display_name), user_path(:id => project.created_by.id))
         - else
           .startedOnBy

@@ -2,9 +2,8 @@ div.peopleList {
 }
 
 div.peopleList h2 {
-  font-size: 20px;
-  padding-bottom: 4px;
-  border-bottom: 2px solid #ccc;
+	padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
 }
 
 .card .cardOwner { 
@@ -13,14 +12,14 @@ div.peopleList h2 {
 
 div.peopleList .card {
   float:left;
-  width: 28%;
+  width: 45%;
   
   margin: 6px;
   
   border-top: none;
   border-bottom: none;
   border-left: none;
-  border-right: 1px dashed #ccc;
+  border-right: 1px solid #eee;
 }
 
 div.card div.cardBlock {

@@ -17,6 +17,7 @@ label.checkbox, label.yes_no {
 
 label.yes_no {
   font-weight: normal;
+	margin: 0 12px 0 4px;
 }
 
 label span.label_required {
@@ -24,35 +25,25 @@ label span.label_required {
 }
 
 input, textarea, select {
-  border: 1px solid #ccc;
   padding: 3px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 11px;
-  background: white;
+  font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
+  font-size: 12px;
 }
 
 select {
   padding: 1px;
 }
 
-input:hover, textarea:hover, select:hover {
-  border: 1px solid green;
-}
-
-input:focus, textarea:focus, select:focus {
-  border: 1px solid black;
-}
-
 fieldset {
   margin: 10px 0;
-  padding: 10px;
-  padding-top: 5px;
-  border: 1px solid #ccc;
+  padding: 10px 0;
+	border-bottom: 1px solid #ddd;
 }
 
 fieldset legend {
   font-size: 90%;
   font-weight: bolder;
+	padding: 0;
 }
 
 input { width: 200px; }
@@ -184,8 +175,8 @@ form div.formBlock label {
 .objectOption div.optionDesc {
   clear: left;
   font-size: 10px;
-  padding: 0 5px 5px 5px;
-  color: #333;
+  padding: 0 0 5px 0;
+  color: #999;
 }
 
 input.openid_login {

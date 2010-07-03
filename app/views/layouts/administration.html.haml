@@ -18,17 +18,13 @@
       / Header
       #headerWrapper
         #header
-          %h1
-            = link_to :administration.l, :controller => 'administration'
+          = link_to "« #{:dashboard.l}", {:controller => 'dashboard'}, {:class => 'dashboard_link'} 
+          %h1= :administration.l
           #userboxWrapper
             = render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
       / End Header
       
       = render :partial => 'layouts/tabs', :object => administration_tabbed_navigation
-      
-      #crumbsWrapper
-        #crumbsBlock
-          = render :partial => 'layouts/crumbs', :object => administration_crumbs
       
       / Content Wrapper
       #outerContentWrapper

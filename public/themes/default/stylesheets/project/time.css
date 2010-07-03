@@ -2,7 +2,7 @@
   font-weight: bolder;
 }
 table.timeLogs {
-  width: 530px;
+  width: 100%;
 }
 
 table.timeLogs th {

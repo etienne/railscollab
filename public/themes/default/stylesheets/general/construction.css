@@ -1,36 +1,45 @@
 body {
   text-align: left;
+	background: #f4f4f4 url("../../images/layout/content-back.png") repeat-x;
 }
 
 #wrapper {
   text-align: center;
 }
 
+#headerWrapper {
+	clear: both;
+}
+
+#header a.dashboard_link {
+	float: left;
+	font-size: 10px;
+	text-shadow: white 0 1px 0;
+}
+
 #header {
-  width: 780px;
+  width: 920px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding: 10px 0 0 20px;
   text-align: left;
 }
 
 #header h1 {
   float: left;
+	clear: left;
   margin: 0;
-  padding: 10px 0 10px 10px;
+  padding: 6px 0 10px 0;
   border: 0;
 }
 
 #header h1 a {
   font-weight: normal;
-  border: 0;
   font-size: 24px;
 }
 
 #header h1 a:hover {
   border: 0;
-  color: #003562;
   background: transparent;
-  text-decoration: underline;
 }
 
 #systemNoticesWrapper {
@@ -58,15 +67,12 @@ body {
 }
 
 #userboxWrapper {
-  margin-left: 500px;
+  margin-left: 700px;
   color: #666;
   font-size: 10px; 
 }
 
 #userbox {
-  padding: 5px 8px;
-  border: 2px solid #ccc;
-  background: #f8f8f8;
 }
 
 #userbox ul {
@@ -109,12 +115,31 @@ body {
   list-style: square;
 }
 
+.action, .ajax_action, button.submit {
+	background: url("../../images/layout/button-bg.png") repeat-x;
+  padding: 6px 10px;
+	text-shadow: white 0 1px 0;
+	border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 12px;
+	color: black;
+	text-decoration: none;
+}
+
+.action:hover, .ajax_action:hover, button.submit:hover {
+	cursor: hand;
+	cursor: pointer;
+	text-decoration: none;
+	color: #267ad9;
+}
+
 /** Tabs **/
 
 #tabsWrapper {
-  width: 780px;
-  margin: 5px auto 0 auto;
+  width: 940px;
+  margin: 35px auto 0 auto;
   text-align: left;
+	border-bottom: 12px solid #333;
 }
 
 #tabs {
@@ -130,35 +155,30 @@ body {
 #tabs ul li {
   margin: 0 1px;
   float: left;
-  background: url('../../images/layout/tab_right.gif') no-repeat top right;
 }
 
 #tabs ul li a {
   border: 0;
   display: block;
-  padding: 2px 12px;
-  background: url('../../images/layout/tab_left.gif') no-repeat top left;
+  padding: 6px 12px;
   text-align: center;
-  color: #333;
-  font-size: 10px;
-  font-weight: bolder;
+  font-size: 13px;
+	font-weight: bold;
   line-height: 18px;
-  text-decoration: none;
+	text-shadow: white 0 1px 0;
 }
 
 #tabs ul li a:hover {
   border: 0;
-  color: #333;
-  text-decoration: underline;
 }
 
 #tabs ul li.active {
-  background: url('../../images/layout/tab_active_right.gif') no-repeat top right;
 }
 
 #tabs ul li.active a {
-  background: url('../../images/layout/tab_active_left.gif') no-repeat top left;
+	background-color: #333;
   color: white;
+	text-shadow: none;
 }
 
 #tabs ul li.active a:hover {
@@ -170,7 +190,6 @@ body {
 
 #crumbsWrapper {
   clear: both;
-  background: #444;
   margin: 0 auto;
   float: left;
   width: 100%;
@@ -179,7 +198,7 @@ body {
 #crumbsBlock {
   margin: 0 auto;
   padding: 0 10px;
-  width: 760px;
+  width: 920px;
   line-height: 20px;
   text-align: left;
 }
@@ -196,20 +215,21 @@ body {
 
 #crumbs ul li {
   display: inline;
-  line-height: 22px;
-  color: white;
-  font-size: 10px;
+  line-height: 28px;
+  color: #ccc;
+  font-size: 11px;
   font-weight: bolder;
 }
 
 #crumbs ul li span {
   font-weight: normal;
+	color: #999;
 }
 
 #crumbs ul li a {
   margin: 0 3px;
   border: 0;
-  color: white;
+  color: #777;
   font-weight: bolder;
   text-decoration: none;
 }
@@ -220,20 +240,14 @@ body {
 }
 
 #searchBox {
-  padding: 1px 0;
-  text-align: right;
+  padding: 4px 0;
+  float: right;
 }
 
 #searchBox input {
-  border: 1px solid #222;
-  font-size: 10px;
-  padding: 1px;
-  width: 100px;
-  background: #e8e8e8;
-}
-
-#searchBox input:focus {
-  background: #f8f8f8;
+  font-size: 12px;
+  line-height: 18px;
+  width: 180px;
 }
 
 #searchBox button {
@@ -250,27 +264,24 @@ body {
 
 #outerContentWrapper {
   clear: both;
-  background: url('../../images/layout/content-back.gif') repeat-x;
 }
 
 #innerContentWrapper {
+	background-color: white;
   margin: 0 auto;
-  padding: 10px;
-  width: 760px;
+  padding: 10px 20px;
+  width: 900px;
   text-align: left;
 }
 
 #pageTitle {
   margin-bottom: 0;
-  color: #BA0101;
-  font-weight: normal;
+  color: #bbb;
+	font-weight: normal;
 }
 
 #pageContent {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-width: 1px 0;
-  background: white;
+  padding-bottom: 20px;
 }
 
 #content {
@@ -280,27 +291,26 @@ body {
 }
 
 #content.sidebar {
-  width: 530px;
+  width: 660px;
   float: left;
 }
 
 /** Sidebar **/
 
 #sidebar {
-  margin-left: 535px;
+  margin-left: 670px;
   padding: 0 10px;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 #sidebar h2 {
-  margin-top: 0;
-  font-size: 12px;
+  margin: 0;
+  font-size: 13px;
 }
 
 #sidebar .blockContent {
   margin-bottom: 10px;
-  padding: 0 5px;
-  line-height: 120%;
+  line-height: 17px;
 }
 
 #sidebar .listWithDetails li {
@@ -310,42 +320,29 @@ body {
 /** Page actions **/
 
 #page_actions {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 #page_actions ul {
-  margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   list-style: none;
 }
 
 #page_actions ul li {
-  padding-right: 3px;
+	margin-right: 8px;
   display: inline;
-  font-weight: bolder;
-  font-size: 10px;
 }
 
 #page_actions ul li a {
-  border: 0;
-  padding: 0 15px 0 0;
-  color: #444;
-  text-decoration: underline;
-  background: url('../../images/icons/more_down.gif') no-repeat right bottom;
 }
 
 #page_actions ul li a:hover {
-  color: black;
 }
 
 #page_actions .dialog {
   margin: 0px;
-
   background-color:#F8F8F8;
-  border-color:#CCCCCC;
-
-  border:2px solid #CCCCCC;
-
   padding:5px 10px;
 }
 
@@ -354,8 +351,8 @@ body {
 #footer {
   clear: both;
   margin: 10px auto;
-  padding: 0 10px 10px 10px;
-  width: 760px;
+  padding: 0 0 10px 0;
+  width: 900px;
   text-align: left;
   color: #999;
   line-height: 130%;
@@ -386,27 +383,27 @@ body {
 
 .clear {
   clear: both;
-  height: 1px;
+  height: 0;
   overflow: hidden;
 }
 
 .flash_error, .flash_success {
   margin: 10px 0;
   padding: 5px 10px;
-  border: 1px solid #ccc;
   clear: both;
+	border: 1px solid;
   cursor: pointer;
   text-align: left;
 }
 
 .flash_error {
   background: #FFB0B0;
-  border-color: red;
+	border-color: #FF7B7C;
 }
 
 .flash_success {
-  background: #90DC90;
-  border-color: green;
+  background: #ccebbd;
+	border-color: #ABCD9B;
 }
 
 /** User card **/
