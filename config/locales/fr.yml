@@ -52,7 +52,7 @@ fr:
   edit_company_logo: Modifier le logo de compagnie
   add_file: Nouveau fichier
   edit_file: Modifier le fichier
-  attach_files: Ajouter des pièces jointes
+  attach_files: Pièces jointes
   file_details: Détails du fichier
   add_folder: Nouveau dossier
   edit_folder: Modifier le dossier
@@ -280,7 +280,7 @@ fr:
   message_subscribe: Subscribe to message
   message_subscription_confirmation: "Are you sure you want to subscribe to this message?"
   options: Options
-  private_message: Private message
+  private_message: Discussion privée
   important_message: Important message
   enable_comments: Enable comments
   enable_anonymous_comments: Anonymous comments
@@ -315,8 +315,8 @@ fr:
   text: Texte
   additional_text: Texte supplémentaire
   additional_text_info: Le texte supplémentaire n’est visible que sur la page des commentaires
-  collapse: Fermer
-  expand: Ouvrir
+  collapse: Masquer
+  expand: Afficher
   milestone: Étape
   category: Catégorie
   private_message_info: "Les discussions privées ne sont visibles que par les coéquipiers. Les clients ne pourront pas les voir."
@@ -348,17 +348,17 @@ fr:
   message_confirm_delete: "Voulez-vous vraiment effacer cette discussion ?"
   
   # Task form
-  private_task_list: Private task list
-  assign_to: Assign to
-  priority: Priority
+  private_task_list: Liste de tâches privée
+  assign_to: Attribuer à
+  priority: Priorité
   description: Description
-  estimated_hours: Estimated hours
-  task_estimated_hours: "[%{hours} estimated hours]"
-  is_private_list: Is private
+  estimated_hours: Heures estimées
+  task_estimated_hours: "[%{hours} heures estimées]"
+  is_private_list: Est privée
   is_private_list_info: "(Private task lists are visible only to owner company members. Members of client companies will not be able to see them)"
-  task_list: Task list
-  or: or
-  cancel: Cancel
+  task_list: Liste de tâches
+  or: ou
+  cancel: Annuler
   
   
   # Task view
@@ -377,7 +377,7 @@ fr:
   task_created_by: "Créée par %{user}"
   
   # Milestone form
-  private_milestone: Private milestone
+  private_milestone: Étape privée
   milestones_private_info: "(Private milestones are visible only to owner company members. Members of client companies will not be able to see them.)"
   due_date: Due date
   send_email_notification_to_user: Send email notification to user
@@ -485,22 +485,22 @@ fr:
   users: Users
   
   # Comments
-  comment: Comment
-  add_comment: Add comment
-  edit_comment: Modifier le commentaire
-  post_comment: Post comment
-  private_comment: Private comment
-  private_comment_info: "Private comments are visible only to owner company members. Members of client companies will not be able to see them"
-  comment_delete_confirm: "Are you sure you want to delete this comment?"
-  no_comments_for_object: Aucun commentaire n’a encore été publié.
-  comment_posted_with_user: "Posted on %{time} by %{user}"
-  comment_posted: "Posted on %{time} by <strong>%{name}</strong>"
+  comment: Réponse
+  add_comment: Publier la réponse
+  edit_comment: Modifier la réponse
+  post_comment: Publier la réponse
+  private_comment: Réponse privée
+  private_comment_info: "Les réponses privées sont seulement visibles par vos coéquipiers. Les clients n’y auront pas accès."
+  comment_delete_confirm: "Voulez-vous vraiment effacer cette réponse ?"
+  no_comments_for_object: Aucune réponse n’a encore été publiée.
+  comment_posted_with_user: "Publié %{time} par %{user}"
+  comment_posted: "Publié %{time} par <strong>%{name}</strong>"
   
   # User
-  generate_password: Generate password
-  send_account_email_notification: "Send email notification?"
+  generate_password: Générer le mot de passe
+  send_account_email_notification: "Envoyer une notification par courriel ?"
   send_account_email_notication_info:  "If you select \"Yes\" the user will receive an email with a welcome message and login parameters"
-  owner: Owner
+  owner: Propriétaire
   
   # Project
   project_show_description_in_overview: Show description on project overview page
@@ -587,14 +587,14 @@ fr:
   detatch: Detatch
   detatch_file_confirm: "Are you sure you want to detatch this file?"
   attach_existing_file: "Attach existing file (from Files section)"
-  file_view_details: View file details
-  no_files_in_location: There are no files in this location.
+  file_view_details: Voir les détails du fichier
+  no_files_in_location: Aucun fichier n’a encore été téléchargé.
   hint_attach_files: "Use this form to attach files to <strong>%{link}</strong>. You can attach one or many files. You can select any existing file from files section or upload new ones. <strong>New files will also be available through files section when you upload them</strong>."
   upload_attach_to_message: Upload new file and attach it to message
   select_file: Select file
   
-  yesno_yes: "Yes"
-  yesno_no: "No"
+  yesno_yes: "Oui"
+  yesno_no: "Non"
   new_password_required: New password requires
   does_not_match: Does not match
   has_insufficient_permissions: Has insufficient permissions
