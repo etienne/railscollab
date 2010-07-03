@@ -8,7 +8,10 @@
 <% unless @message.project_milestone.nil? %>    
     <div class="messageMilestone"><span><%= :milestone.l %>:</span> <%= link_to h(@message.project_milestone.object_name), @message.project_milestone.object_url %></div>
 <% end %>
+<% unless @message.tags.blank? %>
     <div class="messageTags"><span><%= :tags.l %>:</span> <%= @message.tags %></div>
+<% end %>
+    <div class="clear">&nbsp;</div>
   </div>
   <div class="messageText">
     <%= textilize @message.text %>
