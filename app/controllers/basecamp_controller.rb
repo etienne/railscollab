@@ -200,7 +200,6 @@ class BasecampController < ApplicationController
       :category_id => post_attribs[:category_id],
       :title => post_attribs[:title],
       :text => post_attribs[:body],
-      :additional_text => post_attribs[:extended_body],
       :is_private => post_attribs[:private]
     )
 
@@ -362,7 +361,6 @@ class BasecampController < ApplicationController
       :category_id => post_attribs[:category_id],
       :title => post_attribs[:title],
       :text => post_attribs[:body],
-      :additional_text => post_attribs[:extended_body],
       :is_private => post_attribs[:private]
     }
 

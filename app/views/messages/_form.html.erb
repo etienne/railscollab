@@ -10,24 +10,6 @@
     <%= text_area 'message', 'text', :id => 'messageFormText', :class => 'editor' %>
   </div>
   
-  <div>
-    <% 
-      if @message.additional_text?
-        expand_style = 'display:none;'
-        expand_sstyle = expand_style
-        compact_style = 'display:block;'
-        compact_sstyle = 'display:inline'
-      else
-        compact_style = 'display:none;'
-        compact_sstyle = compact_style
-        expand_style = 'display:block;'
-        expand_sstyle = 'display:inline'
-      end
-    %>
-    <label for="messageFormAdditionalText"><%= :additional_text.l %> (<a href="#" id="messageFormAdditionalTextToggle"><span id="messageFormAdditionalTextExpand" style="<%= expand_sstyle %>"><%= :expand.l %></span><span id="messageFormAdditionalTextCollapse" style="<%= compact_sstyle %>"><%= :collapse.l %></span></a>):<span class="desc"> - <%= :additional_text_info.l %></span></label>
-    <%= text_area 'message', 'additional_text', :id => 'messageFormAdditionalText', :class => 'editor', :style => compact_style %>
-  </div>
-  
   <fieldset>
     <legend><%= :milestone.l %></legend>
     <%= select 'message', 'milestone_id', select_milestone_options(@active_project), {}, {:class => 'select_milestone', :id => 'messageFormMilestone'} %>

@@ -17,7 +17,6 @@ xml.post do
 	
 	unless is_abbreviated
 		xml.tag!('use-textile', true, :type => 'boolean')
-		xml.tag!('extended-body', (h post.additional_text))
 		xml.tag!('display-body', true)
 		xml.tag!('display-extended-body', true)
 		xml.private post.is_private, :type => 'boolean'

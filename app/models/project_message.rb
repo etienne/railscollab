@@ -175,7 +175,7 @@ class ProjectMessage < ActiveRecord::Base
 
   # Accesibility
 
-  attr_accessible :title, :text, :additional_text, :milestone_id, :category_id, :is_private, :is_important, :comments_enabled, :anonymous_comments_enabled
+  attr_accessible :title, :text, :milestone_id, :category_id, :is_private, :is_important, :comments_enabled, :anonymous_comments_enabled
 
   # Validation
 

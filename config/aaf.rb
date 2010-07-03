@@ -1,7 +1,7 @@
 ActsAsFerret::define_index('shared',
   :models => {
     Comment => {:fields => [:text, :project_id, :is_private]},
-    ProjectMessage => {:fields => [:title, :text, :additional_text, :project_id, :is_private, :tags_with_spaces]},
+    ProjectMessage => {:fields => [:title, :text, :project_id, :is_private, :tags_with_spaces]},
     ProjectTime => {:fields => [:name, :description, :project_id, :is_private, :tags_with_spaces]},
     ProjectTask => {:fields => [:text, :project_id, :is_private]},
     ProjectTaskList => {:fields => [:name, :description, :project_id, :is_private, :tags_with_spaces]},
@@ -11,6 +11,6 @@ ActsAsFerret::define_index('shared',
     WikiPage => {:fields => [:title, :content, :project_id]}
   },
   :ferret => {
-    :default_fields => [:title, :text, :additional_text, :project_id, :is_private, :tags_with_spaces, :description, :filename, :comment, :content]
+    :default_fields => [:title, :text, :project_id, :is_private, :tags_with_spaces, :description, :filename, :comment, :content]
   }
 )
