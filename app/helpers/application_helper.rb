@@ -72,7 +72,7 @@ module ApplicationHelper
 
   def tag_list(object)
     tags = Tag.list_by_object(object)
-    return '--' if tags.empty?
+    return nil if tags.empty?
 
     tags.collect do |tag|
       link_to h(tag), project_tag_path(object.project_id, CGI.escape(tag))
