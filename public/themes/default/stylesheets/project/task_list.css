@@ -2,8 +2,13 @@ div.taskList {
   font-size: 110%;
 }
 
+div.taskList .header {
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+
 div.taskList .desc {
-  padding: 10px;
+  padding: 10px 5px;
   padding-bottom: 0;
 }
 
@@ -53,7 +58,7 @@ div.taskList span.assignedTo {
 
 div.taskList .addTask {
   padding: 10px;
-  background: #e8e8e8;
+  background: #f0f0f0;
 }
 
 div.taskList .options {

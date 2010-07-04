@@ -47,7 +47,7 @@ module ApplicationHelper
   def render_icon(filename, alt, attrs={})
     attr_values = attrs.keys.collect{ |a| "#{a}='#{attrs[a]}'" }.join(' ')
 
-    "<img src='/themes/#{AppConfig.site_theme}/images/icons/#{filename}.gif' alt='#{alt}' #{attr_values}/>"
+    "<img src='/themes/#{AppConfig.site_theme}/images/icons/#{filename}.png' alt='#{alt}' #{attr_values}/>"
   end
 
   def action_list(actions)
