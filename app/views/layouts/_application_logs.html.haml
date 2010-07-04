@@ -13,7 +13,7 @@
       %b
         = application_logs.friendly_action
         \:
-      = application_logs.rel_object.nil? ? h(truncate(application_logs.object_name, 50)) : link_to(h(truncate(application_logs.object_name, 50)), application_logs.rel_object.object_url)
+    = application_logs.rel_object.nil? ? h(truncate(application_logs.object_name, 50)) : link_to(h(truncate(application_logs.object_name, 50)), application_logs.rel_object.object_url)
 
   - if show_project_column
     %br/
