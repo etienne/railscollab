@@ -25,8 +25,34 @@ table.applicationLogs td {
 }
 
 table.applicationLogs td.logTypeIcon {
-  width: 50px;
+  width: 70px;
 }
+
+table.applicationLogs span.label {
+  font-size: 10px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0 5px;
+  display: block;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+table.applicationLogs span.label.comment                  { background-color: #aba000; }
+table.applicationLogs span.label.company                  { background-color: #4b696d; }
+table.applicationLogs span.label.project_file_revision    { background-color: #647085; }
+table.applicationLogs span.label.project_folder           { background-color: #ffe37e; color: black; }
+table.applicationLogs span.label.project_file             { background-color: #647085; }
+table.applicationLogs span.label.project_message_category { background-color: #fee172; color: black; }
+table.applicationLogs span.label.project_message          { background-color: #00a650; }
+table.applicationLogs span.label.project_milestone        { background-color: #662c91; }
+table.applicationLogs span.label.project                  { background-color: #0076a3; }
+table.applicationLogs span.label.project_task_list        { background-color: #9e005d; }
+table.applicationLogs span.label.project_task             { background-color: #9e005d; }
+table.applicationLogs span.label.project_time             { background-color: #103878; }
+table.applicationLogs span.label.wiki_page                { background-color: #ff7cf4; color: black; }
 
 table.applicationLogs .logProject, table.applicationLogs .logTakenOnBy {
   text-align: right;

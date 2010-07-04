@@ -124,6 +124,9 @@ body {
   font-size: 12px;
 	color: black;
 	text-decoration: none;
+	-webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 
 .action:hover, .ajax_action:hover, button.submit:hover {
@@ -180,6 +183,12 @@ body {
 	background-color: #333;
   color: white;
 	text-shadow: none;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 
 #tabs ul li.active a:hover {

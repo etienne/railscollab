@@ -6,7 +6,8 @@
   %tr.logOlder
 
 %td.logTypeIcon
-  %img{:alt => application_logs.rel_object_type, :src => "/themes/#{AppConfig.site_theme}/images/logtypes/#{application_logs.rel_object_type.downcase}s.gif", :title => application_logs.rel_object_type}/
+  %span{:class => "label #{application_logs.rel_object_type.underscore}"}
+    = ('label_' << application_logs.rel_object_type.underscore).to_sym.l
 %td.logDetails
   %span
     - if not ['Comment', 'ProjectMessage'].include?(application_logs.rel_object_type)
