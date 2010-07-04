@@ -31,12 +31,12 @@ fr:
   index: Index
   
   # Actions
-  order_by: Trier par
-  order_by_name: Trier par nom
-  order_by_priority: Trier par priorité
-  sort_by_finished_date: Trier par date de fin
-  sort_by_hours: Trier par heures
-  report_by_task: Rapport par tâche
+  order_by: Classer par
+  order_by_name: Classer par nom
+  order_by_priority: Classer par priorité
+  sort_by_finished_date: Classer par date de fin
+  sort_by_hours: Classer par heures
+  report_by_task: Classer par tâche
 
   as_list: Voir en mode liste
   as_summary: Voir en mode sommaire
@@ -125,7 +125,7 @@ fr:
   welcome_to_administration: Welcome to the administration panel. Using this tool you can manage your company data, members, clients and projects you are involved in.
   
   # User box
-  welcome_anonymous: "Bienvenu <strong>Anonyme</strong>"
+  welcome_anonymous: "Bienvenue <strong>Anonyme</strong>"
   welcome_back: "Bienvenue <strong>%{user}</strong>"
   logout: Déconnexion
   are_you_sure_logout: Voulez-vous vraiment vous déconnecter?
@@ -143,8 +143,8 @@ fr:
   can_manage_wiki_pages: Gérer les pages de wiki
   
   # Status messages
-  login_success: Login successful
-  login_failure: Invalid login
+  login_success: Bienvenue.
+  login_failure: Le nom ou le mot de passe sont invalides.
   invalid_openid_server: "Unable to find openid server for <q>%{openid_url}</q>"
   failed_verification_openid_url: "Verification of %{openid_url} failed"
   failed_login_openid_url: "Failed login with identity %{openid_url}"
@@ -415,16 +415,16 @@ fr:
   action_by: 'par %{user}'
   
   # Access
-  forgot_password_sent_email: Further instructions have been sent to your e-mail address
-  email_address: Email address
-  send_password: Send password
-  old_password: Old password
-  repeat_password: Repeat password
-  username: Username
-  password: Password
+  forgot_password_sent_email: Des instructions ont été envoyées à votre adresse courriel.
+  email_address: Adresse courriel
+  send_password: Envoyer
+  old_password: Ancien mot de passe
+  repeat_password: Mot de passe (répétition)
+  username: Nom
+  password: Mot de passe
   openid: OpenID
   use_openid: Use OpenID
-  forgot_password_q: "Forgot password?"
+  forgot_password_q: "Mot de passe oublié ?"
   
   # Account
   new_avatar: Nouvelle image de profil
@@ -466,13 +466,13 @@ fr:
   contact_info: Information de contact
   
   # Dashboard
-  started_on: Started on
-  no_active_projects: There are no active projects
-  companies_involved_in: "Companies involved in project"
-  tasks_in_list: "In %{list}"
-  anyone: Anyone
-  none: None
-  project: Project
+  started_on: Démarré
+  no_active_projects: Il n’y a pas de projets actifs
+  companies_involved_in: "Compagnies impliquées dans le projet"
+  tasks_in_list: "Dans %{list}"
+  anyone: N’importe qui
+  none: Aucun
+  project: Projet
   page: Page
   
   # Admin
@@ -488,7 +488,7 @@ fr:
   comment: Réponse
   add_comment: Publier la réponse
   edit_comment: Modifier la réponse
-  post_comment: Publier la réponse
+  post_comment: Écrire une réponse
   private_comment: Réponse privée
   private_comment_info: "Les réponses privées sont seulement visibles par vos coéquipiers. Les clients n’y auront pas accès."
   comment_delete_confirm: "Voulez-vous vraiment effacer cette réponse ?"
@@ -663,8 +663,8 @@ fr:
   notification_smtp_address: "Address"
   notification_smtp_port: "Port"
   notification_smtp_domain: "Domain"
-  notification_smtp_username: "Username"
-  notification_smtp_password: "Password"
+  notification_smtp_username: "Nom"
+  notification_smtp_password: "Mot de passe"
   notification_smtp_authentication: "Authentication"
   notification_method_sendmail: "Sendmail"
   notification_sendmail_location: "Location"
