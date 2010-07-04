@@ -70,9 +70,7 @@ body {
   float: right;
   color: #666;
   font-size: 11px; 
-}
-
-#userbox {
+	text-shadow: white 0 1px 0;
 }
 
 #userbox ul {

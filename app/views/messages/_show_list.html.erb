@@ -2,17 +2,11 @@
 <div class="message">
   <div class="list">
     <div class="meta">
-      <div class="messageCommentCount">
-<% if not message.comments.empty? %>
-        <span><%= :comments.l %>:</span> <a href="<%= "#{message_path(:id => message.id)}#objectComments" %>"><%= message.comments.length %></a>
-<% else %>
-        <span><%= :comments.l %>:</span> <%= message.comments.length %>
-<% end %>
-      </div>
+      <% unless tag_list(message).nil? %>
       <div class="messageTags">
         <span><%= :tags.l %>:</span> <%= tag_list message %>
       </div>
-
+      <% end %>
       <% fc = message.attached_files(@logged_user.member_of_owner?).length %>
       <% if fc > 0 %>
       <div class="objectFilesTitle">
@@ -28,13 +22,19 @@
     <div class="private" title="<%= :private_message.l %>"><span><%= :private_message.l %></span></div>
 <% end %>
     </div>
-<% if not message.created_by.nil? %>
-      <div class="messageAuthor"><%= :message_created_with_user.l_with_args(
+    <div class="messageAuthor">
+    <% unless message.created_by.nil? %>
+      <%= :message_created_with_user.l_with_args(
             :time => format_usertime(message.created_on, :message_created_format),
-            :user => link_to( h(message.created_by.display_name), user_path(:id => message.created_by.id))) %></div>
-<% else %>
-      <div class="messageAuthor"><%= format_usertime(message.created_on, :message_created_format) %></div>
-<% end %>
+            :user => link_to( h(message.created_by.display_name), user_path(:id => message.created_by.id))) %>
+    <% else %>
+      <%= format_usertime(message.created_on, :message_created_format) %>
+    <% end %>
+    <% unless message.comments.empty? %>
+      | <a class="commentsCount" href="<%= "#{message_path(:id => message.id)}#objectComments" %>"><%= message.comments.length %> <%= :comments.l %></a>
+    <% end %>
+    
+    </div>
     </div>
     <div class="clear"></div>
   </div>

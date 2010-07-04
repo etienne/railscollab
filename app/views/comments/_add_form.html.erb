@@ -1,7 +1,5 @@
-<fieldset>
-<legend><%= :post_comment.l %></legend>
+<h2><%= :post_comment.l %></h2>
 <%= form_tag( object_comments_url(commented_object), :multipart => true ) %>
 <%= render :partial => 'comments/form' %>
     <button class="submit" type="submit"><%= :add_comment.l %></button>
 </form>
-</fieldset>

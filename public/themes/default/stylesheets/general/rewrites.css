@@ -70,7 +70,8 @@ h1 {
 }
 
 h2 {
-  font-size: 150%;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 h3 {
@@ -202,7 +203,7 @@ table.blank th, table.blank td {
   background: #e8e8e8;
 }
 
-.block, .hint, .important, .success {
+.hint, .important, .success {
   margin: 10px 0;
   padding: 5px 10px;
   font-size: 90%;
@@ -226,13 +227,17 @@ table.blank th, table.blank td {
   font-weight: bolder;
 }
 
-.block {
-  border-color: #ccc;
-  background-color: #f8f8f8;
-}
-
 .block .header {
   border-color: #ccc;
+}
+
+.involvedCompanies, .startedOnBy {
+  font-size: 90%;
+  color: #999;
+}
+
+a.commentsCount {
+  font-weight: bold;
 }
 
 .hint {

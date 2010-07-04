@@ -25,11 +25,12 @@ table.applicationLogs td {
 }
 
 table.applicationLogs td.logTypeIcon {
-  width: 70px;
+  width: 65px;
 }
 
 table.applicationLogs span.label {
-  font-size: 10px;
+  font-size: 9px;
+  line-height: 15px;
   background-color: #333;
   color: white;
   text-align: center;
