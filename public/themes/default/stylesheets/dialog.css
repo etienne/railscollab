@@ -11,25 +11,11 @@ body {
   line-height: 150%;
 }
 
-a {
-  color: #263356;
-  font-weight: bolder;
-  text-decoration: none;
-  border-bottom: 1px dotted #ccc;
-}
-
-a:hover {
-  border: 0;
-  color: white;
-  background: #263356;
-}
-
 h1 {
   margin: 0 0 5px 0;
   padding: 0 0 5px 0;
-  color: #263356;
   font-size: 20px;
-  border-bottom: 3px double #ccc;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 h2 {
@@ -82,22 +68,6 @@ label.checkbox {
 label span.label_required {
   color: red;
   font-size: 90%;
-}
-
-input, textarea, select {
-  border: 1px solid #ccc;
-  padding: 3px;
-  font-family: "Lucida Grande", verdana, arial, helvetica, sans-serif;
-  font-size: 11px;
-  background: white;
-}
-
-input:hover, textarea:hover, select:hover {
-  border: 1px solid green;
-}
-
-input:focus, textarea:focus, select:focus {
-  border: 1px solid black;
 }
 
 fieldset {
@@ -183,8 +153,8 @@ span.required {
 }
 
 #dialog .inner {
-  border: 3px solid #ccc;
-  padding: 10px;
+  padding: 20px;
+  background-color: white;
 }
 
 .flash_error, .flash_success {
@@ -224,7 +194,7 @@ span.required {
 
 #buttonSubmit {
 	margin-top: 12px;
-  border-top: 3px double #ccc;
+  border-top: 1px solid #f0f0f0;
 }
 
 #buttonSubmit span {
