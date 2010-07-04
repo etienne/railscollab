@@ -28,21 +28,20 @@
     <%= form_tag message_path(:id => @message.id), :method => :put %>
       <div class="formBlock">
         <div>
-          <label><%= :private_message.l %>:</label>
-          <%= yesno_toggle 'message', 'is_private', :class => 'yes_no', :id => 'messageFormIsPrivate' %>
+          <%= yesno_toggle 'message', 'is_private', :class => 'checkbox' %>
+          <%= label 'message', 'is_private', :private_message.l, :class => 'checkbox' %>
         </div>
         <div>
-          <label><%= :important_message.l %>:</label>
-          <%= yesno_toggle 'message', 'is_important', :class => 'yes_no', :id => 'messageFormIsImportant' %>
+          <%= yesno_toggle 'message', 'is_important', :class => 'checkbox' %>
+          <%= label 'message', 'is_important', :important_message.l, :class => 'checkbox' %>
         </div>
         <div>
-          <label><%= :enable_comments.l %>:</label>
-          <%= yesno_toggle 'message', 'comments_enabled', :class => 'yes_no', :id => 'messageFormEnableComments' %>
+          <%= yesno_toggle 'message', 'comments_enabled', :class => 'checkbox' %>
+          <%= label 'message', 'comments_enabled', :enable_comments.l, :class => 'checkbox' %>
         </div>
-        
         <div>
-          <label><%= :enable_anonymous_comments.l %>:</label>
-          <%= yesno_toggle 'message', 'anonymous_comments_enabled', :class => 'yes_no', :id => 'messageFormEnableAnonymousComments' %>
+          <%= yesno_toggle 'message', 'anonymous_comments_enabled', :class => 'checkbox' %>
+          <%= label 'message', 'anonymous_comments_enabled', :enable_anonymous_comments.l, :class => 'checkbox' %>
         </div>
       </div>
       <button class="submit" type="submit"><%= :update_options.l %></button>

@@ -2,7 +2,7 @@
 %html
   %head
     %meta{"http-equiv" => "content-type", :content => "text/html;charset=UTF-8"}/
-    %title= "#{h(page_title)} @ #{h(Company.owner.name)}"
+    %title= h(page_title)
     = stylesheet_link_tag 'project_website'
     - additional_stylesheets.each do |ss|
       = stylesheet_link_tag ss
@@ -18,10 +18,10 @@
       / Header
       #headerWrapper
         #header
-          = link_to "« #{:dashboard.l}", {:controller => 'dashboard'}, {:class => 'dashboard_link'} 
-          %h1= :administration.l
           #userboxWrapper
             = render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
+          = link_to "« #{:dashboard.l}", {:controller => 'dashboard'}, {:class => 'dashboard_link'} 
+          %h1= :administration.l
       / End Header
       
       = render :partial => 'layouts/tabs', :object => administration_tabbed_navigation

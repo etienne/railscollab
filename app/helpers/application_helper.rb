@@ -94,10 +94,7 @@ module ApplicationHelper
   end
 
   def yesno_toggle(object_name, method, options = {})
-    radio_button(object_name, method, "true", options.merge({:id => "#{options[:id]}Yes"}))    +
-    label(object_name, method, :yesno_yes.l, {:for => "#{options[:id]}Yes", :class => "#{options[:class]}"})                 +
-    radio_button(object_name, method, "false", options.merge({:id => "#{options[:id]}No"}))    +
-    label(object_name, method, :yesno_no.l, {:for => "#{options[:id]}No", :class => "#{options[:class]}"})
+    check_box(object_name, method, options)
   end
 
   def yesno_toggle_tag(name, is_yes, options = {})

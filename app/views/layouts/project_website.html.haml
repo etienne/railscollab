@@ -4,10 +4,10 @@
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
     - unless @active_project.nil?
       %title
-        = h "#{@active_project.name} - #{h page_title} @ #{h Company.owner.name}"
+        = h "#{@active_project.name} – #{h page_title}"
     - else
       %title
-        = h "#{page_title} @ #{h Company.owner.name}"
+        = h page_title
 
     = stylesheet_link_tag 'project_website'
     - additional_stylesheets.each do |ss|
@@ -33,11 +33,11 @@
       / Header
       #headerWrapper
         #header
+          #userboxWrapper
+            = render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
           = link_to "« #{:dashboard.l}", {:controller => 'dashboard'}, {:class => 'dashboard_link'} 
           %h1
             = h @active_project.name
-          #userboxWrapper
-            = render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
       / End Header
       
       = render :partial => 'layouts/tabs', :object => project_tabbed_navigation

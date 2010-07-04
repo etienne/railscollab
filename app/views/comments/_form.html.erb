@@ -22,8 +22,10 @@
     <legend><%= :options.l %></legend>
     
     <div class="objectOption">
-      <div class="optionLabel"><label><%= :private_comment.l %>:</label></div>
-      <div class="optionControl"><%= yesno_toggle 'comment', 'is_private', :class => 'yes_no', :id => 'commentFormIsPrivate' %></div>
+      <div class="optionLabel">
+        <%= yesno_toggle 'comment', 'is_private', :class => 'checkbox' %>
+        <%= label 'comment', 'is_private', :private_comment.l, :class => 'checkbox' %>
+      </div>
       <div class="optionDesc"><%= :private_comment_info.l %></div>
     </div>
   </fieldset>

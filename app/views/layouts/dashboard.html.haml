@@ -22,8 +22,8 @@
       / header
       #headerWrapper
         #header
-          %h1= site_name
           #userboxWrapper= render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
+          %h1= site_name
       / end header
       
       = render :partial => 'layouts/tabs', :object => dashboard_tabbed_navigation
