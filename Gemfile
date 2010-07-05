@@ -9,6 +9,8 @@ gem 'acts_as_ferret', '>=0.4.4'
 gem 'haml', '3.0.6'
 gem "sqlite3-ruby", :require => "sqlite3", :group => :development
 gem 'factory_girl', :group => :test
+gem 'paperclip', '2.1.2'
+gem 'right_aws'
 
 # optional gems
 gem 'RedCloth', '>= 4.0.0', :require => 'redcloth'
