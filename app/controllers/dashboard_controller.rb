@@ -64,8 +64,7 @@ class DashboardController < ApplicationController
 
   def my_projects
     # Create the sorted projects list
-    sort_type = params[:orderBy]
-    sort_type = 'priority' unless ['name'].include?(params[:orderBy])
+    sort_type = 'name'
     @sorted_projects = @active_projects.sort_by do |item|
       item[sort_type].nil? ? 0 : item[sort_type]
     end
