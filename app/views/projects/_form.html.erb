@@ -5,11 +5,6 @@
   </div>
   
   <div>
-    <label for="projectPriority"><%= :priority.l %>: <span class="label_required">*</span></label>
-    <%= text_field 'project', 'priority', :id => 'projectPriority', :class => 'long' %>
-  </div>
-  
-  <div>
     <label for="projectFormDescription"><%= :description.l %>:</label>
     <%= text_area 'project', 'description', :id => 'projectFormDescription', :class => 'short', :rows => 10, :cols => 40 %>
   </div>
