@@ -24,7 +24,7 @@
 
     - if user.is_admin
       %li
-        = link_to :administration.l, :controller => 'administration'
+        = link_to :administration.l, :controller => 'configurations'
         = render_icon 'bullet_drop_down', '', :id => 'administration_more', :class => 'PopupMenuWidgetAttachTo', :title => 'Enable javascript'
 
   - unless user.is_anonymous?
