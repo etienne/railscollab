@@ -227,6 +227,10 @@ table.blank th, table.blank td {
   font-weight: bolder;
 }
 
+.block {
+  margin-bottom: 12px;
+}
+
 .block .header {
   border-color: #ccc;
 }
