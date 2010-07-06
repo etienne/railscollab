@@ -17,12 +17,6 @@
     @page_actions << {:title => :add_file, :url=> new_file_path(:active_project => @active_project.id)}
   end
 %>
-<% if @active_project.description.chop and @active_project.show_description_in_overview %>
-<div class="hint">
-  <div class="header"><%= h @active_project.name %></div>
-  <div class="content"><%= textilize @active_project.description %></div>
-</div>
-<% end %>
 
 <% if @late_milestones.length > 0 or !@calendar_milestones.empty? %>
 <div id="lateOrTodayMilestones" class="block">
