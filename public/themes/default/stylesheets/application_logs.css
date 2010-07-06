@@ -60,7 +60,8 @@ table.applicationLogs .logProject, table.applicationLogs .logTakenOnBy {
 }
 
 table.applicationLogs .logProject {
-  width: 100px;
+  width: 160px;
+  font-size: 11px;
 }
 
 table.applicationLogs .logTakenOnBy {

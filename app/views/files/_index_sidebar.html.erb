@@ -3,21 +3,14 @@
   <h2><%= :folders.l %></h2>
   <div class="blockContent" id="sidebarFolderList">
     <ul>
-<% if !@folder.nil? %>
-      <li><%= link_to :all_files.l, files_path %></li>
-<% else %>
-      <li><%= link_to :all_files.l, files_path, :class => 'selected' %></li>
-<% end %>
+      <li<%= @folder.nil? ? ' class="selected"' : '' %>><%= link_to :all_files.l, files_path %></li>
     
 <% @folders.each do |folder| -%>
-<% if !@folder.nil? and @folder.id == folder.id %>
-<% selected_class = {:class => 'selected'} %>
-<% else %>
-<% selected_class = {} %>
-<% end %>
-      <li><%= link_to (h folder.name), files_folder_path(:id => folder.id), selected_class %> 
-      <% if folder.can_be_edited_by(@logged_user) %><%= link_to render_icon('edit',''), edit_folder_path(:id => folder.id) %><% end %>
-      <% if folder.can_be_deleted_by(@logged_user) %><%= link_to render_icon('cancel_gray',''), folder_path(:id => folder.id), :method => :delete, :confirm => :folder_delete_confirmation.l %><% end %>
+      <li class="folder<%= (!@folder.nil? and @folder.id == folder.id) ? ' selected' : '' %>"><%= link_to (h folder.name), files_folder_path(:id => folder.id) %>
+      <div class="actions">
+        <% if folder.can_be_edited_by(@logged_user) %><%= link_to render_icon('edit',''), edit_folder_path(:id => folder.id) %><% end %>
+        <% if folder.can_be_deleted_by(@logged_user) %><%= link_to render_icon('trash',''), folder_path(:id => folder.id), :method => :delete, :confirm => :folder_delete_confirmation.l %><% end %>    
+      </div>
       </li>
 <% end %>
     </ul>

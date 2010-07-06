@@ -18,6 +18,27 @@ div.filesOrderAndPagination div.advancedPagination {
   margin: 0;
 }
 
+div#sidebarFolderList li {
+  padding: 3px 3px 3px 24px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+div#sidebarFolderList li.folder {
+  background: url("../../images/icons/folder.png") no-repeat 2% 45%;
+}
+
+div#sidebarFolderList li.selected {
+  background-color: #e8e8e8;
+}
+
+div#sidebarFolderList div.actions {
+  float: right;
+}
+
+div#sidebarFolderList div.actions a {
+  margin-left: 4px;
+}
+
 /** File info **/
 
 div.listedFile {

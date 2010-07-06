@@ -298,7 +298,8 @@ a.checkboxLink img {
 }
 
 a.selected {
-  background: #ccc;
+  background-color: #e8e8e8;
+  padding: 3px 0;
 }
 
 a.iCalSubscribe {
