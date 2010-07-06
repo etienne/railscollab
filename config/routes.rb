@@ -90,7 +90,8 @@ ActionController::Routing::Routes.draw do |map|
                                        :complete => :put,
                                        :open => :put,
                                        :permissions => [:get, :put]},
-                          :has_many => [:tags]
+                          :has_many => [:tags],
+                          :except => :index
   
   # Nested routes don't seem to work with path_prefix...
   map.with_options :path_prefix => 'projects/:active_project' do |project|

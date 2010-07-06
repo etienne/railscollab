@@ -23,19 +23,9 @@ class ProjectsController < ApplicationController
   layout :project_layout
 
   before_filter :process_session
-  before_filter :obtain_project, :except => [:index, :new, :create]
-  after_filter  :user_track, :only => [:index, :search, :people]
+  before_filter :obtain_project, :except => [:new, :create]
+  after_filter  :user_track, :only => [:search, :people]
 
-  def index
-    @projects = @logged_user.member_of_owner? ? Project.all : @logged_user.projects
-    respond_to do |format|
-      format.html { render :layout => 'administration' }
-      format.xml  { 
-        render :xml => @projects.to_xml(:root => 'projects')
-      }
-    end
-  end
-  
   def show
     include_private = @logged_user.member_of_owner?
 
