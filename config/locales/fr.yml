@@ -5,7 +5,7 @@ fr:
   my_tasks: Mes tâches
   my_account: Mon compte
   index: Index
-  company: Groupe
+  company: Compagnie
   members: Membres
   clients: Clients
   projects: Projets
@@ -295,10 +295,10 @@ fr:
   active: Actif
   completed: Complété
   edit_project_details: Modifier les détails du projet
-  mark_project_as_finished: Fermer le projet
-  mark_project_as_finished_confirmation: "Voulez-vous vraiment fermer ce projet ? Toues les actions du projet seront verrouillées."
-  mark_project_as_active: Réactiver le projet
-  mark_project_as_active_confirmation: "Voulez-vous vraiment réactiver le projet ? Toutes les actions du projet seront déverrouillées."
+  mark_project_as_finished: Archiver le projet
+  mark_project_as_finished_confirmation: "Voulez-vous vraiment archiver ce projet ? Il sera ensuite impossible de le modifier."
+  mark_project_as_active: Réouvrir le projet
+  mark_project_as_active_confirmation: "Voulez-vous vraiment réouvrir le projet ? Il sera de nouveau possible de le modifier."
   involved_companies: Compagnies impliquées
   open_task_lists: Listes de tâches ouvertes
   num_tasks_open_in_task_list: "%{num} tâches ouvertes sur %{total} dans cette liste"
