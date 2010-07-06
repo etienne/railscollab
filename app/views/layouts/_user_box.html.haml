@@ -29,31 +29,19 @@
 
   - unless user.is_anonymous?
     #account_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
-      %p
-        = :account.l
-        \:
       %ul
         %li= link_to :edit_profile.l, edit_user_path(:id => user.id)
-        %li= link_to :update_avatar.l, avatar_user_path(:id => user.id)
-      %p= :userbox_more.l
-      %ul
         %li= link_to :my_projects.l, :controller => 'dashboard', :action => 'my_projects'
         %li= link_to :my_tasks.l, :controller => 'dashboard', :action => 'my_tasks'
 
   - unless projects.blank?
     #projects_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
-      %p
-        = :projects.l
-        \:
       %ul
         - projects.each do |project|
           %li= link_to h(project.name), project_path(:id => project.id)
 
   - if user.is_admin
     #administration_more_menu.PopupMenuWidgetDiv{:style => "display:none"}
-      %p
-        = :administration.l
-        \:
       %ul
         %li= link_to :company.l, Company.owner
         %li= link_to :members.l, companies_path
