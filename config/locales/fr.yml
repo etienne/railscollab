@@ -1,6 +1,6 @@
 fr:
   # Tabs
-  overview: Sommaire
+  overview: Vue d’ensemble
   my_projects: Mes projets
   my_tasks: Mes tâches
   my_account: Mon compte
@@ -17,7 +17,7 @@ fr:
   milestones: Étapes
   ptime: Temps
   files: Fichiers
-  wiki: Wiki
+  wiki: Pages
   tags: Mots clés
   forms: Formulaires
   people: Personnes
@@ -163,7 +163,7 @@ fr:
   success_deleted_avatar: L’image de profil a été effacée
   invalid_user: Utilisateur invalide
   invalid_object: Objet invalide
-  invalid_comment: Réponse invalide
+  invalid_comment: Commentaire invalide
   success_added_comment_error_files: Successfully added comment, some attachments failed validation
   success_added_comment: Successfully added comment
   success_edited_comment_error_files: Successfully updated comment, some attachments failed validation
@@ -337,7 +337,7 @@ fr:
   # Message view
   from: From
   message_created_with_user: "%{time} | %{user}"
-  comments: Réponses
+  comments: Commentaires
   no_messages_in_project: Il n’y a pas de discussions dans ce projet
   no_messages_in_category: Il n’y a pas de discussions dans cette catégorie
   edit: Modifier
@@ -500,14 +500,14 @@ fr:
   users: Users
   
   # Comments
-  comment: Réponse
-  add_comment: Publier la réponse
-  edit_comment: Modifier la réponse
-  post_comment: Écrire une réponse
-  private_comment: Réponse privée
-  private_comment_info: "Les réponses privées sont seulement visibles par vos coéquipiers. Les clients n’y auront pas accès."
-  comment_delete_confirm: "Voulez-vous vraiment effacer cette réponse ?"
-  no_comments_for_object: Aucune réponse n’a encore été publiée.
+  comment: Commentaire
+  add_comment: Publier le commentaire
+  edit_comment: Modifier le commentaire
+  post_comment: Écrire un commentaire
+  private_comment: Commentaire privé
+  private_comment_info: "Les commentaires privés sont seulement visibles par vos coéquipiers. Les clients n’y ont pas accès."
+  comment_delete_confirm: "Voulez-vous vraiment effacer ce commentaire ?"
+  no_comments_for_object: Aucun commentaire n’a encore été publiée.
   comment_posted_with_user: "Publié %{time} par %{user}"
   comment_posted: "Publié %{time} par <strong>%{name}</strong>"
   
@@ -726,19 +726,19 @@ fr:
   
   
   # Search models
-  Tag: Tag
-  Comment: Comment
-  ProjectMessage: Message
-  ProjectTime: Time 
-  ProjectTask: Task
-  ProjectTaskList: Task list
-  ProjectMilestone: Milestone
-  ProjectFile: File
-  ProjectFileRevision: File revision
-  WikiPage: Wiki page
+  Tag: Mot clé
+  Comment: Commentaire
+  ProjectMessage: Discussion
+  ProjectTime: Temps
+  ProjectTask: Tâche
+  ProjectTaskList: Liste de tâches
+  ProjectMilestone: Étapes
+  ProjectFile: Fichier
+  ProjectFileRevision: Fichier (révision)
+  WikiPage: Page
   
-  search_dashboard: "%{type}: %{name} in %{project}"
-  search_project: "%{type}: %{name}"
+  search_dashboard: "%{type} : %{name} dans %{project}"
+  search_project: "%{type} : %{name}"
   
   # system
   
@@ -750,9 +750,9 @@ fr:
       # Use the strftime parameters for formats.
       # When no format has been given, it uses default.
       # You can provide other formats here if you like!
-      default: "%Y-%m-%d" 
-      short: "%b %d" 
-      long: "%B %d, %Y" 
+      default: "%Y.%m.%d"
+      short: "%d %B"
+      long: "%d %B %Y"
 
     day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
     abbr_day_names: [dim, lun, mar, mer, jeu, ven, sam]
@@ -765,31 +765,31 @@ fr:
 
   time:
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z" 
-      short: "%d %b %H:%M" 
-      long: "%B %d, %Y %H:%M" 
-      project_created_format: "%b %e, %Y"
-      project_completed_time_format: "%b %e, %Y"
-      task_list_completed_time_format: "%b %e, %Y"
-      message_created_format: "%b %e. %Y %H:%M"
-      milestone_completed_time_format: "%b %e, %Y %H:%M"
-      milestone_due_date_extended_format: "%A, %e %B, %Y"
+      default: "%A, %e %B %Y à %I:%M:%S" 
+      short: "%e %B à %I:%M" 
+      long: "%e %B %Y à %I:%M" 
+      project_created_format: "%e %B %Y"
+      project_completed_time_format: "%e %B %Y"
+      task_list_completed_time_format: "%e %B %Y"
+      message_created_format: "%e %B %Y à %I:%M"
+      milestone_completed_time_format: "%e %B %Y à %I:%M"
+      milestone_due_date_extended_format: "%A, %e %B %Y"
       milestone_due_date_format: "%A, %e %B"
-      milestone_messages_created_format: "%b %e. %Y %H:%M"
-      wiki_page_updated_format: "%B %e, %Y %H:%M"
-      action_today_fomat: "%H:%M"
-      action_past_format: "%b %e %Y"
-      comment_posted_format: "%b %e. %Y %H:%M"
-      done_date_format: "%b %d"
-      done_date_format_with_year: "%b %d %y"
-      done_date_long_format: "%A, %d %B"
-      done_date_long_format_with_year: "%A, %d %B %Y"
-      revision_date_format: "%b %e. %Y %H:%M"
+      milestone_messages_created_format: "%e %B %Y à %I:%M"
+      wiki_page_updated_format: "%e %B %Y à %I:%M"
+      action_today_fomat: "%I:%M"
+      action_past_format: "%e %B %Y"
+      comment_posted_format: "%e %B %Y à %I:%M"
+      done_date_format: "%e %B"
+      done_date_format_with_year: "%e %B %Y"
+      done_date_long_format: "%A, %e %B"
+      done_date_long_format_with_year: "%A, %e %B %Y"
+      revision_date_format: "%e %B %Y à %I:%M"
       revision_date_format_short: "%A, %e %B"
       grouped_files_date_format: "%A, %e %B"
       grouped_files_date_format_with_year: "%A, %e %B %Y"
-    am: "am" 
-    pm: "pm"
+    am: "AM" 
+    pm: "PM"
 
 # Used in array.to_sentence.
   support:
@@ -797,3 +797,35 @@ fr:
       words_connector: ", "
       two_words_connector: " et "
       last_word_connector: " et "
+
+  wiki_engine:
+    success_creating_wiki_page: 'Nouvelle page créée'
+    success_updating_wiki_page: 'Page mise à jour'
+    success_deleting_wiki_page: 'Page effacée'
+    preview: 'Aperçu'
+    current_version: 'Version actuelle'
+    current_version_edited_by: 'Version actuelle par {{user}}'
+    version: 'Version {{version}}'
+    version_edited_by: 'Version {{version}} par {{user}}'
+    title: 'Titre'
+    content: 'Contenu'
+    main_page: 'Page principale'
+    create: 'Créer'
+    update: 'Mettre à jour'
+    cancel: 'Annuler'
+    new: 'Nouvelle page'
+    edit: 'Modifier'
+    delete: 'Effacer'
+    confirm_deletion: 'Voulez-vous vraiment effacer ?'
+    no_main_page: 'Il n’y a pas encore de page principale.'
+    last_modified: 'Dernière modification'
+    last_modified_with_time: 'Dernière modification le {{time}}'
+    not_found: 'Page introuvable'
+    non_existing_page: 'Cette page n’existe pas encore.'
+    create_it: 'Créer la page'
+    pages: 'Pages'
+    help:
+      link_to_format: '{{link}} fonctionne. Il est également possible d’utiliser du HTML brut.'
+      links_to_wiki_pages: 'Liens vers d’autres pages'
+      format_code: 'Il est possible de mettre en forme du code source de la manière suivante.'
+      highlight_language: 'Préciser le langage de programmation avec <code>class="language"</code> sur l’élément <code>code</code>.'
