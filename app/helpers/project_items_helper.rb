@@ -69,13 +69,12 @@ module ProjectItemsHelper
     project.companies.each do |company|
       next if company.is_owner? and !permissions.can_assign_to_owners
       next if !company.is_owner? and !permissions.can_assign_to_other
-
       items[company.name] = [[:anyone.l, "c#{company.id}"], *company.users.collect do |user|
-        [user.username, user.id.to_s] if user.member_of(project)
+        [user.display_name, user.id.to_s] if user.member_of(project)
       end.compact]
     end
 
-    default_option + grouped_options_for_select(items, options)
+    '' + default_option + grouped_options_for_select(items, options)
   end
 
   def task_select_grouped_options(task_lists, filter=nil, options = {})

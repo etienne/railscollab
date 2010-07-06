@@ -47,7 +47,7 @@ fr:
   add_client: Nouveau client
   edit_profile: Modifier le profil
   update_avatar: Mettre à jour l’image de profil
-  permissions: Permissions
+  permissions: Membres d’équipe
   edit_company: Modifier l’entreprise
   edit_company_logo: Modifier le logo d’entreprise
   add_file: Nouveau fichier
@@ -60,7 +60,7 @@ fr:
   remember_me: Se souvenir de moi
   login: Connexion
   update_permissions: Mettre à jour les permissions
-  update_people: Mettre à jour les personnes
+  update_people: Mettre à jour
   edit_client: Modifier le client
   new_logo: Nouveau logo
   update_logo: Mettre à jour le logo
@@ -294,7 +294,7 @@ fr:
   project_status_header: "État du projet: %{status}"
   active: Actif
   completed: Archivé
-  edit_project_details: Modifier les détails du projet
+  edit_project_details: Modifier le titre du projet
   mark_project_as_finished: Archiver le projet
   mark_project_as_finished_confirmation: "Voulez-vous vraiment archiver ce projet ? Il sera ensuite impossible de le modifier."
   mark_project_as_active: Réouvrir le projet
