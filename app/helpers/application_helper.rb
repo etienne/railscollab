@@ -34,7 +34,7 @@ module ApplicationHelper
   end
   
   def icon_url(filename)
-    "/themes/#{AppConfig.site_theme}/images/icons/#{filename}.gif"
+    "/themes/#{AppConfig.site_theme}/images/icons/#{filename}.png"
   end
 
   def checkbox_link(link, checked=false, hint=nil, attrs={})

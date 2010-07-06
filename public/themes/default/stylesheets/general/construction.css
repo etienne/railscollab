@@ -383,7 +383,7 @@ body {
 
 #listOfRssFeeds li {
   padding-left: 16px;
-  background: url('../../images/icons/feed.gif') no-repeat;
+  background: url('../../images/icons/feed.png') no-repeat;
   line-height: 12px;
   margin: 2px 0;
 }
@@ -489,11 +489,11 @@ div.private {
   width: 37px;
   overflow: hidden;
   margin-left: 2px;
-  background: url('../../images/icons/private.gif') no-repeat;
+  background: url('../../images/icons/private.png') no-repeat;
 }
 
 #pageTitle.private {
-  background: url('../../images/icons/private.gif') no-repeat;
+  background: url('../../images/icons/private.png') no-repeat;
 }
 
 div.private span {
@@ -508,7 +508,7 @@ div.billable {
   width: 37px;
   overflow: hidden;
   margin-left: 2px;
-  background: url('../../images/icons/billable.gif') no-repeat;
+  background: url('../../images/icons/billable.png') no-repeat;
 }
 
 div.billable span {
