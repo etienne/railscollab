@@ -5,7 +5,7 @@ fr:
   my_tasks: Mes tâches
   my_account: Mon compte
   index: Index
-  company: Compagnie
+  company: Entrepises
   members: Membres
   clients: Clients
   projects: Projets
@@ -48,8 +48,8 @@ fr:
   edit_profile: Modifier le profil
   update_avatar: Mettre à jour l’image de profil
   permissions: Permissions
-  edit_company: Modifier la compagnie
-  edit_company_logo: Modifier le logo de compagnie
+  edit_company: Modifier l’entreprise
+  edit_company_logo: Modifier le logo d’entreprise
   add_file: Nouveau fichier
   edit_file: Modifier le fichier
   attach_files: Pièces jointes
@@ -93,7 +93,7 @@ fr:
   add_page: Nouvelle page
   edit_page: Modifier la page
   all_pages: Toutes les pages
-  company_card: "Carte de compagnie de %{company}"
+  company_card: "Carte d’entreprise de %{company}"
   reset_password: Réinitialiser le mot de passe
   set_password: Établir le mot de passe
   save_changes: Enregistrer les changements
@@ -109,20 +109,20 @@ fr:
   recent_project_activities_feed_info: "Activité récente dans %{project}"
   
   # New account steps
-  welcome_to_new_account: Welcome to your newly created account
-  welcome_to_new_account_info: "%{user}, welcome to your new account. From now on it will always be available on %{url} (you can bookmark this link). You can get started in a minute following these easy steps:"
-  new_account_step1: "Step 1: Update your company info"
-  new_account_step1_info: "<a href='%{url}'>Set your company details</a> such as phone and fax number, address, email, homepage etc"
-  new_account_step2: "Step 2: Add team members"
-  new_account_step2_info: "You can <a href='%{url}'>create user accounts</a> for all members of your team (unlimited number). Every member will get their username and password which they can use to access the system"
-  new_account_step3: "Step 3: Add client companies and their members"
-  new_account_step3_info: "Now it's time to <a href='%{url}'>define client companies</a> (unlimited). When you're done you can add their members or leave that for their team leaders. Client members are similar to your company members except that they have limited access to content and functions (you can set what they can do per project and per member)"
-  new_account_step4: "Step 4: Start a project"
-  new_account_step4_info: "Defining a <a href='%{url}'>new project</a> is really easy: set a name and decription (optional) and click submit. After that you can set permissions for your team members and clients."
+  welcome_to_new_account: Bienvenue dans votre nouveau compte
+  welcome_to_new_account_info: "%{user}, bienvenue dans votre nouveau compte. À partir de maintenant, il sera disponible à l'adresse %{url} (vous pouvez mettre ce lien dans vos favoris). Vous serez prêt en quelques minutes en suivant les étapes suivantes :"
+  new_account_step1: "Étape 1: Mettre à jour les informations de votre entreprise"
+  new_account_step1_info: "<a href='%{url}'>Saisissez les coordonnées de votre entreprise</a> comme votre numéro de téléphone, votre adresse, votre adresse courriel, etc."
+  new_account_step2: "Étape 2: Ajoutez des membres à votre équipe"
+  new_account_step2_info: "Vous pouvez <a href='%{url}'>créer des comptes d’utilisateur</a> pour tous les membres de votre équipe. Chaque membre aura ses propres nom d’utilisateur et mot de passe qu’ils utiliseront pour accéder au système."
+  new_account_step3: "Étape 3: Ajouter des clients"
+  new_account_step3_info: "Il est maintenant temps de créer des <a href='%{url}'>entreprises client</a>. Lorsque ce sera fait, vous pourrez ajouter vous-mêmes leurs coordonnées ou leur laisser cette tâche. Les membres client sont semblables aux membres de votre entreprise, mais elles ont un accès limité aux données et aux fonctionnalités (vous pouvez déterminer leurs privilèges par projet ou par membre)."
+  new_account_step4: "Étape 4: Démarrer un projet"
+  new_account_step4_info: "Créer un <a href='%{url}'>nouveau projet</a> est facile : saisissez un nom et une description et cliquez sur Nouveau projet. Vous pourrez ensuite établir les privilèges des membres de votre équipe et de vos clients."
   
-  hide_welcome_info: "&raquo; Hide this info permanently"
+  hide_welcome_info: "&raquo; Ne plus afficher ces instructions"
   
-  welcome_to_administration: Welcome to the administration panel. Using this tool you can manage your company data, members, clients and projects you are involved in.
+  welcome_to_administration: "Bienvenue au panneau d’administration. À l’aide de cet outil, vous pourrez gérer les coordonnées de votre entreprise, les membres de votre équipe, vos clients et vos projets."
   
   # User box
   welcome_anonymous: "Bienvenue <strong>Anonyme</strong>"
@@ -140,7 +140,7 @@ fr:
   can_manage_files: Gérer les fichiers
   can_assign_to_owners: Attribuer des tâches aux coéquipiers
   can_assign_to_other: Attribuer des tâches aux clients
-  can_manage_wiki_pages: Gérer les pages de wiki
+  can_manage_wiki_pages: Gérer les pages
   
   # Status messages
   login_success: Bienvenue.
@@ -164,32 +164,32 @@ fr:
   invalid_user: Utilisateur invalide
   invalid_object: Objet invalide
   invalid_comment: Commentaire invalide
-  success_added_comment_error_files: Successfully added comment, some attachments failed validation
-  success_added_comment: Successfully added comment
-  success_edited_comment_error_files: Successfully updated comment, some attachments failed validation
-  success_edited_comment: Successfully updated comment
-  success_deleted_comment: Successfully deleted comment
-  invalid_company: Invalid company
-  success_added_company: Successfully added company
-  success_added_client: Successfully added client
-  success_edited_client: Successfully updated client
-  success_deleted_client: Successfully deleted client
-  error_deleting_client: Error deleting client
-  no_projects: No projects
-  success_updated_logo: Successfully updated logo
-  error_uploading_logo: Error uploading logo
-  success_deleted_logo: Successfully deleted logo
-  welcome_info_hidden: Welcome info hidden
-  invalid_folder: Invalid folder
-  success_added_folder: Successfully added folder
-  success_edited_folder: Successfully updated folder
-  success_deleted_folder: Successfully deleted folder
-  invalid_file: Invalid file
-  invalid_file_revision: Invalid file revision
-  no_file_revisions: No file revisions
-  success_added_file: Successfully added file
-  success_edited_file: Successfully updated file
-  success_deleted_file: Successfully deleted file
+  success_added_comment_error_files: "Le commentaire a été ajouté, mais certaines pièces jointes sont invalides"
+  success_added_comment: Le commentaire a été publié
+  success_edited_comment_error_files: "Le commentaire a été mis à jour, mais certaines pièces jointes sont invalides"
+  success_edited_comment: Le commentaire a été mis à jour
+  success_deleted_comment: Le commentaire a été effacé
+  invalid_company: Entreprise invalide
+  success_added_company: L’entreprise a été ajoutée
+  success_added_client: Le client a été ajouté
+  success_edited_client: Le client a été mis à jour
+  success_deleted_client: Le client a été effacé
+  error_deleting_client: Une erreur s’est produite lors de l’effacement du client
+  no_projects: Aucun projet
+  success_updated_logo: Le logo a été mis à jour
+  error_uploading_logo: Une erreur s’est produite lors du transfert du logo
+  success_deleted_logo: Le logo a été supprimé
+  welcome_info_hidden: Les instructions de bienvenue ont été cachées
+  invalid_folder: Dossier invalide
+  success_added_folder: Le dossier a été ajouté
+  success_edited_folder: Le dossier a été mis à jour
+  success_deleted_folder: Le dossier a été effacé
+  invalid_file: Fichier invalide
+  invalid_file_revision: Révision de fichier invalide
+  no_file_revisions: Aucune révision de fichier
+  success_added_file: Le fichier a été ajouté
+  success_edited_file: Le fichier a été mis à jour
+  success_deleted_file: Le fichier a été supprimé
   success_added_new_file_to_object: Successfully attached new file to object
   error_adding_file_to_object: Error attaching new file to object
   success_added_file_to_object: Successfully attached file to object
@@ -299,7 +299,7 @@ fr:
   mark_project_as_finished_confirmation: "Voulez-vous vraiment archiver ce projet ? Il sera ensuite impossible de le modifier."
   mark_project_as_active: Réouvrir le projet
   mark_project_as_active_confirmation: "Voulez-vous vraiment réouvrir le projet ? Il sera de nouveau possible de le modifier."
-  involved_companies: Compagnies impliquées
+  involved_companies: Entreprises impliquées
   open_task_lists: Listes de tâches ouvertes
   num_tasks_open_in_task_list: "%{num} tâches ouvertes sur %{total} dans cette liste"
   completed_task_lists: Listes de tâches complétées
@@ -349,13 +349,13 @@ fr:
   
   # Task form
   private_task_list: Liste de tâches privée
-  assign_to: Attribuer à
+  assign_to: Responsable
   priority: Priorité
   description: Description
   estimated_hours: Heures estimées
   task_estimated_hours: "[%{hours} heures estimées]"
-  is_private_list: Est privée
-  is_private_list_info: "(Private task lists are visible only to owner company members. Members of client companies will not be able to see them)"
+  is_private_list: Privée
+  is_private_list_info: "Les listes de tâches privées sont seulement visibles par vos coéquipiers. Les clients n’y ont pas accès."
   task_list: Liste de tâches
   or: ou
   cancel: Annuler
@@ -468,7 +468,7 @@ fr:
   # Dashboard
   started_on: Démarré
   no_active_projects: Il n’y a pas de projets actifs
-  companies_involved_in: "Compagnies impliquées dans le projet"
+  companies_involved_in: "Entreprises impliquées dans le projet"
   tasks_in_list: "Dans %{list}"
   anyone: N’importe qui
   none: Aucun
