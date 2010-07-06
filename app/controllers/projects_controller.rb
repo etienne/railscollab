@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   after_filter  :user_track, :only => [:index, :search, :people]
 
   def index
-    @projects = @logged_user.is_admin ? Project.find(:all) : @logged_user.projects
+    @projects = @logged_user.member_of_owner? ? Project.all : @logged_user.projects
     respond_to do |format|
       format.html { render :layout => 'administration' }
       format.xml  { 
@@ -276,7 +276,7 @@ class ProjectsController < ApplicationController
       if saved
         format.html {
           error_status(false, :success_added_project)
-          redirect_to permissions_project_path(:id => @project.id)
+          redirect_to project_path(:id => @project.id)
         }
         format.js {}
         format.xml  { render :xml => @project.to_xml(:root => 'project'), :status => :created, :location => @project }

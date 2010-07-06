@@ -1,8 +1,8 @@
 - @page_actions = []
-- if @logged_user.is_admin?
+- if Project.can_be_created_by(@logged_user)
   - @page_actions << {:title => :add_project, :url=> new_project_path}
-- if @sorted_projects.length > 0
-  - @sorted_projects.each do |project|
+- if @active_projects.length > 0
+  - @active_projects.each do |project|
     .block
       .header
         %h2= link_to(h(project.name), project_path(:id => project.id))

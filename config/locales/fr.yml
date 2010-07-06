@@ -293,7 +293,7 @@ fr:
   milestone_completed_time_with_user: "%{time} | %{user}"
   project_status_header: "État du projet: %{status}"
   active: Actif
-  completed: Complété
+  completed: Archivé
   edit_project_details: Modifier les détails du projet
   mark_project_as_finished: Archiver le projet
   mark_project_as_finished_confirmation: "Voulez-vous vraiment archiver ce projet ? Il sera ensuite impossible de le modifier."
@@ -533,6 +533,8 @@ fr:
   go: Aller
   due_in_next_n_days: "Due in the next %{num} days"
   project_locked_header: "This project has been marked as completed, and is locked."
+  complete: Archiver
+  reopen: Réouvrir
   
   # Forms
   success_message: Success message

@@ -533,6 +533,8 @@ en:
   go: Go
   due_in_next_n_days: "Due in the next %{num} days"
   project_locked_header: "This project has been marked as completed, and is locked."
+  complete: Complete
+  reopen: Reopen
   
   # Forms
   success_message: Success message

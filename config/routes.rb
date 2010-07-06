@@ -137,7 +137,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :configurations, :only => [:index, :edit, :update]
   map.resources :tools, :only => [:index]
 
-  map.administration 'administration', :controller => 'administration', :action => 'index'
+  map.administration 'admin', :controller => 'configurations', :action => 'index'
 
   # Install the default route as the lowest priority.
   #map.connect ':controller/:action/:id.:format'

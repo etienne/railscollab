@@ -22,9 +22,6 @@ class AdministrationController < ApplicationController
   before_filter :process_session
   before_filter :user_track
 
-  def index
-  end
-
   def upgrade
   	@versions = []
   end

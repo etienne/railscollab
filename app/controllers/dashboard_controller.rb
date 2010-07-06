@@ -63,12 +63,6 @@ class DashboardController < ApplicationController
   end
 
   def my_projects
-    # Create the sorted projects list
-    sort_type = 'name'
-    @sorted_projects = @active_projects.sort_by do |item|
-      item[sort_type].nil? ? 0 : item[sort_type]
-    end
-
     @finished_projects = @logged_user.finished_projects
     @content_for_sidebar = 'my_projects_sidebar'
   end

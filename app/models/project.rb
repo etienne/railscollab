@@ -26,7 +26,7 @@ class Project < ActiveRecord::Base
 	belongs_to :updated_by, :class_name => 'User', :foreign_key => 'updated_by_id'
 	
 	has_many :project_users
-	has_many :users, :through=> :project_users
+	has_many :users, :through => :project_users
 	
 	has_many :project_times, :dependent => :destroy do
 		def public(reload=false)
@@ -137,7 +137,9 @@ class Project < ActiveRecord::Base
 	after_create   :process_create
 	before_update  :process_update_params
 	before_destroy :process_destroy
-	 
+	
+	named_scope :active, :conditions => 'projects.completed_on IS NULL', :order => 'name ASC'
+	
 	def process_params
 	  write_attribute("completed_on", nil)
 	end
@@ -221,11 +223,11 @@ class Project < ActiveRecord::Base
 	# Core Permissions
 	
 	def self.can_be_created_by(user)
-	 return (user.member_of_owner? and user.is_admin)
+	 return user.member_of_owner?
 	end
 	
 	def can_be_edited_by(user)
-	 return (user.member_of_owner? and user.is_admin)
+	 return user.member_of_owner?
 	end
 	
 	def can_be_deleted_by(user)
@@ -233,7 +235,7 @@ class Project < ActiveRecord::Base
 	end
 	
 	def can_be_seen_by(user)
-	 return (self.has_member(user) or (user.member_of_owner? and user.is_admin))
+	 return (self.has_member(user) or user.member_of_owner?)
 	end
 	
 	# Specific Permissions

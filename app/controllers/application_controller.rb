@@ -65,7 +65,7 @@ protected
 
   def logged_user_info
     unless @logged_user.nil?
-      @active_projects = @logged_user.active_projects.all
+      @active_projects = @logged_user.member_of_owner? ? Project.active : @logged_user.active_projects.all
       @running_times = @logged_user.assigned_times.running.all
     end
   end

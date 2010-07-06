@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def checkbox_link(link, checked=false, hint=nil, attrs={})
-    icon_url = checked ? "/themes/#{AppConfig.site_theme}/images/icons/checked.gif" : "/themes/#{AppConfig.site_theme}/images/icons/not-checked.gif"
+    icon_url = checked ? "/themes/#{AppConfig.site_theme}/images/icons/checked.png" : "/themes/#{AppConfig.site_theme}/images/icons/not-checked.png"
     
     method = attrs[:method] || :post
     link_to "<img src='#{icon_url}' alt='' />", link, attrs.merge({:method => method, :class => 'checkboxLink', :title => ( hint.nil? ? '' : (html_escape hint) )})
@@ -121,8 +121,27 @@ module ApplicationHelper
 	end
 
   def actions_for_project(project)
-    [{:name => :edit.l,   :url => edit_project_path(:id => project.id), :cond => project.can_be_edited_by(@logged_user)},
-     {:name => :delete.l, :url => project_path(:id => project.id), :cond => project.can_be_deleted_by(@logged_user), :method => :delete, :confirm => :project_confirm_delete.l}]
+    [{
+      :name => :edit.l,
+      :url => edit_project_path(:id => project.id),
+      :cond => project.can_be_edited_by(@logged_user) 
+    }, {
+      :name => :complete.l,
+      :url => complete_project_path(:id => project.id),
+      :cond => (project.is_active? and project.status_can_be_changed_by(@logged_user)),
+      :method => :put
+    }, {
+      :name => :reopen.l,
+      :url => open_project_path(:id => project.id),
+      :cond => (!project.is_active? and project.status_can_be_changed_by(@logged_user)),
+      :method => :put
+    }, {
+      :name => :delete.l,
+      :url => project_path(:id => project.id),
+      :cond => project.can_be_deleted_by(@logged_user),
+      :method => :delete,
+      :confirm => :project_confirm_delete.l
+    }]
   end
 
   def actions_for_milestone(milestone)
