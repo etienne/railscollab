@@ -46,7 +46,7 @@ fr:
   add_user: Nouvel utilisateur
   add_client: Nouveau client
   edit_profile: Modifier le profil
-  update_avatar: Mettre à jour l’avatar
+  update_avatar: Mettre à jour l’image de profil
   permissions: Permissions
   edit_company: Modifier la compagnie
   edit_company_logo: Modifier le logo de compagnie
@@ -145,25 +145,25 @@ fr:
   # Status messages
   login_success: Bienvenue.
   login_failure: Le nom ou le mot de passe sont invalides.
-  invalid_openid_server: "Unable to find openid server for <q>%{openid_url}</q>"
-  failed_verification_openid_url: "Verification of %{openid_url} failed"
-  failed_login_openid_url: "Failed login with identity %{openid_url}"
-  success_login_openid_url: "You have successfully logged in with %{openid_url} as your identity"
-  verification_failed: Verification failed
-  verification_cancelled: Verification cancelled
-  unknown_response_status: "Unknown response status: %{status}"
-  invalid_email: Invalid email address
-  invalid_email_not_in_use: Invalid email address
-  password_changed: Password changed
-  insufficient_permissions: Insufficient permissions
-  success_updated_profile: Successfully updated profile
-  success_updated_permissions: Successfully updated permissions
-  success_updated_avatar: Successfully updated avatar
-  error_updating_avatar: Error uploading avatar
-  success_deleted_avatar: Successfully deleted avatar
-  invalid_user: Invalid user
-  invalid_object: Invalid object
-  invalid_comment: Invalid comment
+  invalid_openid_server: "Impossible de trouver le serveur OpenID <q>%{openid_url}</q>"
+  failed_verification_openid_url: "La vérification de %{openid_url} a échoué"
+  failed_login_openid_url: "Impossible de se connecter avec l’identité %{openid_url}"
+  success_login_openid_url: "Vous vous êtes connecté avec %{openid_url} comme identité"
+  verification_failed: La vérification a échoué
+  verification_cancelled: La vérification a été annulée
+  unknown_response_status: "Réponse inconnue: %{status}"
+  invalid_email: Adresse courriel invalide
+  invalid_email_not_in_use: Adresse courriel invalide
+  password_changed: Le mot de passe a été changé
+  insufficient_permissions: Privilèges insuffisants
+  success_updated_profile: Le profil a été mis à jour
+  success_updated_permissions: Les privilèges ont été mis à jour
+  success_updated_avatar: L’image de profil a été mise à jour
+  error_updating_avatar: Une erreur s’est produite lors du transfert de l’image de profil
+  success_deleted_avatar: L’image de profil a été effacée
+  invalid_user: Utilisateur invalide
+  invalid_object: Objet invalide
+  invalid_comment: Réponse invalide
   success_added_comment_error_files: Successfully added comment, some attachments failed validation
   success_added_comment: Successfully added comment
   success_edited_comment_error_files: Successfully updated comment, some attachments failed validation
