@@ -36,14 +36,14 @@ select {
 
 fieldset {
   margin: 10px 0;
-  padding: 10px 0;
-	border-bottom: 1px solid #ddd;
+  padding: 6px 0 10px 0;
+	border-top: 1px solid #ddd;
 }
 
 fieldset legend {
-  font-size: 90%;
   font-weight: bolder;
-	padding: 0;
+	padding-right: 8px;
+	color: #999;
 }
 
 input { width: 200px; }

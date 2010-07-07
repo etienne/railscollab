@@ -428,7 +428,7 @@ fr:
   
   # Account
   new_avatar: Nouvelle image de profil
-  current_avatar: Image de profil actuelle
+  current_avatar: Image de profil
   delete_current_avatar: Effacer l’image de profil actuelle
   avatar_confirm_delete: "Voulez-vous vraiment effacer cette image de profil ?"
   avatar_upload_info: "Notez que l’image de profil actuelle sera effacée et remplacée par la nouvelle."

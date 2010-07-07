@@ -199,17 +199,28 @@ class UsersController < ApplicationController
     # Process core parameters
 
     @user.attributes = user_params
+    
+    # Process avatar
+    
+    if user_params[:delete_avatar]
+      @user.avatar = nil
+    end
+    @user.avatar = user_params[:avatar] unless user_params.nil?
 
-    # Send it off
-    saved = @user.save
-    if saved
-      # Re-create ImValues for user
-      ActiveRecord::Base.connection.execute("DELETE FROM user_im_values WHERE user_id = #{@user.id}")
-      real_im_values.each do |im_value|
-        im_value.save
+    if @user.errors.empty?
+      saved = @user.save
+      if saved
+        # Re-create ImValues for user
+        ActiveRecord::Base.connection.execute("DELETE FROM user_im_values WHERE user_id = #{@user.id}")
+        real_im_values.each do |im_value|
+          im_value.save
+        end
+        error_status(false, :success_updated_avatar)
+      else
+        error_status(true, :error_updating_avatar)
       end
     end
-
+    
     respond_to do |format|
       if saved
         format.html {
@@ -247,35 +258,6 @@ class UsersController < ApplicationController
       }
       format.js {}
       format.xml  { head :ok }
-    end
-  end
-
-  def avatar
-    return error_status(true, :insufficient_permissions) unless (@user.profile_can_be_updated_by(@logged_user))
-
-    case request.method
-    when :put
-      user_attribs = params[:user]
-
-      new_avatar = user_attribs[:avatar]
-      @user.errors.add(:avatar, 'Required') if new_avatar.nil?
-      @user.avatar = new_avatar
-
-      if @user.errors.empty?
-        if @user.save
-          error_status(false, :success_updated_avatar)
-        else
-          error_status(true, :error_updating_avatar)
-        end
-        
-        redirect_to edit_user_path(:id => @user.id)
-      end
-    when :delete
-      @user.avatar = nil
-      @user.save
-
-      error_status(false, :success_deleted_avatar)
-      redirect_to edit_user_path(:id => @user.id)
     end
   end
 
