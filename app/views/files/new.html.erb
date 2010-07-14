@@ -1,14 +1,3 @@
-<%
-  @page_actions = []
-  
-  if ProjectFile.can_be_created_by(@logged_user, @active_project)
-	@page_actions << {:title => :add_file, :url => new_file_path}
-  end
-
-  if ProjectFolder.can_be_created_by(@logged_user, @active_project)
-    @page_actions << {:title => :add_folder, :url => new_folder_path}
-  end
-%>
 <%= form_tag( files_path, :multipart => true ) %>
 <%= render :partial => 'form' %>
     <button class="submit" type="submit"><%= :add_file.l %></button>

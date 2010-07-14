@@ -37,7 +37,7 @@
       <div class="fileName"><a href="<%= file.download_url %>" title="<%= :file_view_details.l %>"><%= h file.filename %></a></div>
 
 <% last_revision = file.last_revision %> 
-<% unless last_revision.nil? %>     
+<% unless last_revision.nil? or file.project_file_revisions.length == 1 %>     
       <div class="fileLastRevision">
 <% if !last_revision.created_by.nil? %>
 		<%= :revision_created_by.l_with_args(:number => last_revision.revision_number,
@@ -58,7 +58,9 @@
       <% end %>
       <span><a href="<%= file.object_url %>#objectComments"><%= :comments.l %></a>:</span> <%= file.comments.length %> | <span><a href="<%= file.object_url %>#revisions"><%= :revisions.l %></a>:</span> <%= file.project_file_revisions.length %>
       </div>
+      <% unless tag_list(file).nil? %>
       <div class="fileTags"><%= :tags.l %>: <%= tag_list file %></div>
+      <% end %>
       <div class="fileOptions"><%= action_list actions_for_file(file, last_revision) %></div>
     </div>
   </div>
