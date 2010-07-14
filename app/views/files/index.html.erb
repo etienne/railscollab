@@ -24,8 +24,7 @@
 <%= render :partial => 'files/order_and_pagination', :locals => {:order => @order, :page => @page, :pagination => @pagination} %>
 
 <% @files.each do |group_by, grouped_files| -%>
-<% date_format = "grouped_files_date_format#{'_with_year' unless group_by.year == Date.today.year}" %>
-<h2><%= Time === group_by ? format_usertime(group_by, date_format.to_sym) : group_by.upcase %></h2>
+<h2><%= Time === group_by ? format_usertime(group_by, "grouped_files_date_format#{'_with_year' unless group_by.year == Date.today.year}".to_sym) : group_by.upcase %></h2>
 <div class="filesList">
 <% grouped_files.each do |file| -%>
   <div class="listedFile <%= cycle('odd', 'even') %>">
