@@ -9,7 +9,7 @@
       </div>
       <div id="selectFolderControl">
         <label for="fileFormFolder"><%= :folder.l %>: <span class="label_required">*</span></label>
-        <%= select 'file', 'folder_id', ProjectFolder.select_list(@active_project), {}, {:id => 'fileFormFolder'} %>
+        <%= select 'file', 'folder_id', ProjectFolder.select_list(@active_project), {:selected => params[:folder_id].to_i}, {:id => 'fileFormFolder'} %>
       </div>
       <p><%= :file_upload_info.l_with_args(:max => format_size(AppConfig.max_upload_size)) %></p>
     </div>

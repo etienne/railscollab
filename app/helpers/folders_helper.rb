@@ -46,20 +46,6 @@ module FoldersHelper
     crumbs
   end
 
-  def page_actions
-    @page_actions = []
-  
-    if ProjectFile.can_be_created_by(@logged_user, @active_project)
-      @page_actions << {:title => :add_file, :url => new_file_path(:folder_id => @folder.id)}
-    end
-
-    if ProjectFolder.can_be_created_by(@logged_user, @active_project)
-      @page_actions << {:title => :add_folder, :url => new_folder_path}
-    end
-    
-    @page_actions
-  end
-
   def additional_stylesheets
     ['project/files']
   end

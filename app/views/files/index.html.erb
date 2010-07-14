@@ -9,9 +9,6 @@
     end
   end
 
-  if ProjectFolder.can_be_created_by(@logged_user, @active_project)
-    @page_actions << {:title => :add_folder, :url => new_folder_path}
-  end
 %>
 <% if @files.empty? %>
 
