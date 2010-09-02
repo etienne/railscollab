@@ -27,6 +27,8 @@ class ProjectsController < ApplicationController
   after_filter  :user_track, :only => [:index, :search, :people]
 
   def index
+    set_page_actions
+    
     @projects = @logged_user.is_admin ? Project.find(:all) : @logged_user.projects
     respond_to do |format|
       format.html { render :layout => 'administration' }
@@ -381,5 +383,12 @@ protected
      end
      
      return true
+  end
+  
+  def set_page_actions
+    @page_actions = []
+    if Project.can_be_created_by(@logged_user)
+      @page_actions << {:title => :add_project, :url => new_project_path}
+    end
   end
 end

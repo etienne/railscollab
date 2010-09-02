@@ -1,0 +1,22 @@
+- if @projects.length > 0
+  %table#projects
+    %tr
+      %th
+      %th= :name.l
+      %th= :options.l
+    - @projects.each do |project|
+      %tr
+        %td.middle
+          - if project.status_can_be_changed_by(@logged_user)
+            = project.is_active? ? checkbox_link(complete_project_path(:id => project.id), false, nil, {:method => :put}) : checkbox_link(open_project_path(:id => project.id), true, nil, {:method => :put})
+          - else
+            - if project.is_active?
+              %img{:alt => "", :src => icon_url('not-checked'), :title => :active_project.l}/
+            - else
+              %img{:alt => "", :src => icon_url('checked'), :title => :finished_project.l}/
+        %td.long.middle
+          = link_to(h(project.name), project_path(:id => project.id))
+        %td.middle
+          = action_list(actions_for_project(project))
+- else
+  = :no_projects_owned_by_company.l
