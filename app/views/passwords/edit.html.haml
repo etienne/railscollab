@@ -1,0 +1,15 @@
+- form_tag user_password_path(@user), :method => :put do
+  = error_messages_for :user
+  %input{:name => "confirm", :type => "hidden", :value => h params[:confirm]}/
+  %div
+    %label{:for => "passwordFormNewPassword"}
+      = :password.l
+      %span.label_required *
+    %input#passwordFormNewPassword{:name => "user[password]", :type => "password"}/
+  %div
+    %label{:for => "passwordFormNewPasswordAgain"}
+      = :repeat_password.l
+      %span.label_required *
+    %input#passwordFormNewPasswordAgain{:name => "user[password_confirmation]", :type => "password"}/
+  #buttonSubmit
+    %button.submit{:accesskey => "s", :type => "submit"}= @initial_signup ? :set_password.l : :reset_password.l
