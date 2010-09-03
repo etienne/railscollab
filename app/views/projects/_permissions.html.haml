@@ -1,0 +1,19 @@
+- user_permission = ProjectUser.find(:first, :conditions => {'project_id' => permissions.id, 'user_id' => user.id})
+%tr
+  %td.projectName
+    = check_box_tag "user_project[]", "#{permissions.id}", user.member_of(permissions), {:id => "projectPermissions#{permissions.id}", :class => 'checkbox normal', :onclick => "permissions_form_project_select(#{permissions.id})"}
+    - if !permissions.is_active?
+      %label.checkbox{:for => "projectPermissions#{permissions.id}"}/
+      %del.help{:title => "Completed on #{format_usertime(permissions.completed_on, :project_completed_time_format)} by #{permissions.completed_by.display_name}"}= h permissions.name
+    - else
+      %label.checkbox{:for => "projectPermissions#{permissions.id}>"}= h permissions.name
+  %td.permissionsList
+    - if user.permissions_can_be_updated_by(@logged_user) && !user.member_of(permissions)
+      %div{ :id => "projectPermissionsBlock#{permissions.id}" }
+        .projectPermission
+          = check_box_tag "project_#{permissions.id}_all", "1", user.has_all_permissions(permissions), {:id => "projectPermissions#{permissions.id}All", :class => 'checkbox', :onclick => "permissions_form_project_select_all(#{permissions.id})"}
+          %label.checkbox{:for => "projectPermissions#{permissions.id}All", :style => "font-weight: bolder"}= :all.l
+        - @permissions.keys.each do |pname|
+          .projectPermission
+            = check_box_tag "project_permission[#{permissions.id}][]", "#{pname}", user.has_permission(permissions, pname), {:id => "projectPermission#{permissions.id}#{pname}", :class => 'checkbox normal', :onclick => "permissions_form_project_select_item(#{permissions.id})"}
+            %label.checkbox.normal{:for => "projectPermission#{permissions.id}#{pname}"}= @permissions[pname]

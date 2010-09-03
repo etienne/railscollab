@@ -1,0 +1,5 @@
+- form_tag project_path(:id => @active_project.id), :method => :put do
+  = render :partial => 'form'
+  %button.submit{:type => "submit"}= :save_changes.l
+  = :or.l
+  = link_to :cancel.l, :back

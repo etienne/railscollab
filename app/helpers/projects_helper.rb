@@ -32,13 +32,14 @@ module ProjectsHelper
       when 'edit', 'update' then :edit_project
       when 'search' then :search_results
       when 'show' then :overview
+      when 'index' then :projects
       else super
     end
   end
 
   def extra_crumbs
     case action_name
-      when 'new', 'create', 'edit', 'update', 'permissions' then [{:title => :projects, :url => "/administration/projects"}]
+      when 'new', 'create', 'edit', 'update', 'permissions' then [{:title => :projects, :url => "/administra  tion/projects"}]
       else super
     end
   end
