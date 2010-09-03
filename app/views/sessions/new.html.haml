@@ -1,0 +1,34 @@
+- if !@use_openid
+  #normal_login
+    - form_tag session_path, :method => :post do
+      #loginUsernameDiv
+        %label{:for => "loginUsername"}= :username.l
+        = text_field "login", "user", :size => 30, :id => 'loginUsername', :class => 'medium'
+      #loginPasswordDiv
+        %label{:for => "loginPassword"}= :password.l
+        = password_field "login", "password", :size => 30, :id => 'loginPassword', :class => 'medium'
+      = check_box_tag :remember, '1', false, :class => 'checkbox'
+      %label.checkbox{:for => "remember"}= :remember_me.l
+      .clean
+
+      %span
+        = link_to :forgot_password_q.l , new_password_path
+        - if AppConfig.allow_openid
+          |
+          %a.loginOpenID{:href => "#"}= :use_openid.l
+
+      #buttonSubmit
+        %button.submit{:accesskey => "s", :type => "submit"}= :login.l
+
+- if AppConfig.allow_openid && @use_openid
+  #openid_login
+    - form_tag session_path, :method => :post do
+      #loginUsernameDiv
+        %label{:for => "loginOpenIDIdentity"}= :openid.l
+        = text_field_tag "openid_url", "", :size => 30, :id => 'loginOpenIDIdentity', :class => 'openid_login'
+
+      %span
+        %a.loginOpenID{:href => "#"}= :login.l
+      
+      #buttonSubmit
+        %button.submit{:accesskey => "s", :type => "submit"}= :login.l
