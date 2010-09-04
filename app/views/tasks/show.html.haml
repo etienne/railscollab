@@ -1,0 +1,17 @@
+.task
+  .taskList{:id => "list_#{@task_list.id}", :url => @task_list.object_url}
+    .block
+      .openTasks
+        %ul.taskItems{:id => "openTasksList#{@task_list.id}"}
+          - unless @task.is_completed?
+            = render :partial => 'tasks/show', :collection => [@task], :locals => {:tprefix => "openTasksList#{@task_list.id}"}
+      .completedTasks
+        %ul.taskItems
+          - if @task.is_completed?
+            = render :partial => 'tasks/show', :collection => [@task], :locals => {:tprefix => "openTasksList#{@task_list.id}"}
+
+/ Comments
+#taskComments
+  = render :partial => 'comments/object_comments', :locals => {:comments => @logged_user.member_of_owner? ? @task.comments : @task.comments.public}
+  - if @task.comment_can_be_added_by(@logged_user)
+    = render :partial => 'comments/add_form', :locals => {:commented_object => @task}
