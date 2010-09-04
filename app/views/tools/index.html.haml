@@ -1,0 +1,9 @@
+- if !@tools.empty?
+  #administrationTools
+    - @tools.each do |tool|
+      .administrationTool
+        .administrationToolName
+          %h2= link_to tool.display_name, tool.object_url
+        .administrationToolDesc= tool.display_description
+- else
+  %p= :no_administration_tools.l
