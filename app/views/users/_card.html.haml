@@ -1,0 +1,55 @@
+.card
+  .cardIcon
+    %img{:alt => "#{h card.display_name} avatar", :src => card.avatar_url}/
+  .cardData
+    %h2= h card.display_name
+    .cardBlock
+      %div
+        %span
+          = "#{:title.l}:"
+        = card.title ? (h card.title) : :not_applicable.l
+      %div
+        %span
+          = "#{:company.l}:"
+        = link_to card.company.name, company_path(:id => card.company.id)
+
+    %h2= :contact_online.l
+    .cardBlock
+      %div
+        %span
+          = "#{:email_address.l}:"
+        %a{:href => "mailto:#{h card.email}"}= h card.email
+      - if !card.im_values.empty?
+        %table.imAddresses
+          - card.im_values.each do |im_value|
+            - next if im_value.value.blank?
+            %tr
+              %td
+                %img{:alt => im_value.im_type.name, :src => im_value.im_type.icon_url}/
+              %td
+                = h im_value.value
+                - if im_value.is_default
+                  %span.desc= "(#{:primary_im.l})"
+    - if !card.office_number.nil? or !card.fax_number.nil? or !card.mobile_number.nil? or !card.home_number.nil?
+      %h2= :contact_offline.l
+      .cardBlock
+        - if !card.office_number.nil? and !card.office_number.empty?
+          %div
+            %span
+              = "#{:office.l}:"
+            = h(card.office_number)
+        - if !card.fax_number.nil? and !card.fax_number.empty?
+          %div
+            %span
+              = "#{:fax.l}:"
+            = h(card.fax_number)
+        - if !card.mobile_number.nil? and !card.mobile_number.empty?
+          %div
+            %span
+              = "#{:mobile.l}:"
+            = h(card.mobile_number)
+        - if !card.home_number.nil? and !card.home_number.empty?
+          %div
+            %span
+              = "#{:home.l}:"
+            = h(card.home_number)

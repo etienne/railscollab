@@ -1,0 +1,22 @@
+- form_tag user_path(:id => @user.id), :method => :put do
+  = render :partial => 'form'
+  %button.submit{:type => "submit"}= :edit_user.l
+
+- form_tag( avatar_user_path(:id => @user.id), :multipart => true, :method => :put ) do
+  = error_messages_for :user
+  %fieldset
+    %legend= :current_avatar.l
+    - if @user.has_avatar?
+      %img{:alt => "#{h @user.display_name} avatar", :src => @user.avatar_url}/
+      %p= link_to :delete_current_avatar.l, avatar_user_path(:id => @user.id), {:onclick => :avatar_confirm_delete, :method => :delete}
+    - else
+    = :avatar_not_uploaded.l
+  %div
+    %label{:for => "avatarFormAvatar"}
+      = :new_avatar.l
+      %span.label_required *
+    #avatarFormAvatar
+      %input{:name => "user[avatar]", :type => "file"}/
+    - if @user.has_avatar?
+      %p.desc= :avatar_upload_info.l
+  %button.submit{:type => "submit"}= :update_avatar.l
