@@ -1,0 +1,51 @@
+- if not @tasks.empty?
+  #time
+    - @tasks.each do |list|
+      - total_time = list[:tasks].inject(0) { |total, task| total + task[:hours] }
+      - total_billable_time = list[:tasks].inject(0) { |total, task| total + task[:billable_hours] }
+      - total_estimated_time = list[:tasks].inject(0) { |total, task| total + (task[:task].estimated_hours || 0) }
+      - if total_time > 0
+        .timeTaskList
+          %h2
+            = :task_list_hours.l_with_args(:name => h(list[:list].object_name), :hours => total_time)
+            = :billable_hours.l_with_args(:hours => total_time) if total_billable_time > 0
+            = :task_estimated_hours.l_with_args(:hours => total_estimated_time) if total_estimated_time > 0
+          %h4= :task_list_hours_info.l
+          - list[:tasks].each do |task_info|
+          - task = task_info[:task]
+            %h4
+              %span
+                %img{:alt => "projectask", :src => "/themes/#{AppConfig.site_theme}/images/logtypes/projecttasks.gif", :title => "projectask"}/
+              = :task_list_task_hours.l_with_args(:name => h(task.object_name), :hours => task_info[:hours])
+              = :billable_hours.l_with_args(:hours => task_info[:billable_hours]) if task_info[:billable_hours] > 0
+              = :task_estimated_hours.l_with_args(:hours => task.estimated_hours) if task.estimated_hours && task.estimated_hours > 0
+
+            %table.timeLogs.blank
+              %tr
+                %th= :log_date.l
+                %th= :name.l
+                %th= :details.l
+                %th= :hours.l
+              
+              - task_info[:times].each do |time|
+                %tr
+                  %td.timeDate
+                    - if time.running?
+                      = :time_running.l
+                    - else
+                      = format_usertime(time.done_date, "done_date_format#{'_with_year' if time.done_date.year != Time.now.year}")
+                  %td.timeUser
+                    - if time.assigned_to.nil?
+                      ???
+                    - else
+                      = h time.assigned_to.object_name
+                  %td.timeDetails
+                    = h time.name
+                  %td.timeHours
+                    = '*' if time.is_billable
+                    - if time.running?
+                      = seconds_to_time Time.now - time.start_date
+                    - else
+                      = time.hours
+- else
+  %p= :no_times_in_project.l
