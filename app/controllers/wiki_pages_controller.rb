@@ -28,6 +28,10 @@ class WikiPagesController < ApplicationController
   before_filter :check_create_permissions, :only => [:new, :create]
   before_filter :check_update_permissions, :only => [:edit, :update]
   before_filter :check_delete_permissions, :only => :destroy
+  
+  before_filter :set_index_page_actions, :only => :index
+  before_filter :set_show_page_actions, :only => :show
+  before_filter :set_list_page_actions, :only => :list
 
   protected
   def check_create_permissions
@@ -70,5 +74,28 @@ class WikiPagesController < ApplicationController
   def find_sidebar_page
     @wiki_sidebar = wiki_pages.find("sidebar", :scope => @active_project.id.to_s) rescue nil
     @content_for_sidebar = @wiki_sidebar.nil? ? nil : 'wiki_sidebar' 
+  end
+  
+  def set_index_page_actions
+    @page_actions = []
+    if WikiPage.can_be_created_by(@logged_user, @active_project)
+    @page_actions << {:title => :add_page, :url => new_wiki_page_path}
+    end
+    @page_actions << {:title => :all_pages, :url => list_wiki_pages_path}
+  end
+  
+  def set_show_page_actions
+    @page_actions = []
+    if WikiPage.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_page, :url => new_wiki_page_path}
+    end
+    @page_actions << {:title => :all_pages, :url => list_wiki_pages_path}
+  end
+  
+  def set_list_page_actions
+    @page_actions = []
+    if WikiPage.can_be_created_by(@logged_user, @active_project)
+    @page_actions << {:title => :add_page, :url => new_wiki_page_path}
+    end
   end
 end
