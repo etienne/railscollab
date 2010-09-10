@@ -1,0 +1,28 @@
+- message = show
+.message
+  .block
+    - if message.is_private?
+      .private{:title => :private_message.l}
+        %span= :private_message.l
+    .header= link_to (h message.title), message_path(:id => message.id)
+    .content
+      - unless message.created_by.nil?
+        .messageAuthor= :message_created_with_user.l_with_args(                                                         |
+            :time => format_usertime(message.created_on, :message_created_format),                          |
+            :user => link_to( h(message.created_by.display_name), user_path(:id => message.created_by.id))) |
+      - else
+        .messageAuthor= format_usertime(message.created_on, :message_created_format)
+      .messageText
+        = textilize message.text
+        - unless message.additional_text.blank?
+          %p= link_to :read_more.l, message_path(:id => message.id)
+      = render :partial => 'files/list_attached_files', :locals => {:dont_add => @message.nil?, :attached_files => message.attached_files(@logged_user.member_of_owner?), :attached_files_object => message}
+      .messageCommentCount
+        - unless message.comments.empty?
+          %a{:href => "#{message_path(:id => message.id)}#objectComments"}= "#{message.comments.length} #{:comments.l}"
+      - unless tag_list(message).nil?
+        .messageTags
+          %span
+            = "#{:tags.l}:"
+          = tag_list message
+      .messageOptions= action_list actions_for_message(message)

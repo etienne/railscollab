@@ -1,0 +1,3 @@
+- form_tag( messages_path, :multipart => true ) do
+  = render :partial => 'form', :locals => {:is_new => true}
+  %button.submit{:type => "submit"}= :add_message.l
