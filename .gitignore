@@ -1,5 +1,7 @@
 .DS_Store
+.rvmrc
 .bundle
+Gemfile.lock
 config/app_keys.yml
 config/config.yml
 config/database.yml
