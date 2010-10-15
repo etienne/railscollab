@@ -1,0 +1,41 @@
+= error_messages_for :milestone
+%div
+  %label{:for => "milestoneFormName"}
+    = "#{:name.l}:"
+    %span.label_required *
+  = text_field 'milestone', 'name', :id => 'milestoneFormName', :class => 'long'
+
+%div
+  %label{:for => "milestoneFormDesc"}
+    = "#{:description.l}:"
+    %span.label_required *
+  = text_area 'milestone', 'description', :id => 'milestoneFormDesc', :class => 'short', :rows => 10, :cols => 40
+
+%div
+  %label{:for => "milestoneDueDate"}
+    = "#{:due_date.l}:"
+  = date_select 'milestone', 'due_date', :id => 'milestoneDueDate', :class => 'short'
+
+- if @logged_user.member_of_owner?
+  .formBlock
+    %label{:for => "milestoneIsPrivate"}
+      = "#{:private_milestone.l}:"
+      %span.desc= :milestones_private_info.l
+    = yesno_toggle 'milestone', 'is_private', :id => 'milestoneIsPrivate', :class => 'checkbox'
+
+.formBlock
+  %div
+    %label{:for => "milestoneFormAssignedTo"}
+      = "#{:assign_to.l}:"
+    = assign_project_select 'milestone', 'assigned_to_id', @active_project, :id => 'milestoneFormAssignedTo'
+
+%div
+  = check_box_tag 'send_notification', '1', params[:send_notification], :id => 'milestoneFormSendNotification', :class => 'checkbox'
+  %label.checkbox{:for => "milestoneFormSendNotification"}= :send_email_notification_to_user.l
+
+.formBlock
+  %label{:for => "milestoneFormTags"}
+    = "#{:tags.l}:"
+  = text_field 'milestone', 'tags', :id => 'milestoneFormTags', :class => 'long'
+  %br/
+  %span.desc= :tags_info.l
