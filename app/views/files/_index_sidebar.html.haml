@@ -1,0 +1,33 @@
+- if @folders.length > 0
+  .sidebarBlock
+    %h2= :folders.l
+    #sidebarFolderList.blockContent
+      %ul
+        - if !@folder.nil?
+          %li= link_to :all_files.l, files_path
+        - else
+          %li= link_to :all_files.l, files_path, :class => 'selected'
+        - @folders.each do |folder|
+          - if !@folder.nil? and @folder.id == folder.id
+            - selected_class = {:class => 'selected'}
+          - else
+            - selected_class = {}
+          %li
+            = link_to (h folder.name), files_folder_path(:id => folder.id), selected_class
+            - if folder.can_be_edited_by(@logged_user)
+              = link_to render_icon('edit',''), edit_folder_path(:id => folder.id)
+            - if folder.can_be_deleted_by(@logged_user)
+              = link_to render_icon('cancel_gray',''), folder_path(:id => folder.id), :method => :delete, :confirm => :folder_delete_confirmation.l
+      - if @active_project.is_active?
+        %p
+          %a{:href => new_folder_path}= :add_folder.l
+- if @important_files.length > 0
+  .sidebarBlock
+    %h2= :important_files.l
+    .blockContent
+      %ul
+        - @important_files.each do |important_file|
+          %li
+            %a{:href => important_file.object_url}= important_file.filename
+            %br/
+            %span.desc= :important_file_revisions_count.l_with_args(:count => important_file.project_file_revisions.length)

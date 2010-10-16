@@ -1,0 +1,84 @@
+= error_messages_for :file
+- if @file.new_record?
+  .hint
+    .content
+      #selectFileControl
+        %label{:for => "fileFormFile"}
+          = "#{:file.l}:"
+          %span.label_required *
+        %input#fileFormFile{:name => "file_data[file]", :type => "file"}/
+      #selectFolderControl
+        %label{:for => "fileFormFolder"}
+          = "#{:folder.l}:"
+          %span.label_required *
+        = select 'file', 'folder_id', ProjectFolder.select_list(@active_project), {}, {:id => 'fileFormFolder'}
+      %p= :file_upload_info.l_with_args(:max => format_size(AppConfig.max_upload_size))
+- else
+  .hint
+    .header
+      = check_box_tag 'file_data[updated_file]', '1', false, :class => 'checkbox', :id => 'fileFormUpdateFile', :onclick => "file_form_select_update()"
+      %label.checkbox{:for => "fileFormUpdateFile"}= :update_file.l
+    .content
+      #updateFileDescription
+        %p= :file_update_info.l
+      #updateFileForm
+        %p
+          %strong
+            = "#{:existing_file.l}:"
+          %a{:href => @file.download_url}= h @file.filename
+          = "| #{format_size @file.file_size}"
+        %div
+          %label{:for => "fileFormFile"}
+            = "#{:new_file.l}:"
+          %input#fileFormFile{:name => "file_data[file]", :type => "file"}/
+        #revisionControls
+          %div
+            = check_box_tag 'file_data[version_file_change]', '1', false, :class => 'checkbox', :id => 'fileFormVersionChange', :onclick => "file_form_select_revision()"
+            %label.checkbox{:for => "fileFormVersionChange"}= :new_revision.l
+          #fileFormRevisionCommentBlock
+            %label{:for => "fileFormRevisionComment"}
+              = "#{:revision_comment.l}:"
+            = text_area_tag 'file_data[revision_comment]', '', :id => 'fileFormRevisionComment', :class => 'short'
+      :javascript
+        file_form_select_update();
+        file_form_select_revision();
+
+%fieldset
+  %label{:for => "fileFormDescription"}
+    = "#{:description.l}:"
+  = text_area 'file', 'description', :id => 'fileFormDescription', :class => 'short', :rows => 10, :cols => 40
+
+- if @logged_user.member_of_owner?
+  %fieldset
+    %legend= :options.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:private_file.l}:"
+      .optionControl= yesno_toggle 'file', 'is_private', :class => 'yes_no', :id => 'fileFormIsPrivate'
+      .optionDesc= :private_file_info.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:important_file.l}:"
+      .optionControl= yesno_toggle 'file', 'is_important', :class => 'yes_no', :id => 'fileFormIsImportant'
+      .optionDesc= :important_file_info.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:enable_comments.l}:"
+      .optionControl= yesno_toggle 'file', 'comments_enabled', :class => 'yes_no', :id => 'fileFormEnableComments'
+      .optionDesc= :enable_comments_info.l
+    - if AppConfig.allow_anonymous
+      .objectOption
+        .optionLabel
+          %label
+            = "#{:enable_anonymous_comments.l}:"
+        .optionControl= yesno_toggle 'file', 'anonymous_comments_enabled', :class => 'yes_no', :id => 'fileFormEnableAnonymousComments'
+        .optionDesc= :enable_anonymous_comments_info.l
+
+%fieldset
+  %legend= :tags.l
+  = text_field 'file', 'tags', :id => 'fileFormTags', :class => 'long'
+  %br/
+  %span.desc= :tags_info.l
