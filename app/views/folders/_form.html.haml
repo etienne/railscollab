@@ -1,0 +1,6 @@
+= error_messages_for :folder
+%div
+  %label{:for => "folderFormName"}
+    = "#{:name.l}:"
+    %span.label_required *
+  = text_field 'folder', 'name', :id => 'folderFormName'

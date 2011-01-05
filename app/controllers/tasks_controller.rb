@@ -51,7 +51,7 @@ class TasksController < ApplicationController
     rescue
       return error_status(true, :invalid_task)
     end
-    
+
     respond_to do |format|
       format.html { }
       format.js
@@ -64,6 +64,11 @@ class TasksController < ApplicationController
   def new
     return error_status(true, :insufficient_permissions) unless (ProjectTask.can_be_created_by(@logged_user, @task_list))
     
+    @page_actions = []
+    if ProjectTaskList.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_task_list, :url=> new_task_list_path}
+    end
+    
     @task = @task_list.project_tasks.build
 
     respond_to do |format|
@@ -74,6 +79,11 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+    @page_actions = []
+    if ProjectTaskList.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_task_list, :url=> new_task_list_path}
+    end
+    
     begin
       @task = @task_list.project_tasks.find(params[:id])
     rescue

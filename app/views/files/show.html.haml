@@ -1,0 +1,61 @@
+- @page_actions = []
+- if ProjectFile.can_be_created_by(@logged_user, @active_project)
+  - @page_actions << {:title => :add_file, :url => new_file_path}
+- if ProjectFolder.can_be_created_by(@logged_user, @active_project)
+  - @page_actions << {:title => :add_folder, :url => new_folder_path}
+
+#fileDetails.block
+  - if @file.is_private
+    .private{:title => :private_file.l}
+      %span= :private_file.l
+  .header= h @file.filename
+  .content
+    #fileIcon
+      %img{:alt => h(@file.filename), :src => @file.filetype_icon_url}/
+    #fileInfo
+      - if @file.description
+        #fileDescription= textilize @file.description
+      - if !@folder.nil?
+        #fileFolder
+          %span.propertyName
+            = "#{:folder.l}:"
+          %a{:href => @folder.object_url}= h @folder.name
+      - if !@last_revision.nil?
+        #fileLastRevision
+          %span.propertyName
+            = "#{:last_revision.l}:"
+          - if !@last_revision.created_by.nil?
+            = :revision_created_by.l_with_args(:number => @last_revision.revision_number,                                     |
+              :user => "<a href=\"#{@last_revision.created_by.object_url}\">#{h @last_revision.created_by.display_name}</a>", |
+              :date => format_usertime(@last_revision.created_on, :revision_date_format_short))                               |
+          - else
+            = :revision_created_by.l_with_args(:number => @last_revision.revision_number,       |
+              :date => format_usertime(@last_revision.created_on, :revision_date_format_short)) |
+    #fileTags
+      %span.propertyName
+        = "#{:tags.l}:"
+      = tag_list @file
+    .fileOptions= action_list actions_for_file(@file, @last_revision)
+.clear
+- if !@revisions.empty?
+  #revisions
+    %h2= :revisions.l
+    - @revisions.each do |revision|
+      %div{:class => "revision #{cycle('odd', 'even')} #{'lastRevision' if revision == @last_revision}", :id => "revision#{revision.id}"}
+        .revisionName
+          - if !revision.created_by.nil?
+            = :revision_created_by.l_with_args(:number => revision.revision_number,                               |
+              :user => "<a href=\"#{revision.created_by.object_url}\">#{h revision.created_by.display_name}</a>", |
+              :date => format_usertime(revision.created_on, :revision_date_format))                               |
+          - else
+            = :revision_created_by.l_with_args(:number => revision.revision_number, |
+              :date => format_usertime(revision.created_on, :revision_date_format)) |
+        - if !revision.comment.empty?
+          .revisionComment= textilize revision.comment
+        .revisionOptions= action_list actions_for_file_revision(@file, revision)
+
+/ Comments
+#fileComments
+  = render :partial => 'comments/object_comments', :locals => {:comments => @logged_user.member_of_owner? ? @file.comments : @file.comments.public}
+  - if @file.comment_can_be_added_by(@logged_user)
+    = render :partial => 'comments/add_form', :locals => {:commented_object => @file}

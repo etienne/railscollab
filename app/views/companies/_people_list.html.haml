@@ -56,7 +56,7 @@
           %img{:alt => "#{h user_card.display_name} avatar", :src => user_card.avatar_url}/
 
       .cardData
-        %h3= link_to ((h user_card.display_name), user)
+        %h3= link_to(h(user_card.display_name), user)
         - if user_card.title?
           .detailsTitle
             = h user_card.title

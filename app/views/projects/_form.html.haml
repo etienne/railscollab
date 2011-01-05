@@ -1,0 +1,19 @@
+= error_messages_for :project
+%div
+  %label{:for => "projectFormName"}
+    = "#{:name.l}:"
+    %span.label_required *
+  = text_field 'project', 'name', :id => 'projectFormName', :class => 'long'
+%div
+  %label{:for => "projectPriority"}
+    = "#{:priority.l}:"
+    %span.label_required *
+  = text_field 'project', 'priority', :id => 'projectPriority', :class => 'long'
+%div
+  %label{:for => "projectFormDescription"}
+    = "#{:description.l}:"
+  = text_area 'project', 'description', :id => 'projectFormDescription', :class => 'short', :rows => 10, :cols => 40
+%div
+  %label
+    = "#{:project_show_description_in_overview.l}:"
+  = yesno_toggle 'project', 'show_description_in_overview', :id => 'projectFormShowDescription', :class => 'yes_no'

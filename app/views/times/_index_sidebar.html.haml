@@ -1,0 +1,5 @@
+.sidebarBlock
+  %h2= :csv_export.l
+  .blockContent
+    %a.csvExport{:href => @logged_user.time_export_url(@active_project, 'csv')}= :csv.l
+    %p= :csv_export_times_info.l

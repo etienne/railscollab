@@ -1,0 +1,50 @@
+- if not @times.empty?
+  #time
+    #timesPaginationTop= pagination_links "#{times_path}?", @pagination unless @pagination.length <= 1
+    %table.timeLogs.blank
+      %tr
+        %th= :log_date.l
+        %th= :person.l
+        %th= :hours.l
+        %th= :summary.l
+        %th
+      - time_now = Time.now
+      - @times.each do |time|
+        - class_name = if time.running? 
+          - 'timeRunning'
+        - elsif time.is_today?
+          - 'timeToday'
+        - elsif time.is_yesterday?
+          - 'timeYesterday'
+        - else
+          - 'timeOlder'
+
+        %tr{:class => class_name}
+          %td.timeDate
+            - if time.running?
+              = :time_running.l
+            - else
+              = format_usertime(time.done_date, "done_date_format#{'_with_year' if time.done_date.year != Time.now.year}")
+          %td.timeUser
+            - if time.assigned_to.nil?
+              ???
+            - else
+              = h time.assigned_to.object_name
+          %td.timeHours
+            = '*' if time.is_billable
+            - if time.running?
+              = seconds_to_time Time.now - time.start_date
+            - else
+              = time.hours
+          %td.timeDetails
+            - if !time.open_task.nil?
+              %span
+                %img{:alt => "projectask", :src => "/themes/#{AppConfig.site_theme}/images/logtypes/projecttasks.gif", :title => "projectask"}/
+              = link_to(time.name, time.open_task.object_url, :class => 'assignedTo')
+            - else
+              = h time.name
+          %td.timeEdit
+            = action_list actions_for_time(time)
+    #timesPaginationBottom= pagination_links "#{times_path}?", @pagination unless @pagination.length <= 1
+- else
+  %p= :no_times_in_project.l

@@ -1,0 +1,3 @@
+- form_tag( message_path(:id => @message.id), :method => :put, :multipart => true ) do
+  = render :partial => 'form', :locals => {:is_new => false}
+  %button.submit{:type => "submit"}= :edit_message.l

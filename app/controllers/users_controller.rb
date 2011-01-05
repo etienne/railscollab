@@ -282,6 +282,14 @@ class UsersController < ApplicationController
   def show
     return error_status(true, :insufficient_permissions) unless (@user.can_be_viewed_by(@logged_user))
     
+    @page_actions = []
+    if @user.profile_can_be_updated_by(@logged_user)
+      @page_actions += [{:title => :edit, :url => edit_user_path(:id => @user.id)}]
+    end
+    if @user.permissions_can_be_updated_by(@logged_user)
+      @page_actions << {:title => :update_permissions, :url => permissions_user_path(:id => @user.id)}
+    end
+    
     respond_to do |format|
       format.html { }
       format.js {}

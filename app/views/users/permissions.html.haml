@@ -1,0 +1,10 @@
+:javascript
+  permissions_form_items_set(['#{@permissions.keys.join('\',\'')}']);
+
+- unless @projects.empty?
+  #userPermissions
+    - form_tag permissions_user_path(:id => @user.id), :method => :put do
+      #userProjects
+        %table.blank
+          = render :partial => 'projects/permissions', :locals => {:user => @user}, :collection => @projects
+        %button.submit{:type => "submit"}= :update_permissions.l

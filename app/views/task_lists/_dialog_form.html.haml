@@ -1,0 +1,28 @@
+- form_tag task_lists_path :method => :post do
+  = error_messages_for :task_list
+  %div
+    %label{:for => "taskListFormName"}
+      = "#{:name.l}:"
+      %span.label_required *
+    = text_field 'task_list', 'name', :id => 'taskListFormName', :class => 'long'
+
+  %div
+    %label{:for => "taskListFormDescription"}
+      = "#{:description.l}:"
+    = text_area 'task_list', 'description', :id => 'taskListFormDescription', :class => 'short', :rows => 10, :cols => 40
+
+  .formBlock
+    %label{:for => "taskListFormMilestone"}
+      = "#{:milestone.l}:"
+    = select 'task_list', 'milestone_id', select_milestone_options(@active_project), {}, {:class => 'select_milestone', :id => 'taskListFormMilestone'}
+
+  - if @logged_user.member_of_owner?
+    .formBlock
+      %label{:for => "taskListFormIsPrivate"}
+        = "#{:is_private_list.l}:"
+        %span.desc= :is_private_list_info.l
+      = yesno_toggle 'task_list', 'is_private', :id => 'taskListFormIsPrivate', :class => 'yes_no'
+
+  %button.submit{:type => "submit"}= :add_task_list.l
+  %a.cancel{:href => "#"}
+    = :cancel.l

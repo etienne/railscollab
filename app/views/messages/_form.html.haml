@@ -1,0 +1,100 @@
+= error_messages_for :message
+%div
+  %label{:for => "messageFormTitle"}
+    = "#{:title.l}:"
+    %span.label_required *
+  = text_field 'message', 'title', :id => 'messageFormTitle', :class => 'title'
+%div
+  %label{:for => "messageFormText"}
+    = "#{:text.l}:"
+    %span.label_required *
+  = text_area 'message', 'text', :id => 'messageFormText', :class => 'editor'
+%div
+  - if @message.additional_text?
+    - expand_style = 'display:none;'
+    - expand_sstyle = expand_style
+    - compact_style = 'display:block;'
+    - compact_sstyle = 'display:inline'
+  - else
+    - compact_style = 'display:none;'
+    - compact_sstyle = compact_style
+    - expand_style = 'display:block;'
+    - expand_sstyle = 'display:inline'
+  %label{:for => "messageFormAdditionalText"}
+    = :additional_text.l
+    (
+    %a#messageFormAdditionalTextToggle{:href => "#"}>
+      %span#messageFormAdditionalTextExpand{:style => expand_sstyle}= :expand.l
+      %span#messageFormAdditionalTextCollapse{:style => compact_sstyle}= :collapse.l
+    ):
+    %span.desc
+      \- #{:additional_text_info.l}
+  = text_area 'message', 'additional_text', :id => 'messageFormAdditionalText', :class => 'editor', :style => compact_style
+%fieldset
+  %legend= :milestone.l
+  = select 'message', 'milestone_id', select_milestone_options(@active_project), {}, {:class => 'select_milestone', :id => 'messageFormMilestone'}
+%fieldset
+  %legend= :category.l
+  = select 'message', 'category_id', ProjectMessageCategory.select_list(@active_project), {}, {:class => 'select_milestone', :id => 'messageFormCategory'}
+- if @logged_user.member_of_owner?
+  %fieldset
+    %legend= :options.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:private_message.l}:"
+      .optionControl= yesno_toggle 'message', 'is_private', :class => 'yes_no', :id => 'messageFormIsPrivate'
+      .optionDesc= :private_message_info.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:important_message.l}:"
+      .optionControl= yesno_toggle 'message', 'is_important', :class => 'yes_no', :id => 'messageFormIsImportant'
+      .optionDesc= :important_message_info.l
+    .objectOption
+      .optionLabel
+        %label
+          = "#{:enable_comments.l}:"
+      .optionControl= yesno_toggle 'message', 'comments_enabled', :class => 'yes_no', :id => 'messageFormEnableComments'
+      .optionDesc= :enable_comments_info.l
+    - if AppConfig.allow_anonymous
+      .objectOption
+        .optionLabel
+          %label
+            = "#{:enable_anonymous_comments.l}:"
+        .optionControl= yesno_toggle 'message', 'anonymous_comments_enabled', :class => 'yes_no', :id => 'messageFormEnableAnonymousComments'
+        .optionDesc= :enable_anonymous_comments_info.l
+%fieldset
+  %legend= :tags.l
+  = text_field 'message', 'tags', :id => 'messageFormTags', :class => 'long'
+  %br/
+  %span.desc= :tags_info.l
+- if @message.new_record?
+  %fieldset#emailNotification
+    %legend= :email_notification.l
+    %p= :email_notification_info.l
+    - @active_project.companies.each do |company|
+      :javascript
+        notify_form_companies.company_#{company.id} = {
+          id          : #{company.id},
+          users       : []
+        };
+      - users_on_project = company.users_on_project(@active_project)
+      .companyDetails
+        .companyName
+          = check_box_tag "notify_company[]", "#{company.id}", false, {:id => "notifyCompany#{company.id}", :class => 'checkbox', :onclick => "notify_form_select_company(#{company.id})"}
+          %label.checkbox{:for => "notifyCompany#{company.id}"}= h company.name
+        .companyMembers
+          %ul
+            - users_on_project.each do |user|
+              %li
+                = check_box_tag "notify_user[]", "#{user.id}", false, {:id => "notifyUser#{user.id}", :class => 'checkbox', :onclick => "notify_form_select(#{company.id}, #{user.id})"}
+                %label.checkbox{:for => "notifyUser#{user.id}"}= h user.display_name
+              :javascript
+                notify_form_companies.company_#{company.id}.users.push(#{user.id});
+                :javascript
+        notify_form_set_company(#{company.id});
+    - if ProjectFile.can_be_created_by(@logged_user, @active_project)
+      = render :partial => 'files/attach_file'
+      :javascript
+        file_form_attach_init(#{AppConfig.max_attachments});

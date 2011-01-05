@@ -1,0 +1,30 @@
+- if @companies.length > 0
+  - form_tag permissions_project_path(:id => @active_project.id), :method => :put do
+    #projectCompanies
+      - @companies.each do |company|
+        - if company.users.length > 0
+          .projectCompany
+            .projectCompanyLogo
+              %img{:alt => h(company.name), :src => company.logo_url}/
+
+            .projectCompanyMeta
+              .projectCompanyTitle
+                - if company.is_owner?
+                  %label= h company.name
+                  %input{:checked => "checked", :name => "project_company[]", :type => "hidden", :value => company.id}/
+                - else
+                  = check_box_tag "project_company[]", "#{company.id}", company.is_part_of(@active_project), {:id => "projectCompany#{@active_project.id}_#{company.id}", :class => 'checkbox', :onclick => "permissions_form_project_select_company('#{@active_project.id}_#{company.id}')"}
+                  %label.checkbox{:for => "project_company[]"}= h company.name
+              - unless company.is_part_of(@active_project)
+                .projectCompanyUsers{ :id => "projectCompanyUsers#{@active_project.id}_#{company.id}" }
+                  %table.blank
+                    - unless company.users.empty?
+                      = render :partial => 'projects/permissions_users', :locals => {:project => @active_project, :company => company}, :collection => company.users
+                    - else
+                      %tr
+                        %td{:colspan => "2"}= :company_no_users.l
+                .clear
+    %button.submit{:type => "submit"}= :update_people.l
+
+:javascript
+  permissions_form_items_set(['#{@permissions.keys.join('\',\'')}']);

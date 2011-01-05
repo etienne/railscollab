@@ -1,0 +1,41 @@
+.sidebarBlock
+  %h2= :message_subscribers.l
+  .blockContent
+    %p= :message_subscribers_email_notification_info.l
+    - if @subscribers.length > 0
+      %ul
+        - @subscribers.each do |subscriber|
+          - if subscriber.id == @logged_user.id
+            %li
+              = link_to (h subscriber.display_name), user_path(:id => subscriber.id)
+              = "(#{link_to :message_unsubscribe.l, unsubscribe_message_path(:id => @message.id), {:method => :put, :confirm => :message_unsubscription_confirmation.l}})"
+          - else
+            %li= link_to h(subscriber.display_name), user_path(:id => subscriber.id)
+    - else
+      %p= :no_subscribers.l
+    - if @message.can_subscribe(@logged_user) and !@subscribers.include?(@logged_user)
+      %p= link_to :message_subscribe.l, subscribe_message_path(:id => @message.id), {:method => :put, :confirm => :message_subscription_confirmation.l}
+- if @message.options_can_be_changed_by(@logged_user)
+  .sidebarBlock
+    %h2= :options.l
+    .blockContent
+      - form_tag message_path(:id => @message.id), :method => :put do
+        .formBlock
+          %div
+            %label
+              = "#{:private_message.l}:"
+            = yesno_toggle 'message', 'is_private', :class => 'yes_no', :id => 'messageFormIsPrivate'
+          %div
+            %label
+              = "#{:important_message.l}:"
+            = yesno_toggle 'message', 'is_important', :class => 'yes_no', :id => 'messageFormIsImportant'
+          %div
+            %label
+              = "#{:enable_comments.l}:"
+            = yesno_toggle 'message', 'comments_enabled', :class => 'yes_no', :id => 'messageFormEnableComments'
+          %div
+            %label
+              = "#{:enable_anonymous_comments.l}:"
+            = yesno_toggle 'message', 'anonymous_comments_enabled', :class => 'yes_no', :id => 'messageFormEnableAnonymousComments'
+        %button.submit{:type => "submit"}= :update_options.l
+        %p= link_to :edit_message_sidebar_link.l, edit_message_path(:id => @message.id)

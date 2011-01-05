@@ -27,6 +27,11 @@ class ProjectsController < ApplicationController
   after_filter  :user_track, :only => [:index, :search, :people]
 
   def index
+    @page_actions = []
+    if Project.can_be_created_by(@logged_user)
+      @page_actions << {:title => :add_project, :url => new_project_path}
+    end
+    
     @projects = @logged_user.is_admin ? Project.find(:all) : @logged_user.projects
     respond_to do |format|
       format.html { render :layout => 'administration' }
@@ -37,6 +42,20 @@ class ProjectsController < ApplicationController
   end
   
   def show
+    @page_actions = []
+    if ProjectMessage.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_message, :url=> new_message_path(:active_project => @active_project.id)}
+    end
+    if ProjectTaskList.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_task_list, :url=> new_task_list_path(:active_project => @active_project.id)}
+    end
+    if ProjectMilestone.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_milestone, :url=> new_milestone_path(:active_project => @active_project.id)}
+    end
+    if ProjectFile.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_file, :url=> new_file_path(:active_project => @active_project.id)}
+    end
+    
     include_private = @logged_user.member_of_owner?
 
     respond_to do |format|
@@ -100,6 +119,11 @@ class ProjectsController < ApplicationController
 
   def people
     return error_status(true, :insufficient_permissions) unless @project.can_be_seen_by(@logged_user)
+    
+    @page_actions = []
+    if @project.can_be_managed_by(@logged_user)
+      @page_actions << {:title => :permissions, :url=> permissions_project_path(:id => @active_project.id)}
+    end
 
     @project_companies = @project.companies
 
@@ -382,4 +406,5 @@ protected
      
      return true
   end
+  
 end

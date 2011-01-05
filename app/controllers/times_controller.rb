@@ -29,6 +29,14 @@ class TimesController < ApplicationController
 
   def index
     return error_status(true, :insufficient_permissions) unless @logged_user.has_permission(@active_project, :can_manage_time)
+    
+    @page_actions = []
+    if ProjectTime.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_time, :url => new_time_path}
+    end
+    @page_actions << {:title => :sort_by_finished_date, :url => "#{times_path}?orderBy=done_date"}
+    @page_actions << {:title => :sort_by_hours, :url => "#{times_path}?orderBy=hours"}
+    @page_actions << {:title => :report_by_task, :url => "#{by_task_times_path}?orderBy=hours"}
       
     unless @logged_user.has_permission(@active_project, :can_manage_time)
       error_status(true, :insufficient_permissions)
@@ -62,6 +70,15 @@ class TimesController < ApplicationController
 
   def by_task
     return error_status(true, :insufficient_permissions) unless @logged_user.has_permission(@active_project, :can_manage_time)
+    
+    @page_actions = []
+    if ProjectTime.can_be_created_by(@logged_user, @active_project)
+      @page_actions << {:title => :add_time, :url => new_time_path}
+    end
+    @page_actions << {:title => :sort_by_finished_date, :url => "#{times_path}?orderBy=done_date"}
+    @page_actions << {:title => :sort_by_hours, :url => "#{times_path}?orderBy=hours"}
+    @page_actions << {:title => :report_by_task, :url => "#{by_task_times_path}?orderBy=hours"}
+    
 
     respond_to do |format|
       format.html {

@@ -1,0 +1,47 @@
+- if @important_messages.length > 0
+  .sidebarBlock
+    %h2= :important_messages.l
+    .blockContent
+      %ul.listWithDetails
+        - @important_messages.each do |important_message|
+          %li
+            = link_to(h(important_message.title), message_path(:id => important_message.id, :active_project => @active_project.id))
+            %br/
+            %span.desc= :important_messages_comments_count.l_with_args(:count => important_message.comments.length)
+- if @important_files.length > 0
+  .sidebarBlock
+    %h2= :important_files.l
+    .blockContent
+      %ul
+        - @important_files.each do |important_file|
+          %li
+            %a{:href => important_file.object_url}= h important_file.filename
+            %br/
+            %span.desc= :important_file_revisions_count.l_with_args(:count => important_file.project_file_revisions.length)
+- if @active_project.can_be_edited_by(@logged_user) or @active_project.status_can_be_changed_by(@logged_user)
+  .sidebarBlock
+    - if @active_project.is_active?
+      %h2= :project_status_header.l_with_args(:status => :active.l)
+    - else
+      %h2= :project_status_header.l_with_args(:status => :completed.l)
+    .blockContent
+      %ul
+        - if @active_project.can_be_edited_by(@logged_user)
+          %li= link_to(:edit_project_details.l, edit_project_path(:id => @active_project.id))
+        - if @active_project.status_can_be_changed_by(@logged_user)
+          - if @active_project.is_active?
+            %li= link_to(:mark_project_as_finished.l, complete_project_path(:id => @active_project.id), :method => :put, :confirm => :mark_project_as_finished_confirmation.l)
+          - else
+            %li= link_to(:mark_project_as_active.l, open_project_path(:id => @active_project.id), :method => :put, :confirm => :mark_project_as_active_confirmation.l)
+- if @project_companies.length > 0
+  .sidebarBlock
+    %h2= :involved_companies.l
+    .blockContent
+      %ul
+        - @project_companies.each do |project_company|
+          %li= link_to(h(project_company.name), company_path(:id => project_company.id))
+  .sidebarBlock
+    %h2= :update_feeds.l
+    .blockContent
+      %ul#listOfRssFeeds
+        %li= link_to(:recent_activities.l, @logged_user.recent_activity_feed_url(@active_project, 'rss'))

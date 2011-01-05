@@ -1,0 +1,17 @@
+.sidebarBlock
+  %h2= :calendar_feeds.l
+  .blockContent
+    %a.iCalSubscribe{:href => @logged_user.milestone_feed_url(@active_project, 'ics')}= :ical.l
+    %p= :calendar_feed_milestone_info.l
+    %p= :calendar_feeds_password_warning.l
+- if @completed_milestones.length > 0
+  .sidebarBlock
+    %h2= :completed_milestones.l
+    .blockContent
+      %ul.listWithDetails
+        - @completed_milestones.each do |milestone|
+          %li
+            = link_to (h milestone.name), milestone_path(:id => milestone.id)
+            - if not milestone.completed_by.nil?
+              %br/
+              %span.desc= :milestone_completed_time_with_user.l_with_args(:time => format_usertime(milestone.completed_on, :milestone_completed_time_format), :user => (link_to milestone.completed_by.display_name, user_path(:id => milestone.completed_by.id)))

@@ -1,0 +1,19 @@
+- if @options.empty?
+  %p= :config_category_empty.l
+- else
+  - form_tag configuration_path(@category), :method => :put do
+    #configCategoryOptions
+      - @options.each do |option|
+        %div{:class => "configCategoryOption #{cycle('odd', 'even')}", :id => "configCategoryOption_#{option.name}"}
+          .configOptionInfo
+            .configOptionLabel
+              %label
+                = "#{h(option.display_name)}:"
+            - option_description = option.display_description.strip
+            - if !option_description.empty?
+              .configOptionDescription.desc= h(option_description)
+          .configOptionControl= option.render("options[#{option.name}]", {})
+          .clear
+    %button.submit{:type => "submit"}= :save.l
+    &nbsp;
+    %button{:type => "reset"}= :reset.l

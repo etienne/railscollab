@@ -1,0 +1,8 @@
+- form_for(@wiki_page, :url => wiki_page_path(:id => @wiki_page)) do |form|
+  = render :partial => form
+  .buttons
+    %button.submit{:type => "submit"}= :edit_page.l
+    = preview_button
+
+#preview
+  = render @wiki_page

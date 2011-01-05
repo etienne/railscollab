@@ -1,0 +1,15 @@
+- @additional_stylesheets ||= []
+- @additional_stylesheets << 'project/attach_files'
+- if !attached_files.empty? or (!dont_add and attached_files_object.file_can_be_added_by(@logged_user))
+  .objectFiles
+    %ul
+      - attached_files.each do |attached_file|
+        %li
+          %a{:href => attached_file.download_url}
+            %span= h attached_file.filename
+            = "(#{format_size attached_file.file_size})"
+          = action_list actions_for_attached_files(attached_file, attached_files_object)
+    - if !dont_add and attached_files_object.file_can_be_added_by(@logged_user)
+      %p
+        \&raquo; 
+        = link_to :attach_files.l, attach_file_path(:object_type => attached_files_object.class.to_s , :object_id => attached_files_object.id)

@@ -1,0 +1,16 @@
+- unless @late_milestones.empty? and @calendar_milestones.empty? and @upcoming_milestones.empty?
+  - unless @late_milestones.empty?
+    #lateMilestones
+      %h2= :late_milestones.l
+      = render :partial => 'show', :collection => @late_milestones
+  - unless @upcoming_milestones.empty?
+    #upcomingMilestones
+      %h2= :upcoming_milestones.l
+      - unless @calendar_milestones.empty?
+        %h3= :due_in_next_n_days.l_with_args(:num => 14)
+        #milestoneCalendar
+          = render :partial => 'calendar'
+      %h3= :all_upcoming_milestones.l
+      = render :partial => 'show', :collection => @upcoming_milestones
+- else
+  %p= :no_active_milestones_in_project.l
