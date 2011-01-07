@@ -1,7 +1,7 @@
 .DS_Store
+.autotest
 .rvmrc
 .bundle
-Gemfile.lock
 config/app_keys.yml
 config/config.yml
 config/database.yml
