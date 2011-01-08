@@ -1,16 +1,19 @@
 body {
   text-align: left;
+	background-color: #f7f7f7;
 }
 
-#wrapper {
-  text-align: center;
+#headerWrapper {
+  background: #403f40 url("../../images/layout/header-bg.png") repeat-x bottom;
 }
 
 #header {
   width: 940px;
+  color: #666;
   margin: 0 auto;
   padding-top: 10px;
   text-align: left;
+  text-shadow: black 0 -1px 0;
 }
 
 #header h1 {
@@ -28,6 +31,10 @@ body {
 #header h1 a:hover {
   border: 0;
   background: transparent;
+}
+
+#header a {
+  color: #bbb;
 }
 
 #systemNoticesWrapper {
@@ -147,7 +154,7 @@ body {
 #tabs ul li a {
   border: 0;
   display: block;
-  padding: 6px 12px;
+  padding: 8px 12px;
   text-align: center;
   font-size: 13px;
 	font-weight: bold;
@@ -162,13 +169,15 @@ body {
 }
 
 #tabs ul li.active a {
-	background-color: #444;
-  color: white;
-}
-
-#tabs ul li.active a:hover {
-  color: white;
-  text-decoration: none;
+	background-color: white;
+  color: #404040;
+  text-shadow: none;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 /** Crumbs **/
@@ -226,6 +235,7 @@ body {
 }
 
 #searchBox {
+  float: right;
   padding: 4px 0;
   text-align: right;
 }
@@ -249,8 +259,8 @@ body {
 /** Content **/
 
 #outerContentWrapper {
+  background: url("../../images/layout/content-back.png") repeat-x;
   clear: both;
-	background: url("../../images/layout/content-back.png") repeat-x;
 }
 
 #innerContentWrapper {
@@ -269,7 +279,6 @@ body {
 
 #pageContent {
   padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
 }
 
 #content {
@@ -338,7 +347,7 @@ body {
 
 #footer {
   clear: both;
-  margin: 10px auto;
+  margin: 14px auto;
   padding: 0 0 10px 0;
   width: 900px;
   text-align: left;
