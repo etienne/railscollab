@@ -114,12 +114,6 @@ general:
     comment: ""
     order: 8
     
-  site_theme:
-    handler: ThemeConfigHandler
-    default: "default"
-    comment: ""
-    order: 9
-  
   # Localisation
   default_language: 
     handler: StringConfigHandler

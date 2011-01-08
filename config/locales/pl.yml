@@ -669,8 +669,6 @@ pl:
   option_site_name_description: "Ta informacja bedzie wyświetlana w oknie przegladarki"
   option_site_url_name: "Adres URL strony"
   option_site_url_description: "Bazowy URL na którym hostowana jest ten RailsCollab"
-  option_site_theme_name: "Tło strony"
-  option_site_theme_description: "Tło używane do wyświetlania zawartości"
   option_default_project_folders_name: "Foldery domyślne"
   option_default_project_folders_description: "Foldery, które będą tworzone podczas tworzenia nowego projektu. Każdy nowe folder powinien być w osobnej linijce. Podowjone i puste linie będą pomijane."
   option_default_project_message_categories_name: "Domyślne kategorie wiadomości"

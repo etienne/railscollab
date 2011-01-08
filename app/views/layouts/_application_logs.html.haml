@@ -1,6 +1,6 @@
 %tr{:class => (application_logs.is_today? ? 'logToday' : application_logs.is_yesterday? ? 'logYesterday' : 'logOlder')}
   %td.logTypeIcon
-    %img{:alt => application_logs.rel_object_type, :src => "/themes/#{AppConfig.site_theme}/images/logtypes/#{application_logs.rel_object_type.downcase}s.gif", :title => application_logs.rel_object_type}/
+    %img{:alt => application_logs.rel_object_type, :src => "/images/logtypes/#{application_logs.rel_object_type.downcase}s.gif", :title => application_logs.rel_object_type}/
   %td.logDetails
     %span
       - if not ['Comment', 'ProjectMessage'].include?(application_logs.rel_object_type)

@@ -646,8 +646,6 @@ es:
   option_site_name_description: "Éste valor será mostrado como el nombre del sitio en la pizarra"
   option_site_url_name: "URL del sitio"
   option_site_url_description: "La URL base donde RailsCollab está hospedado"
-  option_site_theme_name: "Tema del sitio"
-  option_site_theme_description: "El tema usado para mostrar el contenido"
   option_default_project_folders_name: "Carpetas por defecto"
   option_default_project_folders_description: "Las carpetas que se crearán automáticamente cuando se cree un proyecto. Cada carpeta debe ir en una línea nueva. Las duplicadas o vacías se ignorarán"
   option_default_project_message_categories_name: "Categoría por defecto de los mensajes"

@@ -39,7 +39,7 @@
           %td.timeDetails
             - if !time.open_task.nil?
               %span
-                %img{:alt => "projectask", :src => "/themes/#{AppConfig.site_theme}/images/logtypes/projecttasks.gif", :title => "projectask"}/
+                %img{:alt => "projectask", :src => "/images/logtypes/projecttasks.gif", :title => "projectask"}/
               = link_to(time.name, time.open_task.object_url, :class => 'assignedTo')
             - else
               = h time.name

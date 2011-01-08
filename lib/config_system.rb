@@ -78,23 +78,6 @@ module ConfigSystem
     end
   end
   
-  def self.post_init  
-    # Following for themeable assets
-    ActionView::Helpers::AssetTagHelper.module_eval do
-       alias_method :av_image_path, :image_path
-       def image_path(source)
-         av_image_path("/themes/#{AppConfig.site_theme}/images/#{source}")
-       end
-       alias_method :path_to_image, :image_path
-       
-       alias_method :av_stylesheet_path, :stylesheet_path
-       def stylesheet_path(source)
-         av_stylesheet_path("/themes/#{AppConfig.site_theme}/stylesheets/#{source}")
-       end
-       alias_method :path_to_stylesheet, :stylesheet_path
-    end    
-  end
-  
   def self.load_overrides
     begin
       override = OpenStruct.new(YAML.load_file("#{RAILS_ROOT}/config/config.override.yml"))

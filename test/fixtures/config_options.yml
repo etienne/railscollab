@@ -1,13 +1,4 @@
 --- 
-config_option_18: 
-  name: site_theme
-  category_name: general
-  id: "18"
-  value: default
-  config_handler_class: ThemeConfigHandler
-  option_order: "9"
-  is_system: f
-  dev_comment: ""
 config_option_6: 
   name: asset_hosts_url
   category_name: general

@@ -15,7 +15,7 @@
           - task = task_info[:task]
             %h4
               %span
-                %img{:alt => "projectask", :src => "/themes/#{AppConfig.site_theme}/images/logtypes/projecttasks.gif", :title => "projectask"}/
+                %img{:alt => "projectask", :src => "/images/logtypes/projecttasks.gif", :title => "projectask"}/
               = :task_list_task_hours.l_with_args(:name => h(task.object_name), :hours => task_info[:hours])
               = :billable_hours.l_with_args(:hours => task_info[:billable_hours]) if task_info[:billable_hours] > 0
               = :task_estimated_hours.l_with_args(:hours => task.estimated_hours) if task.estimated_hours && task.estimated_hours > 0

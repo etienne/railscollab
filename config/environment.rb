@@ -50,8 +50,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-ConfigSystem.post_init
-
 # Include your application configuration below
 
 # Merge database & config.yml into AppConfig
