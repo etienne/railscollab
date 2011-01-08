@@ -20,8 +20,6 @@
 
 class ProjectsController < ApplicationController
 
-  layout :project_layout
-
   before_filter :process_session
   before_filter :obtain_project, :except => [:index, :new, :create]
   after_filter  :user_track, :only => [:index, :search, :people]
