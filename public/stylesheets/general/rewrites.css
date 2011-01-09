@@ -245,8 +245,8 @@ table.blank th, table.blank td {
 
 .important {
   border-color: red;
-  /* background: #FFB0B0; */
-  background-color: #FFBFBF;
+  margin: 0;
+  background: #cdbc4e url("../../images/layout/important-bg.png") repeat-x top;
 }
 
 .important .header {
