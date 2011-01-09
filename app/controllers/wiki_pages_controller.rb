@@ -17,8 +17,6 @@
 #++
 
 class WikiPagesController < ApplicationController
-  layout 'project_website'
-
   before_filter :process_session
   before_filter :set_created_by, :only => [:create, :update]
   before_filter :find_sidebar_page, :only => [:index, :show]

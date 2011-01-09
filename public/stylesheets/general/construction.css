@@ -8,18 +8,26 @@ body {
 }
 
 #header {
-  width: 940px;
-  color: #666;
+  width: 900px;
+  color: #aaa;
   margin: 0 auto;
-  padding-top: 10px;
+  padding: 10px 20px 0;
   text-align: left;
   text-shadow: black 0 -1px 0;
 }
 
+#header a.home {
+  font-size: 11px;
+  color: #777;
+}
+
+#header a.home:hover {
+  color: #aaa;
+}
+
 #header h1 {
-  float: left;
   margin: 0;
-  padding: 10px 0 10px 10px;
+  padding: 16px 0 6px 0;
   border: 0;
 }
 
@@ -62,12 +70,9 @@ body {
 }
 
 #userboxWrapper {
-  margin-left: 700px;
+  float: right;
   color: #666;
   font-size: 10px; 
-}
-
-#userbox {
 }
 
 #userbox ul {
@@ -111,29 +116,31 @@ body {
 }
 
 .action, .ajax_action, button.submit {
-	background: url("../../images/layout/button-bg.png") repeat-x;
-  padding: 6px 10px;
-	text-shadow: white 0 1px 0;
-	border: 1px solid #ccc;
+	background: #1a1a1a url("../../images/layout/button-bg.png") repeat-x top;
+  padding: 8px 12px;
+  border: 1px solid #1a1a1a;
+	text-shadow: black 0 -1px 0;
   font-weight: bold;
   font-size: 12px;
-	color: black;
+	color: #ccc;
 	text-decoration: none;
+	-webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .action:hover, .ajax_action:hover, button.submit:hover {
 	cursor: hand;
 	cursor: pointer;
 	text-decoration: none;
-	color: #007BBB;
+	color: #eee;
 }
 
 /** Tabs **/
 
 #tabsWrapper {
-  width: 940px;
+  width: 900px;
   margin: 15px auto 0 auto;
-  text-align: left;
 }
 
 #tabs {
@@ -141,28 +148,34 @@ body {
 }
 
 #tabs ul {
-  margin: 0;
-  padding: 0 10px;
+  margin: 0 0 0 -10px;
   list-style: none;
 }
 
 #tabs ul li {
-  margin: 0 1px;
   float: left;
 }
 
 #tabs ul li a {
-  border: 0;
   display: block;
   padding: 8px 12px;
+  margin: 0;
   text-align: center;
   font-size: 13px;
 	font-weight: bold;
   line-height: 18px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 #tabs ul li a:hover {
-  border: 0;
+  background-color: rgba(255,255,255,0.07);
+  color: #ddd;
+  text-decoration: none;
 }
 
 #tabs ul li.active {
@@ -172,12 +185,6 @@ body {
 	background-color: white;
   color: #404040;
   text-shadow: none;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
 }
 
 /** Crumbs **/
@@ -265,10 +272,19 @@ body {
 
 #innerContentWrapper {
 	background-color: white;
+	border-top: none;
   margin: 0 auto;
   padding: 10px 20px;
   width: 900px;
-  text-align: left;
+  -moz-box-shadow: 0 3px 8px #ddd;
+  -webkit-box-shadow: 0 3px 8px #ddd;
+  box-shadow: 0 3px 8px #ddd;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 #pageTitle {

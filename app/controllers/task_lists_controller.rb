@@ -18,7 +18,6 @@
 
 class TaskListsController < ApplicationController
 
-  layout 'project_website'
   helper 'project_items'
 
   before_filter :process_session
