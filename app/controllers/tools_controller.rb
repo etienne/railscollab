@@ -1,5 +1,4 @@
 class ToolsController < ApplicationController
-  layout 'administration'
 
   before_filter :process_session
   before_filter :user_track

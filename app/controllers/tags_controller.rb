@@ -19,8 +19,6 @@
 
 class TagsController < ApplicationController
 
-  layout 'project_website'
-
   before_filter :process_session
   after_filter  :user_track
   

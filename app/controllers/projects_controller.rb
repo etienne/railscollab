@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
     
     @projects = @logged_user.is_admin ? Project.find(:all) : @logged_user.projects
     respond_to do |format|
-      format.html { render :layout => 'administration' }
+      format.html
       format.xml  { 
         render :xml => @projects.to_xml(:root => 'projects')
       }

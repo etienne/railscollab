@@ -38,17 +38,6 @@ module NavigationHelper
   def additional_stylesheets
   end
 
-  def administration_tabbed_navigation
-    items = [
-      {:id => :index,         :url => administration_path},
-      {:id => :people,        :url => companies_path},
-      {:id => :projects,      :url => projects_path},
-      {:id => :configuration, :url => configurations_path},
-      {:id => :tools,         :url => tools_path},
-      #{:id => :upgrade,       :url => '/administration/upgrade'}
-    ]
-  end
-
   def administration_crumbs
     [
       {:title => :dashboard,      :url => '/dashboard'},
@@ -56,29 +45,52 @@ module NavigationHelper
     ] + extra_crumbs + [{:title => current_crumb}]
   end
 
-  def dashboard_tabbed_navigation
-    items = [{:id => :overview,       :url => '/dashboard/index'},
-             {:id => :my_projects,    :url => '/dashboard/my_projects'},
-             {:id => :my_tasks,       :url => '/dashboard/my_tasks'},
-             {:id => :milestones,     :url => '/dashboard/milestones'}]
-  end
-
   def dashboard_crumbs
     [{:title => :dashboard, :url => '/dashboard'}, {:title => current_crumb}]
   end
-
-  def project_tabbed_navigation
-    project_id = @active_project.id
-    items = [{:id => :overview,   :url => project_path(@active_project)}]
-    items << {:id => :messages,   :url => messages_path(@active_project)}
-    items << {:id => :tasks,      :url => task_lists_path(@active_project)}
-    items << {:id => :milestones, :url => milestones_path(@active_project)}
-    items << {:id => :ptime,      :url => times_path(@active_project)} if @logged_user.has_permission(@active_project, :can_manage_time)
-    items << {:id => :files,      :url => files_path(@active_project)}
-    items << {:id => :wiki,       :url => wiki_pages_path(@active_project)}
-    items << {:id => :people,     :url => people_project_path(@active_project)}
-
-    items
+  
+  def page_type
+    # Page type can be either :dashboard, :project or :administration
+    # FIXME: This is quite kludgy and could probably be vastly improved.
+    if !@active_project.nil?
+      :project
+    elsif @controller.controller_name == "dashboard"
+      :dashboard
+    else
+      :administration
+    end
+  end
+  
+  def tabbed_navigation
+    case page_type
+    when :project
+      project_id = @active_project.id
+      items = [{:id => :overview,   :url => project_path(@active_project)}]
+      items << {:id => :messages,   :url => messages_path(@active_project)}
+      items << {:id => :tasks,      :url => task_lists_path(@active_project)}
+      items << {:id => :milestones, :url => milestones_path(@active_project)}
+      items << {:id => :ptime,      :url => times_path(@active_project)} if @logged_user.has_permission(@active_project, :can_manage_time)
+      items << {:id => :files,      :url => files_path(@active_project)}
+      items << {:id => :wiki,       :url => wiki_pages_path(@active_project)}
+      items << {:id => :people,     :url => people_project_path(@active_project)}
+      items
+    when :dashboard
+      [
+        {:id => :overview,       :url => '/dashboard/index'},
+        {:id => :my_projects,    :url => '/dashboard/my_projects'},
+        {:id => :my_tasks,       :url => '/dashboard/my_tasks'},
+        {:id => :milestones,     :url => '/dashboard/milestones'}
+      ]
+    when :administration
+      [
+        {:id => :index,         :url => administration_path},
+        {:id => :people,        :url => companies_path},
+        {:id => :projects,      :url => projects_path},
+        {:id => :configuration, :url => configurations_path},
+        {:id => :tools,         :url => tools_path}
+        #{:id => :upgrade,       :url => '/administration/upgrade'}
+      ]
+    end
   end
 
   def project_crumbs(current=nil, extras=[])

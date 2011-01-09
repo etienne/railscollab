@@ -37,7 +37,8 @@ body {
 }
 
 #header h1 a:hover {
-  border: 0;
+  border-bottom: 2px solid #444;
+  text-decoration: none;
   background: transparent;
 }
 
@@ -248,9 +249,9 @@ body {
 }
 
 #searchBox input {
-  font-size: 10px;
+  font-size: 11px;
   padding: 1px;
-  width: 100px;
+  width: 160px;
 }
 
 #searchBox button {

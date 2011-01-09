@@ -18,8 +18,6 @@
 
 class CommentsController < ApplicationController
 
-  layout 'project_website'
-
   before_filter :process_session
   before_filter :obtain_comment, :except => [:index, :new, :create]
   after_filter  :user_track, :only => [:index, :show]

@@ -2,14 +2,14 @@
 %html
   %head
     %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
-    - unless @active_project.nil?
-      %title
-        = h "#{@active_project.name} - #{h page_title} @ #{h Company.owner.name}"
-    - else
-      %title
-        = h "#{page_title} @ #{h Company.owner.name}"
+    %title
+      - unless @active_project.nil?
+        = h "#{@active_project.name} – #{h page_title} @ #{h Company.owner.name}"
+      - else
+        = h "#{page_title} – #{h Company.owner.name}"
 
     = stylesheet_link_tag 'project_website'
+    = stylesheet_link_tag 'company_website' # FIXME: Possibly mostly useless, need to check
     - additional_stylesheets.each do |ss|
       = stylesheet_link_tag ss
     - end unless additional_stylesheets.nil?
@@ -18,11 +18,12 @@
     = javascript_include_tag 'jrails.js'
     = javascript_include_tag 'application.js'
     = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
-    = javascript_tag "var PROJECT_ID = #{@active_project.id}; var LOGGED_USER_ID=#{@logged_user.id};"
-    / head needs to go here?  
+    - unless @active_project.nil?
+      = javascript_tag "var PROJECT_ID = #{@active_project.id}; var LOGGED_USER_ID=#{@logged_user.id};"
+    = javascript_tag "var LOGGED_USER_ID=#{@logged_user.id};"
   
   %body#body
-    - unless @active_project.is_active?
+    - unless @active_project.nil? or @active_project.is_active?
       .important.center
         %h5
           = :project_locked_header.l
@@ -36,8 +37,14 @@
           = render :partial => 'layouts/user_box', :locals => {:user => @logged_user, :projects => @active_projects, :running_times => @running_times}
         = link_to "« #{:dashboard.l}", { :controller => 'dashboard' }, { :class => "home" }
         %h1
-          = h @active_project.name
-        = render :partial => 'layouts/tabs', :object => project_tabbed_navigation
+          - case page_type
+          - when :dashboard
+            = link_to site_name, :controller => 'dashboard'
+          - when :project
+            = link_to (h @active_project.name), project_path(@active_project)
+          - when :administration
+            = link_to :administration.l, :controller => 'administration'
+        = render :partial => 'layouts/tabs', :object => tabbed_navigation
     / End Header
     
     / Content Wrapper

@@ -18,7 +18,6 @@
 #++
 
 class ConfigurationsController < ApplicationController
-  layout 'administration'
 
   before_filter :process_session
   before_filter :find_categories

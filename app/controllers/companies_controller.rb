@@ -19,8 +19,6 @@
 
 class CompaniesController < ApplicationController
 
-  layout 'administration'
-
   before_filter :process_session
   before_filter :obtain_company, :except => [:index, :create, :new]
   after_filter  :user_track, :only => [:card]
